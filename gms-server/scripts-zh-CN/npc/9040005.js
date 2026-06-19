@@ -20,7 +20,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 function start() {
-    cm.sendYesNo("你想退出公会任务吗？");
+    cm.sendYesNo("你想退出家族任务吗？");
 }
 
 function action(mode, type, selection) {

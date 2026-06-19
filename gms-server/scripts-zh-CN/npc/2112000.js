@@ -79,7 +79,7 @@ function action(mode, type, selection) {
 
                     eim.setIntProperty("yuleteTalked", -1);
                 } else {
-                    cm.sendOk("“哈哈！什么，怎么--你是怎么到这里来的？！我以为我已经封闭了所有的路径！不要紧，这种情况很快就会解决。伙计们：部署#rmaster武器#k！！你！是的，就是你。你难道不觉得这就此结束了吗，回头看看你的同伴，他们需要一些帮助！我现在就撤退。”");
+                    cm.sendOk("“哈哈！什么，怎么--你是怎么到这里来的？！我以为我已经封闭了所有的路径！不要紧，这种情况很快就会解决。伙计们：部署#r大师级武器#k！！你！是的，就是你。你难道不觉得这就此结束了吗，回头看看你的同伴，他们需要一些帮助！我现在就撤退。”");
 
                     eim.setIntProperty("yuleteTalked", 1);
                 }
@@ -98,8 +98,8 @@ function action(mode, type, selection) {
                     if (state == -1) {
                         cm.sendOk("瞧！这就是马加提亚炼金术研究的顶峰！哈哈哈哈哈哈……");
                     } else if (state == 0) {
-                        cm.sendOk("你们真是一群讨厌的家伙，哎。好吧，我向你们展示我的最新武器，由最优秀的炼金术带来，#r弗兰肯罗伊德#k。");
-                        eim.dropMessage(5, "Yulete: I present you my newest weapon, brought by the finest alchemy, Frankenroid!");
+                        //cm.sendOk("你们真是一群讨厌的家伙，哎。好吧，我向你们展示我的最新武器，由最优秀的炼金术带来的#r法兰肯#k。");  //召唤BOSS时弹窗有低概率闪退
+                        eim.dropMessage(5, "犹泰: 行吧，我会展示给你们最强炼金术打造的武器，法兰肯！");
 
                         var mapobj = eim.getMapInstance(926100401);
                         var bossobj = LifeFactory.getMonster(9300139);
@@ -110,8 +110,8 @@ function action(mode, type, selection) {
                         eim.setIntProperty("statusStg7", 1);
                         eim.setIntProperty("yuletePassed", -1);
                     } else {
-                        cm.sendOk("你们这些家伙真是让人头疼，哎。好吧，我向你们展示我的最新武器，由阿尔卡德诺和泽纳米斯最精湛的炼金术结合而成，那些令马加提亚社会中无聊的人们禁止携带的东西，#rmighty Frankenroid#k！");
-                        eim.dropMessage(5, "Yulete: I present you my newest weapon, brought by the finest combined alchemy of Alcadno's and Zenumist's, those that the boring people of Magatia societies have banned to bring along, the mighty Frankenroid!!");
+                        //cm.sendOk("你们这些家伙真是让人头疼，哎。好吧，我向你们展示我的最新武器，由阿尔卡德诺和泽纳米斯最精湛的炼金术结合而成，那些令马加提亚社会中无聊的人们禁止携带的东西，#r生气的法兰肯#k！");//召唤BOSS时弹窗有低概率闪退
+                        eim.dropMessage(5, "犹泰: 很好，让我向你们展示我的最新武器，由卡帕莱特和蒙特鸠最好的组合炼金术带来的，那些玛加提亚无聊的人所禁止的 生气的法兰肯!!");
 
                         var mapobj = eim.getMapInstance(926100401);
                         var bossobj = LifeFactory.getMonster(9300140);

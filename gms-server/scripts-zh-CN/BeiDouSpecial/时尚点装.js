@@ -500,18 +500,15 @@ function action(mode, type, selection) {
     if (status == 1) {
         selectedType = selection;
         if (selectedType == 0) { //武器
-            //if (cm.getPlayer().isGM()) {
-            add = "请选择你想要的点装\r\n#r注意：描述很多有误，并非所有武器可用！#k\r\n";
-            itemSet = wq;
-            for (i = 0; i < itemSet.length; i++) {
-                add += "\r\n#L" + i + "##v " + itemSet[i][0] + "##z";
-                add += itemSet[i][0] + "#" + "    需要点卷:#r " + itemSet[i][1] + "#l#k";
-            };
-            cm.sendSimple(add, 2);
-            //} else {
-            //    cm.sendOk("还有bug，武器点装兑换暂时关闭！其他点装仍可兑换。");
-            //    cm.dispose();
-            //}
+          //  add ="请选择你想要的点装\r\n#r注意：描述很多有误，并非所有武器可用！#k\r\n";
+          //  itemSet = wq;
+            //    for (i = 0; i < itemSet.length; i++) {	
+            //        add += "\r\n#L" + i + "##v " + itemSet[i][0] + "##z";
+           //         add += itemSet[i][0]+"#"+"    需要点卷:#r " + itemSet[i][1]+"#l#k";
+           //     };
+          //  cm.sendSimple(add,2); 
+        cm.sendOk("有bug，武器点装兑换暂时关闭！其他点装仍可兑换。");
+            cm.dispose();
         } else if (selectedType == 1){ //上衣
             add ="请选择你想要的点装\r\n";
             itemSet = yf;

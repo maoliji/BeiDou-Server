@@ -30,9 +30,9 @@ var player;
 var em;
 const ExpeditionType = Java.type('org.gms.server.expeditions.ExpeditionType');
 var exped = ExpeditionType.SHOWA;
-var expedName = "Showa Gang";
-var expedBoss = "The Boss";
-var expedMap = "Nightmarish Last Days";
+var expedName = "大老板挑战";
+var expedBoss = "大老板";
+var expedMap = "噩梦的终结";
 var expedItem = 4000138;
 
 var list = "你想做什么？#b\r\n\r\n#L1#查看当前远征队成员#l\r\n#L2#开始战斗！#l\r\n#L3#退出远征队#l";
@@ -64,7 +64,7 @@ function action(mode, type, selection) {
                 status = 1;
             } else if (expedition.isLeader(player)) { //If you're the leader, manage the exped
                 if (expedition.isInProgress()) {
-                    cm.sendOk("你的探险已经在进行中，对于那些仍在战斗中的人，让我们为那些勇敢的灵魂祈祷吧。");
+                    cm.sendOk("你的远征已经在进行中，对于那些仍在战斗中的人，让我们为那些勇敢的灵魂祈祷吧。");
                     cm.dispose();
                 } else {
                     cm.sendSimple(list);
@@ -72,7 +72,7 @@ function action(mode, type, selection) {
                 }
             } else if (expedition.isRegistering()) { //If the expedition is registering
                 if (expedition.contains(player)) { //If you're in it but it hasn't started, be patient
-                    cm.sendOk("你已经注册了这次远征。请等待 #r" + expedition.getLeader().getName() + "#k 开始。");
+                    cm.sendOk("你已经登记了这次远征。请等待 #r" + expedition.getLeader().getName() + "#k 开始。");
                     cm.dispose();
                 } else { //If you aren't in it, you're going to get added
                     cm.sendOk(expedition.addMember(cm.getPlayer()));
@@ -89,7 +89,7 @@ function action(mode, type, selection) {
 
                     cm.dispose();
                 } else { //If you're not in by now, tough luck
-                    cm.sendOk("另一支探险队已经主动挑战了" + expedBoss + "，让我们为这些勇敢的灵魂祈祷吧。");
+                    cm.sendOk("另一支远征队已经主动挑战了" + expedBoss + "，让我们为这些勇敢的灵魂祈祷吧。");
                     cm.dispose();
                 }
             }
@@ -112,7 +112,7 @@ function action(mode, type, selection) {
                 if (res == 0) {
                     cm.sendOk("#r" + expedBoss + " 远征#k 已经创建。\r\n\r\n再次与我交谈，查看当前队伍，或开始战斗！");
                 } else if (res > 0) {
-                    cm.sendOk("抱歉，您已经达到了此次远征的尝试配额！请另选他日再试……");
+                    cm.sendOk("抱歉，您已经达到了此次远征的尝试次数！请另选他日再试……");
                 } else {
                     cm.sendOk("在开始远征时发生了意外错误，请稍后重试。");
                 }
@@ -134,11 +134,11 @@ function action(mode, type, selection) {
                 expedMembers = expedition.getMemberList();
                 var size = expedMembers.size();
                 if (size == 1) {
-                    cm.sendOk("你是探险队中唯一的成员。");
+                    cm.sendOk("你是远征队中唯一的成员。");
                     cm.dispose();
                     return;
                 }
-                var text = "以下成员组成了你的探险队（点击成员名字可以将其踢出探险队）：\r\n";
+                var text = "以下成员组成了你的远征队（点击成员名字可以将其踢出远征队）：\r\n";
                 text += "\r\n\t\t1." + expedition.getLeader().getName();
                 for (var i = 1; i < size; i++) {
                     text += "\r\n#b#L" + (i + 1) + "#" + (i + 1) + ". " + expedMembers.get(i).getValue() + "#l\n";
@@ -150,18 +150,18 @@ function action(mode, type, selection) {
 
                 var size = expedition.getMemberList().size();
                 if (size < min) {
-                    cm.sendOk("你的远征队至少需要有" + min + "名玩家注册。");
+                    cm.sendOk("你的远征队至少需要有" + min + "名玩家登记。");
                     cm.dispose();
                     return;
                 }
 
-                cm.sendOk("探险队将开始，现在将由护送你前往 #b" + expedMap + "#k。");
+                cm.sendOk("远征队将开始，现在将由护送你前往 #b" + expedMap + "#k。");
                 status = 4;
             } else if (selection == 3) {
                 const PacketCreator = Java.type('org.gms.util.PacketCreator');
-                player.getMap().broadcastMessage(PacketCreator.serverNotice(6, expedition.getLeader().getName() + "探险结束了。"));
+                player.getMap().broadcastMessage(PacketCreator.serverNotice(6, expedition.getLeader().getName() + "远征结束了。"));
                 cm.endExpedition(expedition);
-                cm.sendOk("这次探险已经结束。有时候最好的策略是逃跑。");
+                cm.sendOk("这次远征已经结束。有时候最好的策略是撤退。");
                 cm.dispose();
 
             }
@@ -175,7 +175,7 @@ function action(mode, type, selection) {
             em.setProperty("leader", player.getName());
             em.setProperty("channel", player.getClient().getChannel());
             if (!em.startInstance(expedition)) {
-                cm.sendOk("另一支探险队已经主动挑战了" + expedBoss + "，让我们为这些勇敢的灵魂祈祷吧。");
+                cm.sendOk("另一支远征队已经主动挑战了" + expedBoss + "，让我们为这些勇敢的灵魂祈祷吧。");
                 cm.dispose();
                 return;
             }

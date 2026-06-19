@@ -15,7 +15,7 @@ function action(mode, type, selection) {
         var item = 4031711 + parseInt(cm.c.getPlayer().getMapId() / 300000000);
 
         if (!cm.canHold(item)) {
-            cm.sendNext("你没有可用的ETC空余的栏位。");
+            cm.sendNext("你没有可用的背包其他栏空余。");
         } else if (cm.getMeso() >= 5000) {
             cm.gainMeso(-5000);
             cm.gainItem(item, 1);

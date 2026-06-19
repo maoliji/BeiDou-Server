@@ -50,7 +50,7 @@ function action(mode, type, selection) {
                     cm.gainItem(2022198, 1);
                     cm.sendOk("你拿了桌子上放着的药丸。");
                 } else {
-                    cm.sendOk("你没有可用的使用槽来获取Russellon的药丸。");
+                    cm.sendOk("你没有可用的背包空间来获取Russellon的药丸。");
                 }
             }
 

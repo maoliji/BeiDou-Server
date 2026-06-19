@@ -20,7 +20,7 @@
       <int name="id" value="6090003"/>
       <int name="startHour" value="22"/>
       <int name="endHour" value="14"/>
-      <string name="message" value="A cry of a ghost is echoing throughout the hills. The Scholar Ghost has appeared. Offer the tail of a Three-Tailed-Fox on the Stone Tower to appease the grieving Scholar Ghost."/>
+      <string name="message" value="不知从何处传来凄凉哀号的声音，随着哭声，书生鬼出现在眼前。若想解开书生鬼的冤屈，须将三尾狐的尾巴献到石塔上。"/>
     </imgdir>
   </imgdir>
   <imgdir name="back">
@@ -6011,7 +6011,7 @@
       <string name="id" value="2229009"/>
       <int name="x" value="2713"/>
       <int name="y" value="-389"/>
-      <int name="reactorTime" value="900"/>
+      <int name="reactorTime" value="100"/>
       <int name="f" value="0"/>
       <string name="name" value=""/>
     </imgdir>

@@ -39,9 +39,9 @@ function start() {
     if (parseInt(cm.getJobId() / 100) == jobType && cm.canSpawnPlayerNpc(GameConstants.getHallOfFameMapid(cm.getJob()))) {
         spawnPnpc = true;
 
-        var sendStr = "你已经走了很长的路才获得你今天所拥有的力量、智慧和勇气，不是吗？你觉得在#r冒险岛荣耀大厅，持有你当前角色的图像#k怎么样？";
+        var sendStr = "你已经走了很长的路才获得你今天所拥有的力量、智慧和勇气，不是吗？你觉得在#r名人堂里有一个NPC拥有你角色的最新形象#k怎么样？";
         if (spawnPnpcFee > 0) {
-            sendStr += "只需要支付 #b " + cm.numberWithCommas(spawnPnpcFee) + " 金币#k，我就可以帮你实现~";
+            sendStr += "只需要支付#b " + cm.numberWithCommas(spawnPnpcFee) + "金币#k，我就可以帮你实现~";
         }
 
         cm.sendYesNo(sendStr);
@@ -61,13 +61,13 @@ function start() {
             }
         } else if (actionx["3thJobI"] || (cm.getPlayer().gotPartyQuestItem("JB3") && cm.getLevel() >= 70 && cm.getJobId() % 10 == 0 && parseInt(cm.getJobId() / 100) == 2 && !cm.getPlayer().gotPartyQuestItem("JBP"))) {
             actionx["3thJobI"] = true;
-            cm.sendNext("你来了。几天前，奥西里亚的#b#p2020009##k跟我谈到了你。我看到你对成为魔法师的第三次职业转职感兴趣。为了实现这个目标，我需要测试你的实力，看看你是否配得上这个晋升。在金银岛的一个邪恶森林深处中有一个开口，会带你通往一个秘密通道。一旦进入，你将面对我的一个克隆。你的任务是打败他，并带着#b#t4031059##k回来。");
+            cm.sendNext("你来了。几天前，冰峰雪域的#b#p2020009##k跟我谈到了你。我看到你对成为魔法师的第三次职业转职感兴趣。为了实现这个目标，我需要测试你的实力，看看你是否配得上这个晋升。在金银岛的一个邪恶森林深处中有一个开口，会带你通往一个秘密通道。一旦进入，你将面对我的一个分身。你的任务是打败他，并带着#b#t4031059##k回来。");
         } else if (cm.getPlayer().gotPartyQuestItem("JBP") && !cm.haveItem(4031059)) {
-            cm.sendNext("请给我带来#b#t4031059##k，它是从我的克隆体那里得到的。你可以在邪恶森林深处的空间洞穴里找到他。");
+            cm.sendNext("请给我带来#b#t4031059##k，它是从我的分身那里得到的。你可以在邪恶森林深处的空间洞穴里找到他。");
             cm.dispose();
         } else if (cm.haveItem(4031059) && cm.getPlayer().gotPartyQuestItem("JBP")) {
             actionx["3thJobC"] = true;
-            cm.sendNext("干得好。你打败了我的分身，并安全地带回了#b#t4031059##k。你现在已经从物理角度证明了自己配得上进行第三次职业转职。现在你应该把这条项链交给在奥西里亚的#b#p2020011##k，以进行测试的第二部分。祝你好运。你会需要的。");
+            cm.sendNext("干得好。你打败了我的分身，并安全地带回了#b#t4031059##k。你现在已经证明了自己配得上进行第三次职业转职。现在你应该把这条项链交给在冰峰雪域的#b#p2020011##k，以进行测试的第二部分。祝你好运。你会需要的。");
         } else {
             cm.sendOk("你选择得很明智。");
             cm.dispose();
@@ -178,14 +178,14 @@ function action(mode, type, selection) {
                     if (selection == 0) {
                         cm.sendNext("掌握#r火/毒系魔法#k的魔法师。\r\n\r\n#b火/毒法师#k是一个活跃的职业，能够造成魔法元素伤害。这些技能使他们在面对对其元素弱点的敌人时具有显著优势。通过他们的技能#r冥想#k和#r减速#k，#b火/毒法师#k可以增加他们的魔法攻击并减少对手的移动能力。#b火/毒法师#k拥有强大的火焰箭攻击和毒素攻击。");    //f/p mage
                     } else if (selection == 1) {
-                        cm.sendNext("掌握#r冰/雷系魔法#k的魔法师。\r\n\r\n#b冰/雷法师#k是一个活跃的职业，能够造成魔法元素伤害。这些技能使他们在面对对其元素弱点的敌人时具有显著优势。通过他们的技能#r冥想#k和#r减速#k，#b冰/雷法师#k可以增加他们的魔法攻击力并减少对手的移动能力。#b冰/雷法师#k拥有冰冻攻击和雷电攻击。");    //i/l mage
+                        cm.sendNext("掌握#r冰/雷系魔法#k的魔法师。\r\n\r\n#b冰/雷法师#k是一个活跃的职业，能够造成魔法元素伤害。这些技能使他们在面对对其元素弱点的敌人时具有显著优势。通过他们的技能#r冥想#k和#r减速#k，#b冰/雷法师#k可以增加他们的魔法攻击力并减少对手的移动能力。#b冰/雷法师#k拥有冰冻攻击和闪电攻击。");    //i/l mage
                     } else {
                         cm.sendNext("掌握#r神圣魔法#k的魔法师。\r\n\r\n#b牧师#k是一个强大的支持职业，必定会被任何队伍接受。这是因为他们有能力#r治疗#k自己和队伍中的其他成员。使用#r祝福#k，#b牧师#k可以增强属性并减少所受的伤害。如果你发现生存困难，这个职业是值得一试的。#b牧师#k对不死怪物尤其有效。");    //cleric
                     }
 
                     status -= 2;
                 } else {
-                    cm.sendSimple("现在... 你做好决定了吗？请选择你想要在二转时选择的职业。#b\r\n#L0#法师（火 / 毒）\r\n#L1#法师（冰 / 雷）\r\n#L2#牧师");
+                    cm.sendSimple("现在... 你做好决定了吗？请选择你想要在二转时选择的职业。#b\r\n#L0#法师（火 / 毒）\r\n#L1#法师（冰 / 闪电）\r\n#L2#牧师");
                 }
             }
         } else if (status == 2) {

@@ -1,7 +1,7 @@
 var status = 0;
 
 function start() {
-        	cm.sendYesNo("花费2000万金币，可直接学会群宠技能，是否学习？");
+        	cm.sendYesNo("花费2000万金币，可直接学会三宠技能，是否学习？");
 	}
 
 function action(mode, type, selection) {
@@ -26,7 +26,7 @@ function action(mode, type, selection) {
 	} else {
 		cm.gainMeso(-20000000);
 		cm.teachSkill(0000008,1,1,-1);  //教三宠技能
-                          	cm.sendOk("学习群宠技能成功！");
+                          	cm.sendOk("学习三宠技能成功！");
 		cm.dispose();  }
              }else {
 		cm.dispose();

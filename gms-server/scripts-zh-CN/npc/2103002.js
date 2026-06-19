@@ -47,7 +47,7 @@ function action(mode, type, selection) {
                     cm.sendOk("你刚刚偷走了戒指。尽快清理这个区域！");
                     cm.gainItem(4031578, 1);
                 } else {
-                    cm.sendOk("你没有可用的ETC槽。");
+                    cm.sendOk("你没有可用的其他栏空间。");
                 }
             }
 

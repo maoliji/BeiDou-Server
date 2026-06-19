@@ -105,7 +105,7 @@ function action(mode, type, selection) {
             }
             cm.sendSimple(msg);
         } else {
-            cm.sendNext("你似乎没有金枫叶、订婚戒指或结婚戒指。你一定不属于这里，所以我会带你去阿莫利亚。");
+            cm.sendNext("你似乎没有金枫叶、订婚戒指或结婚戒指。看来你不该来这里，我会送你回婚礼村。");
             selection = 20; // Random.
         }
     } else if (status == 1) {
@@ -120,13 +120,13 @@ function action(mode, type, selection) {
             case 0:
                 if (eim.getIntProperty("isPremium") == 1) {
                     eim.warpEventTeam(680000300);
-                    cm.sendOk("享受吧！永远珍惜你的照片！");
+                    cm.sendOk("享受吧！永远珍惜你们的照片！");
                     if (cmPartner != null) {
                         cmPartner.npcTalk(cm.getNpc(), "Enjoy! Cherish your Photos Forever!");
                     }
                 } else {    // skip the party-time (premium only)
                     eim.warpEventTeam(680000500);
-                    cm.sendOk("恭喜新婚！我会护送你到出口。");
+                    cm.sendOk("恭喜新婚！我会护送你们到出口。");
                     if (cmPartner != null) {
                         cmPartner.npcTalk(cm.getNpc(), "Congratulations for the newly-wed! I will escort you to the exit.");
                     }
@@ -136,7 +136,7 @@ function action(mode, type, selection) {
                 break;
 
             case 1:
-                cm.sendOk("超级明星们必须接受骨盆比博普的命令才能团结一致。当你准备好了，你可以点击我去参加Afterparty。");
+                cm.sendOk("超级明星们必须接受Pelvis Bebop的命令才能团结一致。当你准备好了，你可以点击我去参加后续派对。");
                 cm.dispose();
                 break;
 

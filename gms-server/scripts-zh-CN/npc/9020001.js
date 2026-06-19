@@ -28,14 +28,13 @@
  */
 
 var stage1Questions = Array(
-    "收集与#b战士#n首次转职所需最低等级相同数量的#b通行证#n。",
-    "收集与#b战士#n首次转职所需最低力量（STR）相同数量的#b通行证#n。",
-    "收集与#b魔法师#n首次转职所需最低智力（INT）相同数量的#b通行证#n。",
-    "收集与#b弓箭手#n首次转职所需最低敏捷（DEX）相同数量的#b通行证#n。",
-    "收集与#b飞侠#n首次转职所需最低敏捷（DEX）相同数量的#b通行证#n。",
-    "收集与二次转职所需最低等级相同数量的#b通行证#n。",
-    "收集与#b魔法师#n首次转职所需最低等级相同数量的#b通行证#n。"
-);
+        "请听题.战士一转需要的最低等级是多少,请搜集那么多的通行证给我.",
+        "请听题.战士一转需要的最低力量是多少,请搜集那么多的通行证给我.",
+        "请听题.法师一转需要的最低智力是多少,请搜集那么多的通行证给我.",
+        "请听题.弓箭手一转需要的最低敏捷是多少,请搜集那么多的通行证给我.",
+        "请听题.飞侠一转需要的最低敏捷是多少,请搜集那么多的通行证给我.",
+        "请听题.二转需要的等级是多少,请搜集那么多的通行证给我.",
+        "请听题.法师一转需要的最低等级是多少,请搜集那么多的通行证给我.");
 var stage1Answers = Array(10, 35, 20, 25, 25, 30, 8);
 
 const Rectangle = Java.type('java.awt.Rectangle');
@@ -68,10 +67,6 @@ function clearStage(stage, eim, curMap) {
 }
 
 function rectangleStages(eim, property, areaCombos, areaRects) {
-    const GameConfig = Java.type('org.gms.config.GameConfig');
-    if(GameConfig.getServerBoolean("use_enable_stage_skip") && eim.getPlayerCount() == 1){
-        return true;
-    }
     var c = eim.getProperty(property);
     if (c == null) {
         c = Math.floor(Math.random() * areaCombos.length);
@@ -139,12 +134,6 @@ function action(mode, type, selection) {
                     cm.sendNext("太棒了！你通过了所有的关卡来到了这一点。这是为了你出色的表现而给予的小奖品。在接受之前，请确保你的使用和其他物品栏有空位可用。");
                 }
             } else if (curMap == 103000800) {   // stage 1
-                const GameConfig = Java.type('org.gms.config.GameConfig');
-                if (eim.getPlayerCount() == 1 && !GameConfig.getServerBoolean("use_enable_stage_skip")) {
-                    cm.sendOk("这里的机关需要多人配合才能解开，一个人恐怕难以应付。等你找到了可靠的伙伴，再一起回来挑战吧！");
-                    cm.dispose();
-                    return;
-                }
                 if (cm.isEventLeader()) {
                     var numpasses = eim.getPlayerCount() - 1;     // minus leader
 
@@ -154,13 +143,13 @@ function action(mode, type, selection) {
                         eim.gridClear();
                         cm.gainItem(4001008, -numpasses);
                     } else {
-                        cm.sendNext("对不起，但你的通行证数量不够。你需要给我正确数量的通行证；应该是你队伍成员数量减去队长的数量，在这种情况下需要 " + numpasses + " 张通行证来通过这个关卡。告诉你的队伍成员解决问题，收集通行证，然后交给你。");
+                        cm.sendNext("对不起，但你的通行证数量不够。你需要给我正确数量的通行证；应该是你队伍成员数量减去队长的数量，在这种情况下需要" + numpasses + "张通行证来通过这个关卡。告诉你的队伍成员解决问题，收集通行证，然后交给你。");
                     }
                 } else {
                     var data = eim.gridCheck(cm.getPlayer());
 
                     if (data == 0) {
-                        cm.sendNext("谢谢你带来了优惠券。请把通行证交给你的队伍队长继续。");
+                        cm.sendNext("谢谢你带来了通行证。请把通行证交给你的队伍队长继续。");
                     } else if (data == -1) {
                         data = Math.floor(Math.random() * stage1Questions.length) + 1;   //data will be counted from 1
                         eim.gridInsert(cm.getPlayer(), data);
@@ -171,13 +160,13 @@ function action(mode, type, selection) {
                         var answer = stage1Answers[data - 1];
 
                         if (cm.itemQuantity(4001007) == answer) {
-                            cm.sendNext("这是正确的答案！为此，你刚刚获得了一个#b通行证#k。请将它交给队伍的队长。");
+                            cm.sendNext("回答正确!这是给你#b通行证#k.请把它交给队长.");
                             cm.gainItem(4001007, -answer);
                             cm.gainItem(4001008, 1);
                             eim.gridInsert(cm.getPlayer(), 0);
                         } else {
                             var question = stage1Questions[eim.gridCheck(cm.getPlayer()) - 1];
-                            cm.sendNext("对不起，但那不是正确的答案！\r\n" + question);
+                            cm.sendNext("抱歉,但是数量不对！\r\n" + question);
                         }
                     }
                 }
@@ -190,7 +179,7 @@ function action(mode, type, selection) {
                 var nextStgId = 103000802;
 
                 if (!eim.isEventLeader(cm.getPlayer())) {
-                    cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
+                    cm.sendOk("请根据队长的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第二阶段。在我旁边，你会看到一些绳子，在这些绳子中，有#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3名队伍成员找到正确的绳子然后挂在上面#k\r\n但是，如果你挂得太低，这不算作答案；请确保靠近绳子中间位置才算作正确答案。此外，你的队伍只允许有3名成员挂在绳子上，队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的绳子挂上去吧！");
                     var c = Math.floor(Math.random() * stgCombos.length);
@@ -198,7 +187,7 @@ function action(mode, type, selection) {
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
 
-                    if (accept) {
+                    if (accept || eim.getPlayers().size() < 3) {  // 检测到队伍人数不足时，直接通过本关，方便单机玩家
                         clearStage(stage, eim, curMap);
                         cm.sendNext("请赶紧前往下一个阶段，传送门已经打开了！");
                     } else {
@@ -208,7 +197,7 @@ function action(mode, type, selection) {
                 }
 
                 cm.dispose();
-            } else if (curMap == 103000802) {   // stage 3
+            } else if (curMap == 103000802) {
                 var stgProperty = "stg3Property";
                 var stgCombos = stage3Combos;
                 var stgAreas = stage3Rects;
@@ -224,7 +213,7 @@ function action(mode, type, selection) {
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
 
-                    if (accept) {
+                    if (accept || eim.getPlayers().size() < 3) {  // 检测到队伍人数不足时，直接通过本关，方便单机玩家
                         clearStage(stage, eim, curMap);
                         cm.sendNext("请赶紧前往下一个阶段，传送门已经打开了！");
                     } else {
@@ -234,7 +223,7 @@ function action(mode, type, selection) {
                 }
 
                 cm.dispose();
-            } else if (curMap == 103000803) {   // stage 4
+            } else if (curMap == 103000803) {
                 var stgProperty = "stg4Property";
                 var stgCombos = stage4Combos;
                 var stgAreas = stage4Rects;
@@ -250,7 +239,7 @@ function action(mode, type, selection) {
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
 
-                    if (accept) {
+                    if (accept || eim.getPlayers().size() < 3) {  // 检测到队伍人数不足时，直接通过本关，方便单机玩家
                         clearStage(stage, eim, curMap);
                         cm.sendNext("请赶紧前往下一个阶段，传送门已经打开了！");
                     } else {
@@ -260,7 +249,7 @@ function action(mode, type, selection) {
                 }
 
                 cm.dispose();
-            } else if (curMap == 103000804) {   // stage 5
+            } else if (curMap == 103000804) {
                 if (eim.isEventLeader(cm.getPlayer())) {
                     if (cm.haveItem(4001008, 10)) {
                         cm.sendNext("这是通往最后的奖励阶段的传送门。这个阶段让你更容易地击败普通怪物。你将有一定的时间来尽可能多地狩猎，但你可以随时通过NPC中途离开这个阶段。再次恭喜你通过了所有的阶段。让你的队伍跟我对话，他们可以通过到达奖励阶段来领取奖品。保重……");

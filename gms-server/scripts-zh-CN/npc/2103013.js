@@ -30,13 +30,13 @@ function start() {
 
 /*function start() {
 	status = -1;
-	var text = "You should NOT talk to this NPC in this map.";
+	var text = "你在错误的地图.";
 	if (cm.getMapId() == 926020001)
-		text = "Stop! You've succesfully passed Nett's test. By Nett's grace, you will now be given the opportunity to enter Pharaoh Yeti's Tomb. Do you wish to enter it now?\r\n\r\n#b#L0# Yes, I will go now.#l\r\n#L1# No, I will go later.#l";
+		text = "站住!你成功抵挡了奈特的怒火.奈特允许你进入企鹅长老的墓.现在想进去吗?\r\n\r\n#b#L0#好.#l\r\n#L1#等会儿.#l";
 	else if (cm.getMapId() == 926010000)
-		text = "I am Duarte.\r\n\r\n#b#L0# Ask about the Pyramid.#l\r\n#e#L1# Enter the Pyramid.#l#n\r\n\r\n#L2# Find a Party.#l\r\n\r\n#L3# Enter Pharaoh Yeti's Tomb.#l\r\n#L4# Ask about Pharaoh Yeti's treasures.#l\r\n#L5# Receive the <Protector of Pharaoh> Medal.#l";
+		text = "我是#p2103013#.\r\n\r\n#b#L0#这里是干嘛的.#l\r\n#e#L1# 我要进入金字塔.#l#n\r\n\r\n#L2#寻找组队.#l\r\n\r\n#L3#进入企鹅长老墓穴.#l\r\n#L4# 奖励是什么.#l\r\n#L5#领取<法老保护者>勋章.#l";
 	else 
-		text = "Do you want to forfeit the challenge and leave?\r\n\r\n#b#L0# Leave#l";
+		text = "你想放弃挑战离开吗?\r\n\r\n#b#L0#离开#l";
 		
 	cm.sendSimple(text);
 }
@@ -63,7 +63,7 @@ function action(mode, type, selection) {
                 cm.sendSimple("你这些不知道尼特之怒的愚蠢家伙，现在是选择你们命运的时刻！\r\n\r\n#b#L0# 独自进入。#l\r\n#L1# 与2人或更多的队伍一起进入。#l");
             } else if (selection == 2) {
                 cm.openUI(0x16);
-                cm.showInfoText("Use the Party Search (Hotkey O) window to search for a party to join anytime and anywhere!");
+                cm.showInfoText("使用组队搜索找一个队伍!");
                 cm.dispose();
             } else if (selection == 3) {
                 cm.sendSimple("你带来了什么宝石？\r\n\r\n#L0##i4001322# #t4001322##l\r\n#L1##i4001323# #t4001323##l\r\n#L2##i4001324# #t4001324##l\r\n#L3##i4001325# #t4001325##l");
@@ -189,7 +189,7 @@ function action(mode, type, selection) {
                 cm.gainItem(itemid);
                 cm.warp(926010000);
             } else {
-                cm.showInfoText("You must have at least 1 empty slot in your Etc window to receive the reward.");
+                cm.showInfoText("你的背包其他栏需要至少1格才能领取奖励.");
             }
 
             cm.dispose();

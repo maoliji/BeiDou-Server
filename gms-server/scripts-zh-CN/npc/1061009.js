@@ -68,7 +68,7 @@ function start() {
             cm.sendOk("抱歉，但是三转职业升级（" + js + "）已关闭。");
         } else {
             if (!em.startInstance(cm.getPlayer())) {
-                cm.sendOk("有其他人已经在挑战克隆体了。请等待直到该区域被清空。");
+                cm.sendOk("有其他人已经在挑战分身了。请等待直到该区域被清空。");
             }
 
             cm.dispose();

@@ -143,7 +143,7 @@ function insidePqAction(mode, type, selection) {
             var snowman = LifeFactory.getMonster(9400317 + (5 * difficulty));
             mapobj.spawnMonsterOnGroundBelow(snowman, new Point(-180, 15));
             eim.setIntProperty("snowmanLevel", 1);
-            eim.dropMessage(5, "The snowman appeared on the field! Protect it using all means necessary!");
+            eim.dropMessage(5, "雪人出现了，请尽力保护它！");
 
             eim.setIntProperty("statusStg1", 0);
             cm.dispose();
@@ -155,7 +155,7 @@ function insidePqAction(mode, type, selection) {
                 return;
             }
 
-            mapobj.broadcastStringMessage(5, "As the snowman grows to it's prime, the Scrooge appears!");
+            mapobj.broadcastStringMessage(5, "雪人长大了，怪物出来了！");
             eim.getEm().getIv().invokeFunction("snowmanHeal", eim);
 
             var boss = LifeFactory.getMonster(9400318 + difficulty);

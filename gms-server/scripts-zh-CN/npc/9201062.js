@@ -104,7 +104,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             } else if (beauty == 3) {
                 var color = (colors[selection] / 100) % 10 | 0;
@@ -114,7 +114,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的美瞳隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做。");
                 }
             }
         }

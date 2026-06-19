@@ -95,17 +95,17 @@ function action(mode, type, selection) {
         var hasGoldenLeaf = cm.haveItem(4000313);
 
         if (hasGoldenLeaf && hasEngage) {
-            cm.sendOk("你还不能离开！你需要点击高阶祭司约翰并结婚，然后我才能让你离开。");
+            cm.sendOk("你还不能走！在我让你离开之前，你需要点击大祭司约翰结婚.");
             cm.dispose();
         } else if (hasGoldenLeaf && hasRing) {
-            var choice = Array("Go to the Afterparty", "What should I be doing");
-            var msg = "What can I help you with?#b";
+            var choice = Array("去参加聚会", "我该怎么办");
+            var msg = "有什么事?#b";
             for (i = 0; i < choice.length; i++) {
                 msg += "\r\n#L" + i + "#" + choice[i] + "#l";
             }
             cm.sendSimple(msg);
         } else {
-            cm.sendNext("你似乎没有金枫叶、订婚戒指或结婚戒指。你一定不属于这里，所以我会带你去阿莫利亚。");
+            cm.sendNext("你似乎没有#z4000313#、订婚戒指或结婚戒指。你不该来这里，我把你送回婚礼村。");
             selection = 20; // Random.
         }
     } else if (status == 1) {
@@ -120,15 +120,15 @@ function action(mode, type, selection) {
             case 0:
                 if (eim.getIntProperty("isPremium") == 1) {
                     eim.warpEventTeam(680000300);
-                    cm.sendOk("享受吧！永远珍惜你的照片！");
+                    cm.sendOk("享受吧！永远珍惜你们的照片！");
                     if (cmPartner != null) {
-                        cmPartner.npcTalk(cm.getNpc(), "Enjoy! Cherish your Photos Forever!");
+                        cmPartner.npcTalk(cm.getNpc(), "永远珍惜你的照片！");
                     }
                 } else {    // skip the party-time (premium only)
                     eim.warpEventTeam(680000500);
                     cm.sendOk("恭喜新人！我会护送你们到出口。");
                     if (cmPartner != null) {
-                        cmPartner.npcTalk(cm.getNpc(), "Congratulations for the newly-wed! I will escort you to the exit.");
+                        cmPartner.npcTalk(cm.getNpc(), "祝贺新婚! 我会护送你到出口。");
                     }
                 }
 

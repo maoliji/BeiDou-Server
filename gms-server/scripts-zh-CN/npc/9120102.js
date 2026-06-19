@@ -133,7 +133,7 @@ function action(mode, type, selection) {
                     cm.setFace(facenew[selection]);
                     cm.sendOk("享受你的新面容吧！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                    cm.sendOk("嗯...看起来你没有这个地方专门的会员卡。很抱歉要说这个，但没有会员卡，你就不能进行整形手术了...");
                 }
             } else if (beauty == 1) {
                 if (cm.haveItem(5152045) == true) {
@@ -141,7 +141,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                    cm.sendOk("嗯...看起来你没有这个地方专门的会员卡。很抱歉要说这个，但没有会员卡，你就不能进行整形手术了...");
                 }
             } else if (beauty == 3) {
                 var color = (colors[selection] / 100) % 10 | 0;
@@ -151,7 +151,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             }
         }

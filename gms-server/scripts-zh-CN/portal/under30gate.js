@@ -28,7 +28,8 @@ Save location to return.
 */
 
 function enter(pi) {
-    if (pi.getPlayer().getLevel() <= 30) {
+    var eim = pi.getEventInstance();
+    if (pi.getPlayer().getLevel() <= 30 || eim.getPlayers().size() < 6 ) { //检测到队伍人数不足时，不限制小号等级，方便单机玩家
         pi.playPortalSound();
         pi.warp(990000640, 1);
         return true;

@@ -7,13 +7,13 @@ function start() {
 function action(mode, type, selection) {
     var eim = cm.getEventInstance();
     if (eim != null && eim.getIntProperty("glpq6") == 3) {
-        cm.sendOk("干得漂亮。你超越了扭曲大师。通过那扇门领取你的奖品。");
+        cm.sendOk("干得漂亮。你超越了扭曲大师。通过那扇门领取你的奖品吧。");
         cm.dispose();
         return;
     }
 
     if (!cm.isEventLeader()) {
-        cm.sendNext("我希望你们的领导和我谈谈。");
+        cm.sendNext("让队长来找我。");
         cm.dispose();
         return;
     }
@@ -27,12 +27,12 @@ function action(mode, type, selection) {
     if (eim != null) {
         if (eim.getIntProperty("glpq6") == 0) {
             if (status == 0) {
-                cm.sendNext("欢迎来到扭曲大师的堡垒。我将是今晚的主持人…");
+                cm.sendNext("欢迎来到扭曲大师的们的晚宴...");
             } else if (status == 1) {
-                cm.sendNext("今晚，我们有一群冒险岛玩家的盛宴.. 哈哈哈...");
+                cm.sendNext("今晚，我们有一群冒险岛玩家的盛宴.. 哈哈哈...\r\n让我们训练有素的精英护卫来招待你！");
             } else if (status == 2) {
-                cm.sendNext("让我们经过特别训练的守护大师护送你！");
-                cm.mapMessage(6, "Engarde! Master Guardians approach!");
+                //cm.sendNext("让我们经过特别训练的守护大师护送你！"); //召唤boss时弹出对话框有时会掉线
+                cm.mapMessage(6, "注意！精英护卫们出现了!");
                 for (var i = 0; i < 10; i++) {
                     var mob = eim.getMonster(9400594);
                     const xPos = Math.floor(-1337 + (Math.random() * 1337))
@@ -45,14 +45,16 @@ function action(mode, type, selection) {
                 }
                 eim.setIntProperty("glpq6", 1);
                 cm.dispose();
-            }
+            } else {                 
+		cm.dispose();
+          }	
         } else if (eim.getIntProperty("glpq6") == 1) {
             if (cm.getMap().countMonsters() == 0) {
                 if (status == 0) {
-                    cm.sendOk("嗯，这是什么？你打败了它们？");
+                    cm.sendOk("嗯，什么？你打败了它们？\r\n好吧，没关系！扭曲大师们会很高兴欢迎你的。");
                 } else if (status == 1) {
-                    cm.sendNext("好吧，无论如何！扭曲之主将很高兴欢迎你。");
-                    cm.mapMessage(6, "Twisted Masters approach!");
+                    //cm.sendNext("好吧，无论如何！扭曲大师们会很高兴欢迎你。"); //召唤boss时弹出对话框有时会掉线
+                    cm.mapMessage(6, "注意！扭曲大师们出现了!");
 
                     //Margana
                     var mob = eim.getMonster(9400590);
@@ -72,15 +74,17 @@ function action(mode, type, selection) {
 
                     eim.setIntProperty("glpq6", 2);
                     cm.dispose();
-                }
+                } else {                 
+		cm.dispose();
+          }	
             } else {
-                cm.sendOk("不要理我。主守护者会护送你！");
+                cm.sendOk("不要把注意力放在我身上，精英护卫们会好好招待你们的！");
                 cm.dispose();
             }
         } else if (eim.getIntProperty("glpq6") == 2) {
             if (cm.getMap().countMonsters() == 0) {
-                cm.sendOk("什么？呃...这不可能发生。");
-                cm.mapMessage(5, "The portal to the next stage has opened!");
+                cm.sendOk("什么？呃...这不可能。");
+                cm.mapMessage(5, "通往下一阶段的门已经打开!");
                 eim.setIntProperty("glpq6", 3);
 
                 eim.showClearEffect(true);
@@ -89,11 +93,11 @@ function action(mode, type, selection) {
                 eim.clearPQ();
                 cm.dispose();
             } else {
-                cm.sendOk("不要理会我。扭曲之主会护送你！");
+                cm.sendOk("不要把注意力放在我身上，扭曲大师们会好好招待你们的！");
                 cm.dispose();
             }
         } else {
-            cm.sendOk("干得漂亮。你超越了扭曲大师。通过那扇门领取你的奖品。");
+            cm.sendOk("干得漂亮。你超越了扭曲大师。通过那扇门领取你的奖品吧。");
             cm.dispose();
         }
     } else {

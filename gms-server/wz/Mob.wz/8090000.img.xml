@@ -4,7 +4,7 @@
     <int name="boss" value="1"/>
     <int name="bodyAttack" value="1"/>
     <int name="level" value="80"/>
-    <int name="maxHP" value="175000"/>
+    <int name="maxHP" value="75000"/>
     <int name="maxMP" value="300"/>
     <int name="speed" value="-50"/>
     <int name="PADamage" value="350"/>
@@ -28,7 +28,7 @@
       </imgdir>
     </imgdir>
     <imgdir name="ban">
-      <string name="banMsg" value="You will be relocated due to the diversionary strategy of Deet and Roi."/>
+      <string name="banMsg" value="由于迪特和罗伊的转移策略，你被迁移走了。"/>
       <imgdir name="banMap">
         <imgdir name="0">
           <int name="field" value="261000000"/>

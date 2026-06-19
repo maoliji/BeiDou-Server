@@ -68,7 +68,7 @@ var questionTree = [
         ["为了给射手村的玛雅治病，需要给她什么？", ["苹果", "强力灵药", "奇怪的药", "菊花", "橙汁"], 2],
         ["以下与合成或冶炼工作没有关系的NPC是？", ["奈巴", "塞利尔", "塞恩", "易德", "后街吉姆"], 2],
         ["在彩虹岛看不到的NPC是？", ["巴里", "特奥", "皮奥", "赛德", "玛利亚"], 1],
-        ["在航海室的监视器里能看到谁和凯琳在一起？", ["路卡斯", "金博士", "长老斯坦", "斯卡德", "弗利维教授"], 1],
+        ["在导航室的监视器里能看到谁和Kyrin在一起？", ["路卡斯", "金博士", "长老斯坦", "斯卡德", "弗利维教授"], 1],
         ["你知道射手村的赫丽娜吗？他的眼睛是什么颜色？", ["蓝色", "绿色", "棕色", "红色", "黑色"], 1],
         ["勇士部落武术教练的帽子上有多少根羽毛？", ["7", "8", "3", "13", "16"], 3],
         ["魔法密林汉斯持有的宝珠是什么颜色?", ["白色", "橙色", "蓝色", "紫色", "绿色"], 2]
@@ -105,13 +105,13 @@ function action(mode, type, selection) {
             if (cm.getPlayer().gotPartyQuestItem("JBQ") && !cm.haveItem(4031058, 1)) {
                 if (cm.haveItem(4005004, 1)) {
                     if (!cm.canHold(4031058)) {
-                        cm.sendNext("接受此试炼前，请确保有一个空闲的其它槽位。");
+                        cm.sendNext("接受此试炼前，请确保你的背包其他栏有1个以上的空位。");
                         cm.dispose();
                     } else {
-                        cm.sendNext("好的...我将在这里测试你的智慧。回答所有问题正确，你就会通过测试，但是，如果你有一次说谎，那么你就得重新开始，好吗，我们开始吧。");
+                        cm.sendNext("好的...我将在这里测试你的智慧。回答正确我的问题, 你就可以顺利通过测试。如果你答错了, 那我们将重新开始测试，我们开始吧。");
                     }
                 } else {
-                    cm.sendNext("给我带来一个 #b#t4005004##k 以继续进行试炼。");
+                    cm.sendNext("先给我带来一个 #b#t4005004##k 以继续进行试炼。");
                     cm.dispose();
                 }
             } else {
@@ -132,7 +132,7 @@ function action(mode, type, selection) {
             cm.sendSimple(questionHead + questionEntry + "\r\n\r\n#b" + questionOptions + "#k");
         } else if (status >= 2 && status <= 5) {
             if (!evaluateAnswer(selection)) {
-                cm.sendNext("你已经失败了这个问题。");
+                cm.sendNext("挑战失败了，请重新尝试。");
                 cm.dispose();
                 return;
             }
@@ -148,16 +148,16 @@ function action(mode, type, selection) {
             cm.sendSimple(questionHead + questionEntry + "\r\n\r\n#b" + questionOptions + "#k");
         } else if (status == 6) {
             if (!evaluateAnswer(selection)) {
-                cm.sendNext("你已经失败了，这个问题回答错误。");
+                cm.sendNext("挑战失败了，请重新尝试。");
                 cm.dispose();
                 return;
             }
 
-            cm.sendOk("好的。你的所有答案都被证明是真实的。你的智慧得到了验证。拿着这条项链回去吧。");
+            cm.sendOk("恭喜你答对了所有的问题。你的智慧得到了验证。\r\n拿着这条项链回去吧。");
             cm.gainItem(4031058, 1);
             cm.dispose();
         } else {
-            cm.sendOk("意外的分支。");
+            cm.sendOk("脚本出错了。");
             cm.dispose();
         }
     }
@@ -168,7 +168,7 @@ function evaluateAnswer(selection) {
 }
 
 function generateQuestionHeading() {
-    return "这是"+(status == 1 ? "第一" : status == 2 ? "第二" : status == 3 ? "第三" : "第四") + "个问题：\r\n";
+    return "这是第 " + (status) + (status == 1 ? "st" : status == 2 ? "nd" : status == 3 ? "rd" : "th") + " 个问题. ";
 }
 
 function shuffleArray(array) {

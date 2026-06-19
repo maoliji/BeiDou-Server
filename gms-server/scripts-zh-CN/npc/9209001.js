@@ -24,11 +24,14 @@ status = -1;
 var sel, sel2;
 
 function start() {
-    cm.sendOk("你好，冒险岛第七天市场目前不可用。");
-    cm.dispose();
-    return;
-
-    cm.sendSimple("你好，枫之谷七日市场今天开张了。#b\r\n#L0#移动到枫之谷七日市场地图\r\n#L1#听解释关于枫之谷七日市场");
+    var cal = java.util.Calendar.getInstance();
+    var week = cal.get(7) - 1;
+    if (week < 0) {
+        cm.sendOk("你好,现在市场还没有开放.");
+        cm.dispose();
+        return;
+    }
+    cm.sendSimple("你好，冒险岛周末集市开放了。#b\r\n#L0#移动到冒险岛周末集市地图\r\n#L1#听解释关于冒险岛周末集市");
 }
 
 function action(mode, type, selection) {
@@ -50,9 +53,9 @@ function action(mode, type, selection) {
             sel = selection;
         }
         if (selection == 0) {
-            cm.sendNext("好的，我们会把你送到冒险岛第七天市场地图。");
+            cm.sendNext("好的，我们会把你送到冒险岛周末集市。");
         } else {
-            cm.sendSimple("你想了解关于冒险岛第七天市场的什么信息？#b\r\n#L0#冒险岛第七天市场在哪里举行？\r\n#L1#在冒险岛第七天市场可以做什么？\r\n#L2#我没有任何问题。");
+            cm.sendSimple("你想了解关于冒险岛周末集市的什么信息？#b\r\n#L0#冒险岛周末集市在哪里举行？\r\n#L1#在冒险岛周末集市可以做什么？\r\n#L2#我没有任何问题。");
         }
     } else if (status == 1) {
         if (sel == 0) {
@@ -60,10 +63,10 @@ function action(mode, type, selection) {
             cm.warp(680100000 + parseInt(Math.random() * 3));
             cm.dispose();
         } else if (selection == 0) {
-            cm.sendNext("枫叶七日市场只在星期天开放。你可以在任何城镇找到我，比如Henysys、新叶城、利弗雷、废都、废弃都市，我几乎无处不在！");
+            cm.sendNext("冒险岛周末集市只在星期天开放。你可以在任何城镇找到我，比如Henysys、新叶城、利弗雷、废都、废弃都市，我几乎无处不在！");
             status -= 2;
         } else if (selection == 1) {
-            cm.sendSimple("您可以在冒险岛第七天市场找到其他地方难以找到的稀有物品。#b\r\n#L0#购买特殊物品\r\n#L1#帮助家禽农场主");
+            cm.sendSimple("您可以在冒险岛周末集市找到其他地方难以找到的稀有物品。#b\r\n#L0#购买特殊物品\r\n#L1#帮助家禽农场主");
         } else {
             cm.sendNext("我猜你没有任何问题。请记得我们，如果你对任何事情感到好奇，请随时问。");
             cm.dispose();
@@ -73,9 +76,9 @@ function action(mode, type, selection) {
             sel2 = selection;
         }
         if (sel2 == 0) {
-            cm.sendNext("你可以在冒险岛第七天市场找到许多物品。价格可能会有所变动，所以最好在它们便宜的时候购买！");
+            cm.sendNext("你可以在冒险岛周末集市找到许多物品。价格可能会有所变动，所以最好在它们便宜的时候购买！");
         } else {
-            cm.sendNext("除了商人之外，你还可以在枫之谷第七天市场找到家禽场主的懒惰女儿。帮助咪咪孵化她的蛋，直到它长成一只鸡！");
+            cm.sendNext("除了商人之外，你还可以在冒险岛周末集市找到家禽场主的懒惰女儿。帮助咪咪孵化她的蛋，直到它长成一只鸡！");
         }
     } else if (status == 3) {
         if (sel2 == 0) {
@@ -91,7 +94,7 @@ function action(mode, type, selection) {
         }
     } else if (status == 5) {
         if (sel2 == 0) {
-            cm.sendNextPrev("在冒险岛的第七天市场以低价购买物品，当其价值上涨时将其卖给商人中介，测试你的商业头脑！");
+            cm.sendNextPrev("在冒险岛周末集市以低价购买物品，当其价值上涨时将其卖给商人中介，测试你的商业头脑！");
         } else {
             cm.sendNextPrev("你可以点击蛋来查看它的成长情况。你必须勤奋照料蛋，因为你获得的经验和蛋的成长是同时进行的。");
         }

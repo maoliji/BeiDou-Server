@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <imgdir name="ChatBlockReason.img">
   <imgdir name="1">
-    <string name="type" value="Foul Language"/>
-    <string name="msg" value="Foul language/Harrassment"/>
+    <string name="type" value="不文明言语"/>
+    <string name="msg" value="骚扰或使用不文明言语"/>
   </imgdir>
   <imgdir name="2">
-    <string name="type" value="Advertising"/>
-    <string name="msg" value="Advertising websites"/>
+    <string name="type" value="广告"/>
+    <string name="msg" value="推广网站"/>
   </imgdir>
   <imgdir name="3">
-    <string name="type" value="Hack"/>
-    <string name="msg" value="Fake GM"/>
+    <string name="type" value="黑客"/>
+    <string name="msg" value="冒充GM"/>
   </imgdir>
   <imgdir name="4">
-    <string name="type" value="Account Trading"/>
-    <string name="msg" value="Trading or selling account"/>
+    <string name="type" value="账号交易"/>
+    <string name="msg" value="交易或出售账号"/>
   </imgdir>
   <imgdir name="5">
-    <string name="type" value="Trading"/>
-    <string name="msg" value="Do not report fame scams and trade scams. "/>
+    <string name="type" value="交易欺诈"/>
+    <string name="msg" value="交易中的欺诈行为"/>
   </imgdir>
   <imgdir name="6">
-    <string name="type" value="Penalty Alert"/>
-    <string name="msg" value="The reporter&apos;s conversation is also subject to penalties."/>
+    <string name="type" value="警告处罚"/>
+    <string name="msg" value="报告者也要遵守规则，违规举报可能会被处罚."/>
   </imgdir>
 </imgdir>

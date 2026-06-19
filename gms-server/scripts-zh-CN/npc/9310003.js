@@ -1,8 +1,12 @@
+
+var status = 0;
+
 function start() {
-
-    cm.sendOk("外滩的风景很漂亮吧？黄浦江边最适合慢慢散步，也别忘了去城市广场和豫园看看。");
-
-    cm.dispose();
-
+    status = -1;
+    action(1, 0, 0);
 }
 
+function action(mode, type, selection) {
+    cm.openShopNPC(9310003); 
+    cm.dispose();
+}

@@ -59,7 +59,7 @@ function action(mode, type, selection) {
     switch (status) {
         case 0:
             if (cm.getMapId() == 680000300) {
-                cm.sendYesNo("你确定要#r退出舞台#k并返回#b阿莫利亚#k吗？这样你将会#r跳过奖励关卡#k。");
+                cm.sendYesNo("你确定要#r退出关卡#k并返回#b婚礼村#k吗？这样你将会#r跳过奖励关卡#k。");
             } else {
                 var hasEngagement = false;
                 for (var x = 4031357; x <= 4031364; x++) {
@@ -71,7 +71,7 @@ function action(mode, type, selection) {
 
                 if (cm.haveItem(4000313) && isMarrying) {
                     if (eim.getIntProperty("weddingStage") == 3) {
-                        cm.sendOk("你们完全征服了舞台！！！快去找#b#p9201007##k开始派对。");
+                        cm.sendOk("你们完全征服了关卡！！！快去找#b#p9201007##k开始派对。");
                         cm.dispose();
                     } else if (hasEngagement) {
                         if (!cm.createMarriageWishlist()) {
@@ -84,13 +84,13 @@ function action(mode, type, selection) {
                 } else {
                     if (eim.getIntProperty("weddingStage") == 3) {
                         if (!isMarrying) {
-                            cm.sendYesNo("你们不会错过他们了吧？我们的超级明星们#r合作得非常出色#k，很快#b他们就会开始派对#k。你真的要#r退出节目#k，回到#b阿莫利亚#k吗？");
+                            cm.sendYesNo("你们不会错过他们了吧？我们的超级明星们#r合作得非常出色#k，很快#b他们就会开始派对#k。你真的要#r退出关卡#k，回到#b婚礼村#k吗？");
                         } else {
-                            cm.sendOk("你们完全征服了舞台！！！快去找#b#p9201007##k开始派对。");
+                            cm.sendOk("你们完全征服了关卡！！！快去找#b#p9201007##k开始派对。");
                             cm.dispose();
                         }
                     } else {
-                        cm.sendYesNo("你确定要#r退出舞台#k并前往#b阿莫利亚#k吗？你将会#r跳过奖励阶段#k，家人。");
+                        cm.sendYesNo("你确定要#r退出关卡#k并前往#b婚礼村#k吗？你将会#r跳过奖励阶段#k，家人。");
                     }
                 }
             }

@@ -17,7 +17,7 @@ function action(mode, type, selection) {
 
 
     if (status == 0) {
-        cm.sendGetText("一个可疑的声音打破了沉默。 #b暗号#k ！");
+        cm.sendGetText("一个可疑的声音打破了沉默。 #b暗号#k ！（芝麻开门）");
     } else if (status == 1) {
         if (cm.getText() == "芝麻开门") {
             if (cm.isQuestCompleted(3925)) {

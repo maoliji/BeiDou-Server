@@ -72,7 +72,7 @@ function action(mode, type, selection) {
                 cm.setFace(facenew[selection]);
                 cm.sendOk("享受你的新面容吧！");
             } else {
-                cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                cm.sendOk("嗯...看起来你没有这个地方专门的会员卡。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
             }
 
             cm.dispose();

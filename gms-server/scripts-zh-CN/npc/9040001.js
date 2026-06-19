@@ -45,7 +45,7 @@ function action(mode, type, selection) {
     }
 
     if (status == 0) {
-        var outText = "It seems you have finished exploring Sharenian Keep, yes? Are you going to return to the recruitment map now?";
+        var outText = "看来你已经结束了对圣端尼亚遗迹的探索，是吗？你现在要返回营地?";
         cm.sendYesNo(outText);
     } else if (mode == 1) {
         var eim = cm.getEventInstance();

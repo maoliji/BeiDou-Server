@@ -21,35 +21,39 @@ function action(mode, type, selection) {
         }
         if (status == 0) {
             if (cm.getLevel() < 20) {
-                cm.sendDimensionalMirror("#-1# There is no place for you to transport to from here.");
+                cm.sendDimensionalMirror("#-1# 现在没有你可以传送的位置.");
                 cm.dispose();
             } else {
                 var selStr = "";
-                if (cm.getLevel() >= 20 && cm.getLevel() <= 30) {
-                    selStr += "#0# Ariant Coliseum";
+                if (cm.getLevel() >= 20) {
+                    selStr += "#0# 阿里安特挑战赛"; 
                 }
 
-                if (cm.getLevel() >= 25) {
-                    selStr += "#1# Mu Lung Dojo";
-                }
+                if (cm.getLevel() >= 25) { 
+                    selStr += "#1# 武陵道场"; 
+                } 
 
-                if (cm.getLevel() >= 30 && cm.getLevel() <= 50) {   // MC 1 & 2 recalled thanks to ---
-                    selStr += "#2# Monster Carnival 1";
-                }
+                if (cm.getLevel() >= 30) {   // MC 1 & 2 recalled thanks to ---
+                    selStr += "#2# 怪物嘉年华1"; 
+                } 
 
-                if (cm.getLevel() >= 51 && cm.getLevel() <= 70) {
-                    selStr += "#3# Monster Carnival 2";
-                }
+                if (cm.getLevel() >= 51) {
+                    selStr += "#3# 怪物嘉年华2"; 
+                } 
 
-                /*
-                if (cm.getLevel() >= 40) { NOT IMPLEMENTED
+               // if (cm.getLevel() >= 55) { //暂无法返回原地图
+               //     selStr += "#4# 老海盗"; 
+              //  } 
+
+                if (cm.getLevel() >= 40) { //未开放
                     selStr += "#5# Nett's Pyramid"; 
                 } 
 
-                if (cm.getLevel() >= 25 && cm.getLevel() <= 30) { NOT IMPLEMENTED
+                if (cm.getLevel() >= 25) { //未开放
                     selStr += "#6# Construction Site"; 
                 } 
-                */
+
+//客户端默认只有6个图标，顺序固定，添加新传送需要客户端支持，且返回原地图也需要map传送点增加脚本
 
                 cm.sendDimensionalMirror(selStr);
             }
@@ -69,6 +73,9 @@ function action(mode, type, selection) {
                 case 3:
                     cm.getPlayer().saveLocation("MONSTER_CARNIVAL");
                     cm.warp(980030000, 3);
+                    break;
+                case 4:
+                    cm.warp(251010404, 4);
                     break;
                 case 5:
                     cm.warp(926010000, 4);

@@ -45,7 +45,7 @@ var costSet = [10000, 25000, 25000, 25000, 25000, 25000, 25000];
 
 function start() {
     cm.getPlayer().setCS(true);
-    var selStr = "Hey there! My name is #p2040014#, and I am a specialist in mini-games. What kind of mini-game you want me to make? #b"
+    var selStr = "你好!我是#p2040014#, 小游戏的专家.你想玩什么游戏? #b"
     var options = ["#i4080100# #t4080100#", "#i4080006# #t4080006#", "#i4080007# #t4080007#", "#i4080008# #t4080008#", "#i4080009# #t4080009#", "#i4080010# #t4080010#", "#i4080011# #t4080011#"];
     for (var i = 0; i < options.length; i++) {
         selStr += "\r\n#L" + i + "# " + options[i] + "#l";
@@ -68,13 +68,13 @@ function action(mode, type, selection) {
         cost = costSet[selectedItem];
         qty = 1;
 
-        var prompt = "So we are going for ";
+        var prompt = "我们要做";
         if (qty == 1) {
-            prompt += "a #t" + item + "#";
+            prompt += "一个#t" + item + "#";
         } else {
             prompt += qty + " #t" + item + "#";
         }
-        prompt += ", right? In that case, I'm going to need specific items from you in order to make it. Make sure you have room in your inventory, though!#b";
+        prompt += ",对吗? 我需要这些材料，请确保背包空间足够#b";
         if (mats instanceof Array) {
             for (var i = 0; i < mats.length; i++) {
                 prompt += "\r\n#i" + mats[i] + "# " + (matQty[i] * qty) + " #t" + mats[i] + "#";
@@ -83,7 +83,7 @@ function action(mode, type, selection) {
             prompt += "\r\n#i" + mats + "# " + (matQty * qty) + " #t" + mats + "#";
         }
         if (cost > 0) {
-            prompt += "\r\n#i4031138# " + (cost * qty) + " meso";
+            prompt += "\r\n#i4031138# " + (cost * qty) + "金币";
         }
         cm.sendYesNo(prompt);
     } else if (status == 1) {
@@ -105,7 +105,7 @@ function action(mode, type, selection) {
             }
         }
         if (!complete) {
-            cm.sendOk("您缺少了一些用于制作套装的物品。请提供它们，以便我们可以组装游戏套装。");
+            cm.sendOk("您缺少了一些用于制作的物品。请提供它们，以便我们可以组装游戏套装。");
         } else {
             if (cm.canHold(item, qty)) {
                 if (mats instanceof Array) {
@@ -120,7 +120,7 @@ function action(mode, type, selection) {
                 cm.gainItem(item, qty);
                 cm.sendOk("这是你的游戏设置。玩得开心！");
             } else {
-                cm.sendOk("如果你的杂项物品栏没有空间，我就无法为你制作套装。请先腾出空间，然后再和我交谈。");
+                cm.sendOk("如果你的物品其他栏没有空间，我就无法为你制作套装。请先腾出空间，然后再和我交谈。");
             }
         }
 

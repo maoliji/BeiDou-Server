@@ -27,13 +27,13 @@ function action(mode, type, selection) {
         if (mode <= 0) {
             cm.dispose();
         } else {
-            cm.sendYesNo("我希望你们的领导和我谈谈。或者，你可能想要退出。你打算放弃这次活动吗？");
+            cm.sendYesNo("我希望你们的队长和我谈谈。或者，你可能想要退出。你打算放弃这次活动吗？");
         }
     } else {
         var eim = cm.getEventInstance();
         if (eim == null) {
             cm.warp(251010404, 0);
-            cm.sendNext("你怎么可能在这里，而没有在实例上注册呢？");
+            cm.sendNext("你怎么来到这里的?");
             cm.dispose();
             return;
         }
@@ -49,21 +49,21 @@ function action(mode, type, selection) {
                 var emp = eim.getProperty("stage2");
                 if (emp === "0") {
                     if (cm.haveItem(4001120, 20)) {
-                        cm.sendNext("太棒了！现在去收集20个升华勋章给我。");
+                        cm.sendNext("太棒了！现在去收集20个#z4001121#徽章给我。");
                         cm.gainItem(4001120, -20);
                         cm.getMap().killAllMonsters();
                         eim.setProperty("stage2", "1");
                     } else {
-                        cm.sendNext("我们现在要前往海盗船！为了进入，我们必须证明自己是高贵的海盗。给我猎取20个新手勋章。");
+                        cm.sendNext("我们现在要前往海盗船！为了进入，我们必须证明自己是高贵的海盗。给我猎取20个#z4001120#徽章。");
                     }
                 } else if (emp === "1") {
                     if (cm.haveItem(4001121, 20)) {
-                        cm.sendNext("太棒了！现在去收集20个资深勋章给我。");
+                        cm.sendNext("太棒了！现在去收集20个#z4001122#徽章给我。");
                         cm.gainItem(4001121, -20);
                         cm.getMap().killAllMonsters();
                         eim.setProperty("stage2", "2");
                     } else {
-                        cm.sendNext("我们现在要前往海盗船！为了进入，我们必须证明自己是高贵的海盗。给我猎取20个升龙勋章。");
+                        cm.sendNext("我们现在要前往海盗船！为了进入，我们必须证明自己是高贵的海盗。给我猎取20个#z4001121#徽章。");
                     }
                 } else if (emp === "2") {
                     if (cm.haveItem(4001122, 20)) {
@@ -73,7 +73,7 @@ function action(mode, type, selection) {
                         eim.setProperty("stage2", "3");
                         eim.showClearEffect(cm.getMapId());
                     } else {
-                        cm.sendNext("我们现在要前往海盗船！为了进入，我们必须证明自己是高贵的海盗。给我猎取20个资深勋章。");
+                        cm.sendNext("我们现在要前往海盗船！为了进入，我们必须证明自己是高贵的海盗。给我猎取20个#z4001122#徽章。");
                     }
                 } else {
                     cm.sendNext("下一个阶段已经开放。前进！");
@@ -82,7 +82,7 @@ function action(mode, type, selection) {
                 break;
             case 925100200:
             case 925100300:
-                cm.sendNext("要攻打海盗船，我们必须先消灭守卫。");
+                cm.sendNext("要想袭击海盗船，我们必须先消灭守卫.");
                 cm.dispose();
                 break;
             case 925100201:
@@ -111,7 +111,7 @@ function action(mode, type, selection) {
                 break;
             case 925100202:
             case 925100302:
-                cm.sendNext("他们是效忠于老海盗的凯丁和克鲁。随你处置。");
+                cm.sendNext("这些是船长和克鲁斯，他们献身于海盗勋爵。你认为合适就杀了他们.");
                 cm.dispose();
                 break;
             case 925100400:

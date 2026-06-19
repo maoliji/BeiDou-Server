@@ -61,7 +61,7 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendSimple("嗨，你好~！我是莱努博士，负责冒险岛的Henesys整形外科店的美瞳服务！使用#b#t5152010##k或者#b#t5152013##k，你可以让我们来照顾剩下的事情，拥有你一直渴望的美丽外观~！记住，每个人注意到的第一件事就是你的眼睛，我们可以帮助你找到最适合你的美瞳！那么，你想要使用什么呢？\r\n#L1#美瞳：#i5152010##t5152010##l\r\n#L2#美瞳：#i5152013##t5152013##l\r\n#L3#一次性美瞳：#i5152103#（任何颜色）#l");
+            cm.sendSimple("嗨，你好~！我是#p9200100#，负责冒险岛的射手村整形外科店的美瞳服务！使用#b#t5152010##k或者#b#t5152013##k，你可以让我们来照顾剩下的事情，拥有你一直渴望的美丽外观~！记住，每个人注意到的第一件事就是你的眼睛，我们可以帮助你找到最适合你的美瞳！那么，你想要使用什么呢？\r\n#L1#美瞳：#i5152010##t5152010##l\r\n#L2#美瞳：#i5152013##t5152013##l\r\n#L3#一次性美瞳：#i5152103#（任何颜色）#l");
         } else if (status == 1) {
             if (selection == 1) {
                 beauty = 1;
@@ -73,7 +73,7 @@ function action(mode, type, selection) {
                 }
                 colors = Array();
                 pushIfItemsExists(colors, [current, current + 100, current + 200, current + 400, current + 600, current + 700]);
-                cm.sendYesNo("如果你使用普通优惠券，你将获得一副随机的化妆隐形眼镜。你打算使用#b#t5152010##k，真的改变你的眼睛吗？");
+                cm.sendYesNo("如果你使用普通会员卡，你将获得一副随机的化妆隐形眼镜。你打算使用#b#t5152010##k，真的改变你的眼睛吗？");
             } else if (selection == 2) {
                 beauty = 2;
                 if (cm.getPlayer().getGender() == 0) {
@@ -119,7 +119,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[Math.floor(Math.random() * colors.length)]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我不认为你现在带着我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我不认为你现在带着我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             } else if (beauty == 2) {
                 if (cm.haveItem(5152013) == true) {
@@ -127,7 +127,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             } else if (beauty == 3) {
                 var color = (colors[selection] / 100) % 10 | 0;
@@ -137,7 +137,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的美瞳隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             } else if (beauty == 0) {
                 if (selection == 0 && cm.getMeso() >= regprice) {
@@ -149,7 +149,7 @@ function action(mode, type, selection) {
                     cm.gainItem(5152013, 1);
                     cm.sendOk("享受！");
                 } else {
-                    cm.sendOk("你没有足够的金币来购买优惠券！");
+                    cm.sendOk("你没有足够的金币来购买会员卡！");
                 }
             }
         }

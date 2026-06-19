@@ -4,7 +4,7 @@
     <int name="boss" value="1"/>
     <int name="bodyAttack" value="1"/>
     <int name="level" value="63"/>
-    <int name="maxHP" value="7600000"/>
+    <int name="maxHP" value="26000"/>
     <int name="maxMP" value="100"/>
     <int name="speed" value="-30"/>
     <int name="PADamage" value="190"/>
@@ -28,7 +28,7 @@
       </imgdir>
     </imgdir>
     <imgdir name="ban">
-      <string name="banMsg" value="You will be relocated due to the prank of Rurumo."/>
+      <string name="banMsg" value="由于路路猫的恶作剧，你被迁移走了。"/>
       <imgdir name="banMap">
         <imgdir name="0">
           <int name="field" value="261000000"/>

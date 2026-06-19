@@ -58,7 +58,7 @@ function action(mode, type, selection) {
             if (status == 0) {
                 em = cm.getEventManager("MagatiaPQ_Z");
                 if (em == null) {
-                    cm.sendOk("玛加提亚组队任务（泽尼姆斯特）遇到了一个错误。");
+                    cm.sendOk("玛加提亚组队任务（Zenumist）遇到了一个错误。");
                     cm.dispose();
                     return;
                 } else if (cm.isUsingOldPqNpcStyle()) {
@@ -66,14 +66,14 @@ function action(mode, type, selection) {
                     return;
                 }
 
-                cm.sendSimple("#e#b<组队任务：罗密欧与朱丽叶>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n我心爱的朱丽叶被绑架了！虽然她是阿尔卡德诺家的人，但我不能坐视她因这场愚蠢的冲突而受苦。我需要你和你的同事们帮助我救她！拜托，帮帮我们！！请让你的#b队伍领袖#k和我谈谈。#b\r\n#L0#我想参加这个组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启") + "组队搜索。\r\n#L2#我想了解更多细节。");
+                cm.sendSimple("#e#b<组队任务：罗密欧与朱丽叶>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n我心爱的朱丽叶被绑架了！虽然她是Alcadno家的人，但我不能坐视她因这场愚蠢的冲突而受苦。我需要你和你的同事们帮助我救她！拜托，帮帮我们！！请让你的#b队伍领袖#k和我谈谈。#b\r\n#L0#我想参加这个组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启") + "组队搜索。\r\n#L2#我想了解更多细节。\r\n#L3#兑换物品。");
             } else if (status == 1) {
                 if (selection == 0) {
                     if (cm.getParty() == null) {
                         cm.sendOk("只有当你加入一个队伍时，你才能参加派对任务。");
                         cm.dispose();
                     } else if (!cm.isLeader()) {
-                        cm.sendOk("你的队长必须与我交谈才能开始这个组队任务。");
+                        cm.sendOk("必须由你的队长与我交谈才能开始这个组队任务。");
                         cm.dispose();
                     } else {
                         var eli = em.getEligibleParty(cm.getParty());
@@ -89,13 +89,29 @@ function action(mode, type, selection) {
                     }
                 } else if (selection == 1) {
                     var psState = cm.getPlayer().toggleRecvPartySearchInvite();
-                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
+                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "开启" : "关闭") + "#k。想要改变状态时随时找我。");
                     cm.dispose();
-                } else {
-                    cm.sendOk("不久前，一位名叫尤利特的科学家因为他对阿尔卡德诺和泽尼玛斯的合成炼金术的研究而被这个城镇放逐。由于这种组合所带来的巨大力量，根据法律是禁止研究的。然而，他无视了这项法律，并且参与了这两项研究。结果，他被流放了。\r\n他现在在报复，已经带走了我心爱的人，下一个目标是我，因为我们是玛加提亚的重要人物，是这两个社会的继承者。但我不害怕。我们必须不惜一切代价把她夺回来！");
-                    cm.dispose();
+                                } else if (selection == 2) {
+                                        cm.sendOk("#e#b<组队副本: 罗密欧与朱丽叶>#k#n\r\n不久前，一位名叫尤利特的科学家因为研究阿尔卡多和泽努米斯特的结合炼金术而被逐出了这个小镇，由于这种结合所产生的巨大力量，法律禁止对两者进行研究。然而，他忽视了这一规律，在两项研究中都获得了成功。结果，他被流放了。\r\n他现在正在报复，已经带走了我心爱的一个，他的下一个目标是我，因为我们是两个社会的继承人马加蒂的大照片。但我不害怕。我们必须不惜一切代价找到他!");
+                                        cm.dispose();
+                                }
+                                 else {
+                                        cm.sendSimple("那么，你想得到什么奖品?\r\n#b#L0#给我#v1122010##z1122010#.\r\n");
+                        }
+                       } else if (status == 2) {
+                                if (selection == 0) {
+                                        if (cm.haveItem(4001159, 5) && cm.haveItem(4001160, 5) && cm.canHold(1122010)) {
+                                                cm.gainItem(4001159, -5);  //两种珠子各5个
+                                                cm.gainItem(4001160, -5);  //两种珠子各5个
+                                                cm.gainItem(1122010, 1);  //兑换何露丝之眼
+                                                cm.sendOk("兑换成功！");
+                                                cm.dispose();
+                                        } else {
+                                                cm.sendOk("你没有#v4001159#和#v4001160#各5个.");
+                                                cm.dispose();
+                                        }
+                                }
+                        }
                 }
-            }
         }
-    }
 }

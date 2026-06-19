@@ -7,7 +7,7 @@
     <int name="swim" value="0"/>
     <int name="returnMap" value="102000000"/>
     <int name="forcedReturn" value="999999999"/>
-    <float name="mobRate" value="1.1"/>
+    <float name="mobRate" value="1.6"/>
     <string name="bgm" value="Bgm12/RuinCastle"/>
     <string name="mapMark" value="Perion"/>
     <int name="hideMinimap" value="0"/>

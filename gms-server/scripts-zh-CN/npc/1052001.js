@@ -38,9 +38,9 @@ function start() {
     if (parseInt(cm.getJobId() / 100) == jobType && cm.canSpawnPlayerNpc(GameConstants.getHallOfFameMapid(cm.getJob()))) {
         spawnPnpc = true;
 
-        var sendStr = "You have walked a long way to reach the power, wisdom and courage you hold today, haven't you? What do you say about having right now #ra NPC on the Hall of Fame holding the current image of your character#k? Do you like it?";
+        var sendStr = "你走了很长的路，才达到了今天的力量、智慧和勇气，不是吗？你觉得现在#r名人堂里有一个NPC拥有你角色的最新形象#k怎么样？你喜欢吗？";
         if (spawnPnpcFee > 0) {
-            sendStr += " I can do it for you, for the fee of #b " + cm.numberWithCommas(spawnPnpcFee) + " mesos.#k";
+            sendStr += "我可以为你做，费用是#b " + cm.numberWithCommas(spawnPnpcFee) + "金币。#k";
         }
 
         cm.sendYesNo(sendStr);
@@ -60,13 +60,13 @@ function start() {
             }
         } else if (actionx["3thJobI"] || (cm.getPlayer().gotPartyQuestItem("JB3") && cm.getLevel() >= 70 && cm.getJobId() % 10 == 0 && parseInt(cm.getJobId() / 100) == 4 && !cm.getPlayer().gotPartyQuestItem("JBP"))) {
             actionx["3thJobI"] = true;
-            cm.sendNext("你来了。几天前，奥西里亚的#b#p2020011##k跟我谈到了你。我看到你对于成为盗贼职业的第三次转职很感兴趣。为了实现这个目标，我需要测试一下你的实力，看看你是否配得上这个晋升。在金银岛的一个深水沼泽中有一个洞口，会带你通往一个秘密通道。一旦进入，你将面对我的分身。你的任务是打败他，并带着#b#t4031059##k回来。");
+            cm.sendNext("你来了。几天前，冰封雪域的#b#p2020011##k跟我谈到了你。我看到你对于成为盗贼职业的第三次转职很感兴趣。为了实现这个目标，我需要测试一下你的实力，看看你是否配得上这个晋升。在金银岛的一个深水沼泽中有一个洞口，会带你通往一个秘密通道。一旦进入，你将面对我的分身。你的任务是打败他，并带着#b#t4031059##k回来。");
         } else if (cm.getPlayer().gotPartyQuestItem("JBP") && !cm.haveItem(4031059)) {
             cm.sendNext("请把#b#t4031059##k带给我。");
             cm.dispose();
         } else if (cm.haveItem(4031059) && cm.getPlayer().gotPartyQuestItem("JBP")) {
             actionx["3thJobC"] = true;
-            cm.sendNext("干得好。你打败了我的分身，并安全地带回了#b#t4031059##k。你现在已经从物理角度证明了自己配得上进行第三次职业转职。现在你应该把这条项链交给在奥西里亚的#b#p2020011##k，以进行测试的第二部分。祝你好运。你会需要的。");
+            cm.sendNext("干得好。你打败了我的分身，并安全地带回了#b#t4031059##k。你现在已经证明了自己配得上进行第三次职业转职。现在你应该把这条项链交给在冰封雪域的#b#p2020011##k，以进行测试的第二部分。祝你好运。你会需要的。");
         } else if (cm.isQuestStarted(6141)) {
             cm.warp(910300000, 3);
         } else {
@@ -127,7 +127,7 @@ function action(mode, type, selection) {
             if (cm.getLevel() >= 10 && cm.canGetFirstJob(jobType)) {
                 cm.sendYesNo("哦...！你看起来就很鸡贼，确实像是我们团队的一员... 你需要再多一点邪恶的心思，你觉得怎么样？想成为飞侠吗？ ");
             } else {
-                cm.sendOk("再多训练一会儿，直到达到基本要求，我就可以教你成为#r盗贼#k的方法。");
+                cm.sendOk("再多训练一会儿，直到达到基本要求，我就可以教你成为#r飞侠#k的方法。");
                 cm.dispose();
             }
         } else if (status == 1) {
@@ -175,9 +175,9 @@ function action(mode, type, selection) {
             } else {
                 if (selection < 3) {
                     if (selection == 0) {    //assassin
-                        cm.sendNext("擅长使用#r爪#k的盗贼。\r\n\r\n#b刺客#k是远程攻击者。他们非常节约金币，并且有很高的伤害潜力，但是比飞侠花费更多。");
+                        cm.sendNext("擅长使用#r爪#k的飞侠。\r\n\r\n#b刺客#k是远程攻击者。他们非常节约金币，并且有很高的伤害潜力，但是比飞侠花费更多。");
                     } else if (selection == 1) {    //bandit
-                        cm.sendNext("擅长使用匕首的盗贼。\r\n\r\n#b侠客#k是快速的近战攻击者，在二转职业中非常强大。他们不像刺客那样效率高，也没有远程攻击的优势，但在原始力量方面弥补了这一点。");
+                        cm.sendNext("擅长使用匕首的飞侠。\r\n\r\n#b侠客#k是快速的近战攻击者，在二转职业中非常强大。他们不像刺客那样效率高，也没有远程攻击的优势，但在原始力量方面弥补了这一点。");
                     }
 
                     status -= 2;
@@ -201,7 +201,7 @@ function action(mode, type, selection) {
             if (job == 410) {
                 cm.sendNext("好的，从现在开始你就是#b刺客#k了。刺客有灵活的双手和敏捷的双脚来征服敌人。请继续训练。我会让你比现在更强大！");
             } else {
-                cm.sendNext("好的，从现在开始你就是#b强盗了。强盗们喜欢在阴影和黑暗中游走，等待合适的时机将匕首突然而迅速地刺入敌人的心脏……请继续训练。我会让你比现在更强大。");
+                cm.sendNext("好的，从现在开始你就是#b侠客了。强盗们喜欢在阴影和黑暗中游走，等待合适的时机将匕首突然而迅速地刺入敌人的心脏……请继续训练。我会让你比现在更强大。");
             }
 
             if (cm.getJobId() != job) {
@@ -212,7 +212,7 @@ function action(mode, type, selection) {
         } else if (status == 5) {
             cm.sendNextPrev("我也给了你一点 #bSP#k。打开左下角的 #b技能菜单#k。你可以提升新获得的二级技能。不过要注意，你不能一次性提升它们。有些技能只有在学会其他技能后才能使用。记得要牢记这一点。");
         } else if (status == 6) {
-            cm.sendNextPrev((job == 410 ? "刺客" : "侠客") + "需要变强。 但请记住，你不能滥用这种力量去对付弱者。请以正确的方式运用你强大的力量，因为……对你而言，以正确的方式运用这种力量，远比仅仅变得更强要困难得多。当你取得更大的进步后，请来找我。我会等你。");
+            cm.sendNextPrev((job == 410 ? "刺客" : "侠客") + " 你必须坚强。但请记住，你不能滥用这种力量在弱者身上。请以正确的方式使用你的巨大力量，因为对你来说，以正确的方式使用它，比仅仅变得更强要重要得多。请在你取得更大进步后找到我。我会等你的。");
         }
     } else if (actionx["3thJobI"]) {
         if (status == 0) {
@@ -220,7 +220,7 @@ function action(mode, type, selection) {
                 cm.getPlayer().removePartyQuestItem("JB3");
                 cm.getPlayer().setPartyQuestItemObtained("JBP");
             }
-            cm.sendNextPrev("因为他是我的克隆，所以你可以期待一场艰难的战斗。他使用了许多特殊的攻击技能，与你以往所见的完全不同，你的任务是成功地与他一对一地战斗。在秘密通道中有一个时间限制，所以你必须在规定时间内打败他。祝你好运，希望你带着#b#t4031059##k来。");
+            cm.sendNextPrev("因为他是我的分身，所以你可以期待一场艰难的战斗。他使用许多特殊的攻击技能，与你以往所见的完全不同，你的任务是成功地与他一对一地战斗。在秘密通道中有一个时间限制，所以你必须在规定时间内打败他。祝你好运，希望你带着#b#t4031059##k来。");
         }
     } else if (actionx["3thJobC"]) {
         cm.getPlayer().removePartyQuestItem("JBP");

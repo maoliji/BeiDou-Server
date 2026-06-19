@@ -50,7 +50,7 @@ function action(mode, type, selection) {
             if (!eim.isEventCleared()) {
                 cm.sendYesNo("你准备好离开这个地方了吗？");
             } else {
-                cm.sendYesNo("你已经打败了拉塔尼卡船长，干得好！你准备好离开这个地方了吗？");
+                cm.sendYesNo("你已经打败了幽灵船长，干得好！你准备好离开这个地方了吗？");
             }
         } else if (status == 1) {
             if (eim.isEventCleared()) {

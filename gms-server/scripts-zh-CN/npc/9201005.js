@@ -106,14 +106,14 @@ function action(mode, type, selection) {
             }
 
             if (status == 0) {
-                var text = "Welcome to the #bCathedral#k! How can I help you?";
-                var choice = ["How do I prepare a wedding?", "I have an engagement and want to arrange the wedding", "I am the guest and I'd like to go into the wedding"];
+                var text = "欢迎来到#b大教堂#k!有什么事吗?";
+                var choice = ["我应该怎么准备婚礼?", "我订婚了，想安排婚礼", "我受邀请来参加婚礼"];
                 for (x = 0; x < choice.length; x++) {
                     text += "\r\n#L" + x + "##b" + choice[x] + "#l";
                 }
 
                 if (cm.haveItem(5251100)) {
-                    text += "\r\n#L" + x + "##bMake additional invitation cards#l";
+                    text += "\r\n#L" + x + "##b制作额外的请柬#l";
                 }
 
                 cm.sendSimple(text);
@@ -187,15 +187,15 @@ function action(mode, type, selection) {
                                             var wedType = weddingType ? "Premium" : "Regular";
                                             cm.sendOk("你们两个都收到了15张婚礼邀请函，可以发给你们的客人。#b双击邀请函#k 将其发送给某人。邀请只能在婚礼开始时间之前发送。你们的#b" + wedType + " 婚礼#k 定于#r" + placeTime + "#k开始。穿得正式一点，不要迟到！");
 
-                                            player.dropMessage(6, "Wedding Assistant: You both have received 15 Wedding Tickets. Invitations can only be sent before the wedding start time. Your " + wedType + " wedding is set to start at the " + placeTime + ". Get dressed and don't be late!");
-                                            partner.dropMessage(6, "Wedding Assistant: You both have received 15 Wedding Tickets. Invitations can only be sent before the wedding start time. Your " + wedType + " wedding is set to start at the " + placeTime + ". Get dressed and don't be late!");
+                                            player.dropMessage(6, "婚礼助手:你们俩都拿到了15张请柬. 婚礼开始前才可以发送邀请. 你们的" + wedType + "婚礼将在" + placeTime + "举行. 打扮好别迟到!");
+                                            partner.dropMessage(6, "婚礼助手:你们俩都拿到了15张请柬. 婚礼开始前才可以发送邀请. 你们的" + wedType + "婚礼将在" + placeTime + "举行. 打扮好别迟到!");
 
                                             if (!hasSuitForWedding(player)) {
-                                                player.dropMessage(5, "Wedding Assistant: Please purchase a wedding garment before showing up for the ceremony. One can be bought at the Wedding Shop left-most Amoria.");
+                                                player.dropMessage(5, "婚礼助手:请在出席婚礼前购买一件婚纱。一个可以在最左边的婚庆店买到.");
                                             }
 
                                             if (!hasSuitForWedding(partner)) {
-                                                partner.dropMessage(5, "Wedding Assistant: Please purchase a wedding garment before showing up for the ceremony. One can be bought at the Wedding Shop left-most Amoria.");
+                                                partner.dropMessage(5, "婚礼助手:请在出席婚礼前购买一件婚纱。一个可以在最左边的婚庆店买到.");
                                             }
                                         } else {
                                             cm.sendOk("您的婚礼预订可能最近已经处理。请稍后再试。");

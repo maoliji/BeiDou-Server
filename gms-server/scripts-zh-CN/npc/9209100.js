@@ -29,10 +29,13 @@ function action(mode, type, selection) {
 
         if (status == 0) {
             if (playerNearby(cm.getPlayer().getPosition(), cm.getMap().getPortal("chimney01").getPosition())) {
-                cm.sendOk("嘿嘿，不要偷偷钻进别人家的烟囱哦。要是被记在圣诞老人的淘气名单上，今年的礼物可就危险了。");
+                cm.sendYesNo("嘿，嘿~~请不要未经允许潜入别人家里，你不会是想今年在圣诞老人的名单上被列为调皮的吧？");
             } else {
-                cm.sendOk("呵呵呵，愿你在新的一年里健康、顺利，也收获满满的幸福。");
+                cm.sendOk("嘿嘿嘿~~你有一个充满健康、实现和幸福的美好一年！");
             }
+        } else if (status == 1) {
+            cm.warp(209000100);
+            cm.dispose();
         } else {
             cm.dispose();
         }

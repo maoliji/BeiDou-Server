@@ -24,8 +24,8 @@
  */
 
 var isPq = true;
-var minPlayers = 6, maxPlayers = 30;
-var minLevel = 100, maxLevel = 255;
+var minPlayers = 3, maxPlayers = 30;
+var minLevel = 100, maxLevel = 200;
 var entryMap = 240060000;
 var exitMap = 240050600;
 var recruitMap = 240050400;
@@ -40,8 +40,8 @@ const maxLobbies = 1;
 
 const GameConfig = Java.type('org.gms.config.GameConfig');
 minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
-if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低80级，最高200级。
+    minLevel = 80 , maxLevel = 200;
 }
 
 function init() {
@@ -130,15 +130,9 @@ function playerEntry(eim, player) {
     eim.dropMessage(5, "[远征队] " + player.getName() + " 已进入地图。");
     var map = eim.getMapInstance(entryMap);
     player.changeMap(map, map.getPortal(0));
-    //开启伤害记录
-    if(GameConfig.getServerBoolean("damage_ranking")) {
-        eim.startDamageRecording();
-        player.dropMessage(6, "当前副本已开启伤害统计。");
-    }
 }
 
 function scheduledTimeout(eim) {
-    eim.broadcastDamageRanking();   // 时间结束时通报
     end(eim);
 }
 
@@ -206,7 +200,6 @@ function monsterKilled(mob, eim) {
     if (isHorntail(mob)) {
         eim.setIntProperty("defeatedBoss", 1);
         eim.showClearEffect(mob.getMap().getId());
-        eim.broadcastDamageRanking();  // BOSS死亡时通报
         eim.clearPQ();
 
         eim.dispatchRaiseQuestMobCount(8810018, 240060200);

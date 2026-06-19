@@ -24,6 +24,7 @@
 	Nothing at all.
  */
 
+
 var status;
 
 function start() {
@@ -46,8 +47,13 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendOk("新手在这张地图上训练。 精通者在下一个地图上训练。 专业人士在最后一个地图上训练，那里会有boss等待。");
-            cm.dispose();
+            cm.sendAcceptDecline("新手在这张地图上训练。 精通者在下一个地图上训练。 专业人士在最后一个地图上训练，你是否要在记录表上签字以应对前来检查的仙人？");
+            return;
+        } else if (status == 1) {
+            cm.weakenAreaBoss(5090001, "仙人玩偶检查了记录表，对你表示很满意。");
         }
+
+        cm.dispose();
     }
 }
+

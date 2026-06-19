@@ -60,7 +60,7 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            cm.sendSimple("嘿，我是帕塔，我是一位在勇士部落著名的整形外科医生和美瞳专家。我相信你的脸和眼睛是你身体中最重要的特征，通过使用#b#t5152028##k或者#b#t5152041##k，我可以为你开具适合的面部护理和美瞳。现在，你想要使用什么？\r\n#L1#整形手术：#i5152028##t5152028##l\r\n#L2#美瞳：#i5152041##t5152041##l\r\n#L3#一次性美瞳：#i5152100#（任何颜色）#l");
+            cm.sendSimple("嘿，我是#p2090103#，我是一位在武陵著名的整形外科医生和美瞳专家。我相信你的脸和眼睛是你身体中最重要的特征，通过使用#b#t5152028##k或者#b#t5152041##k，我可以为你开具适合的面部护理和美瞳。现在，你想要使用什么？\r\n#L1#整形手术：#i5152028##t5152028##l\r\n#L2#美瞳：#i5152041##t5152041##l\r\n#L3#一次性美瞳：#i5152100#（任何颜色）#l");
         } else if (status == 1) {
             if (selection == 1) {
                 beauty = 1;
@@ -127,7 +127,7 @@ function action(mode, type, selection) {
                     cm.setFace(facenew[selection]);
                     cm.sendOk("享受你的新面容吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的整形手术优惠券。没有优惠券，恐怕我不能为你做手术。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的整形手术会员卡。没有会员卡，恐怕我不能为你做手术。");
                 }
             } else if (beauty == 2) {
                 if (cm.haveItem(5152041)) {
@@ -135,7 +135,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的美瞳隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我不认为你现在带着我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我不认为你现在带着我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             } else if (beauty == 3) {
                 var color = (colors[selection] / 100) % 10 | 0;
@@ -145,7 +145,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[selection]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片优惠券。没有优惠券，恐怕我不能为你做这件事。");
+                    cm.sendOk("对不起，但我觉得你现在没有我们的化妆镜片会员卡。没有会员卡，恐怕我不能为你做这件事。");
                 }
             }
         }

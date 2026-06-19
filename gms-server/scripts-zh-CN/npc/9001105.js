@@ -25,7 +25,7 @@ function action(mode, type, selection) {
 
         if (status == 0) {
             if (cm.getMapId() == 922240200) {
-                cm.sendSimple("你有什么要说的吗...? #b\b\r\n#L0#我想要救出嘎嘎。#l\r\n");    //#L1#I want to go to the Space Mine.#l
+                cm.sendSimple("你有什么要说的吗...? #b\b\r\n#L0#我想要救出佳佳。#l\r\n");    //#L1#I want to go to the Space Mine.#l
             } else if (cm.getMapId() >= 922240000 && cm.getMapId() <= 922240019) {
                 cm.sendYesNo("如果你失败了也不要担心。你还有3次机会。你还想放弃吗？");
             } else if (cm.getMapId() >= 922240100 && cm.getMapId() <= 922240119) {
@@ -52,7 +52,7 @@ function action(mode, type, selection) {
                     }
                 } else if (status == 2) {
                     if (selected == 1) {
-                        cm.sendYesNo("如果我们把嘎嘎留给外星人，他会遭遇可怕的事情！我会让你借用一艘月兔用来旅行的太空飞船，这样你就可以救出嘎嘎。虽然他有时看起来有点犹豫不决、慢吞吞和不成熟，但他其实是一个很好的年轻人。你现在想去救他吗？");
+                        cm.sendYesNo("如果我们把佳佳留给外星人，他会遭遇可怕的事情！我会让你借用一艘月兔用来旅行的太空飞船，这样你就可以救出嘎嘎。虽然他有时看起来有点犹豫不决、慢吞吞和不成熟，但他其实是一个很好的年轻人。你现在想去救他吗？");
                     } else if (selected == 2) {
                         cm.sendOk("尚未编码，f4。");
                         cm.dispose();

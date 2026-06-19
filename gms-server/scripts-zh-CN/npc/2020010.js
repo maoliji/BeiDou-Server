@@ -68,7 +68,7 @@ function action(mode, type, selection) {
         } else if (status == 2) {
             if (cm.getPlayer().getRemainingSp() > 0) {
                 if (cm.getPlayer().getRemainingSp() > (cm.getLevel() - 70) * 3) {
-                    cm.sendNext("请在继续之前使用你所有的SP。");
+                    cm.sendNext("请在继续之前使用你所有的技能点SP。");
                     cm.dispose();
                     return;
                 }
@@ -80,12 +80,12 @@ function action(mode, type, selection) {
             }
 
             if (Math.floor(cm.getJobId() / 10) == 31) {
-                cm.sendNext("你已正式成为#b游侠#k。你将真正拥抱的其中一个技能是名为#b致命一击#k的技能，它允许游侠在近距离射出箭矢。#b地狱火#k允许游侠暂时对怪物进行火属性攻击，而#b傀儡#k（召唤一个稻草人吸引怪物的注意力）和#b银鹰#k（召唤一只银鹰攻击怪物）等技能巩固了弓箭手作为远程攻击专家的地位。");
+                cm.sendNext("恭喜你，你现在是#b射手#k了. 你真正需要掌握的技能之一是#b贯穿箭#k它允许射手近距离射箭。#b烈火箭#k允许游侠暂时对怪物进行基于火力的攻击，而技能就像#b替身术#k(召唤稻草人吸引怪物的注意力)和#b银鹰召唤#k(召唤一只攻击怪物的银鹰)增加弓箭手的远程攻击能力");
             } else {
-                cm.sendNext("你已正式成为 #b狙击手#k。你将真正拥抱的其中一个技能是名为 #b致命一击#k 的技能，它允许狙击手在近距离射箭。 #b暴风雪#k 允许狙击手暂时对怪物进行冰属性攻击，而像 #b稻草人#k（召唤一个吸引怪物注意力的稻草人）和 #b金雕#k（召唤一个攻击怪物的金雕）这样的技能巩固了弓箭手作为远程攻击专家的地位。");
+                cm.sendNext("恭喜你，你现在是#b游侠#k了.你真正需要掌握的技能之一是#b贯穿箭#k它允许游侠近距离射箭。#b寒冰箭#k允许游侠暂时对怪物进行冰属性攻击，而技能如#b替身术t#k(召唤稻草人吸引怪物的注意力)和#b金鹰召唤#k(召唤一只攻击怪物的金鹰)增加弓箭手的远程攻击能力。");
             }
         } else if (status == 3) {
-            cm.sendNextPrev("我也给了你一些SP和AP，这将帮助你开始。你现在确实已经成为一个强大的战士。但请记住，现实世界将等待着你，那里会有更艰难的障碍需要克服。当你觉得无法自我训练来达到更高的境界时，那时候，只有那时候，来找我。我会在这里等着你。");
+            cm.sendNextPrev("我也给了你一些技能点和能力值，这将帮助你开始。你现在确实已经成为一个强大的战士。但请记住，现实世界将等待着你，那里会有更艰难的障碍需要克服。当你觉得无法自我训练来达到更高的境界时，那时候，只有那时候，来找我。我会在这里等着你。");
         }
     } else if (actionx["Physical"]) {
         if (status == 0) {
@@ -95,7 +95,7 @@ function action(mode, type, selection) {
                 cm.gainItem(4031057, -1);
                 cm.getPlayer().setPartyQuestItemObtained("JBQ");
             }
-            cm.sendNextPrev("这是测试的第二部分。这个测试将决定你是否足够聪明，可以迈向伟大的下一步。在Ossyria的雪地上有一个被雪覆盖的黑暗区域，被称为圣地，甚至怪物也无法到达。在这个区域的中心，有一块被称为圣石的巨大石头。你需要献上一件特殊的物品作为祭品，然后圣石将在当场测试你的智慧。");
+            cm.sendNextPrev("这是测试的第二部分。这个测试将决定你是否足够聪明，可以迈向伟大的下一步。在冰封雪域的雪原上有一个被雪覆盖的黑暗区域，被称为圣地，甚至怪物也无法到达。在这个区域的中心，有一块被称为圣石的巨大石头。你需要献上一件特殊的物品作为祭品，然后圣石将在当场测试你的智慧。");
         } else if (status == 2) {
             cm.sendNextPrev("你需要诚实而坚定地回答每一个问题。如果你能正确回答所有问题，那么圣石将正式接受你，并交给你#b#t4031058##k。把项链拿回来，我会帮助你迈向下一步。祝你好运。");
         }
@@ -122,7 +122,7 @@ function action(mode, type, selection) {
             }
         } else {
             if (cm.getPlayer().getLevel() >= 50) {
-                cm.sendOk("首领居住委员会授予你#b特许#k，成为#r反击扎昆团队#k的一部分。祝你前程似锦。");
+                cm.sendOk("长老会会授予你#b特许#k，成为#r反击扎昆团队#k的一部分。祝你一切顺利。");
                 if (!(cm.isQuestStarted(100200) || cm.isQuestCompleted(100200))) {
                     cm.startQuest(100200);
                 }
@@ -131,7 +131,7 @@ function action(mode, type, selection) {
                     cm.completeQuest(100201);
                 }
             } else {
-                cm.sendOk("你太弱了，无法成为#rcounteroffensive团队对抗扎昆#k的一部分。至少达到#blevel 50#k，然后再和我说话。");
+                cm.sendOk("你太弱了，无法挑战#r扎昆#k. 至少达到#b50级#k以后，再与我交谈。");
             }
             cm.dispose();
         }

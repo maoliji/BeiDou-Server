@@ -98,7 +98,7 @@ function action(mode, type, selection) {
                 var state = eim.getIntProperty("statusStg" + stage);
 
                 if (state == -1) {           // preamble
-                    cm.sendOk("嗨。欢迎来到 #b玩具塔副本阶段" + stage + "#k。在这个阶段，让你的队伍中的5名成员站在那些箱子上，以形成正确的组合来解锁下一个阶段。只有一个玩家应该留在所需的箱子上以确定组合。");
+                    cm.sendOk("嗨，欢迎来到第#b" + stage + "#k关。在这个阶段，让你的队伍中的5名成员站在那些箱子上，以形成正确的组合来解锁下一个阶段。只有一个玩家应该留在所需的箱子上以确定组合。");
 
                     var st = (debug) ? 2 : 0;
                     eim.setProperty("statusStg" + stage, st);
@@ -125,7 +125,7 @@ function action(mode, type, selection) {
                         }
                     }
 
-                    if (playersOnCombo == 5 || cm.getPlayer().gmLevel() > 1) {
+                    if (playersOnCombo == 5 || cm.getPlayer().gmLevel() > 1  || eim.getPlayers().size() < 5) { // 检测到队伍人数不足时，直接通过本关，方便单机玩家
                         var comboStr = eim.getProperty("stage" + stage + "combo");
                         if (comboStr == null) {
                             comboStr = generateCombo();
@@ -140,7 +140,7 @@ function action(mode, type, selection) {
                                 correctCombo = false;
                             }
                         }
-                        if (correctCombo || cm.getPlayer().gmLevel() > 1) {
+                        if (correctCombo || cm.getPlayer().gmLevel() > 1 || eim.getPlayers().size() < 5) {  // 检测到队伍人数不足时，直接通过本关，方便单机玩家
                             eim.setProperty("statusStg" + stage, 1);
                             clearStage(stage, eim, curMap);
                             cm.dispose();
@@ -154,7 +154,7 @@ function action(mode, type, selection) {
                     }
                 }
             } else {
-                cm.sendNext("请告诉你的#b队长#k来找我谈话。");
+                cm.sendNext("请告诉你的#b队伍领袖#k来找我谈话。");
             }
         }
 

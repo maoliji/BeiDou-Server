@@ -46,10 +46,12 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendAcceptDecline("这是一盏带开关的小灯具，是否要将其点亮？");
+            cm.sendYesNo("这是一盏带开关的小灯，你想打开它吗？");
+            return;
         } else if (status == 1) {
-            cm.weakenAreaBoss(5090000, "你已点亮灯具！暗影之力会因光照快速减弱。");
-			cm.dispose();
+            cm.weakenAreaBoss(5090000, "你已经打开了灯。由于光线的影响，阴影的强度会迅速减弱。");
         }
+
+        cm.dispose();
     }
 }

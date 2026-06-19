@@ -39,7 +39,7 @@ function pushIfItemExists(array, itemid) {
 }
 
 function start() {
-    cm.sendSimple("如果你使用这张普通的优惠券，你的脸可能会变成一个随机的新样子...你还想用 #b#t5152037##k 来做吗？我会帮你做。但别忘了，它会是随机的！\r\n\#L2#好的！（使用 #i5152037# #t5152037#）#l");
+    cm.sendSimple("如果你使用这张普通会员卡，你的脸可能会变成一个随机的新样子...你还想用 #b#t5152037##k 来做吗？我会帮你做。但别忘了，它会是随机的！\r\n\#L2#好的！（使用 #i5152037# #t5152037#）#l");
 }
 
 function action(mode, type, selection) {
@@ -55,7 +55,7 @@ function action(mode, type, selection) {
 
         if (status == 1) {
             if (!cm.haveItem(5152037)) {
-                cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                cm.sendOk("嗯...看起来你没有这个地方专门的会员卡。很抱歉要说这个，但没有会员卡，你就不能进行整形手术了...");
                 cm.dispose();
                 return;
             }
@@ -71,7 +71,7 @@ function action(mode, type, selection) {
                     pushIfItemExists(facenew, fface_r[i] + cm.getPlayer().getFace() % 1000 - (cm.getPlayer().getFace() % 100));
                 }
             }
-            cm.sendYesNo("如果你使用普通的优惠券，你的脸可能会变成一个随机的新样子……你还想用#b#t5152037##k来做吗？");
+            cm.sendYesNo("如果你使用普通会员卡，你的脸可能会变成一个随机的新样子……你还想用#b#t5152037##k来做吗？");
         } else if (status == 2) {
             cm.gainItem(5152037, -1);
             cm.setFace(facenew[Math.floor(Math.random() * facenew.length)]);

@@ -20,7 +20,7 @@
       <int name="id" value="6090004"/>
       <int name="startHour" value="3"/>
       <int name="endHour" value="7"/>
-      <string name="message" value="With undecipherable whispers, Rurumo has appeared. Use the poison spray to weaken Rurumo."/>
+      <string name="message" value="随着窃窃私语声，陆陆猫出现了,用罗赛伦的桌子削弱陆陆猫吧～"/>
     </imgdir>
   </imgdir>
   <imgdir name="back">
@@ -1273,7 +1273,7 @@
       <string name="id" value="2619005"/>
       <int name="x" value="687"/>
       <int name="y" value="123"/>
-      <int name="reactorTime" value="0"/>
+      <int name="reactorTime" value="100"/>
       <int name="f" value="0"/>
       <string name="name" value=""/>
     </imgdir>

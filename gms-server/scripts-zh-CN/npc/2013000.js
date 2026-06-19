@@ -82,7 +82,7 @@ function action(mode, type, selection) {
                     }
                 } else if (selection == 1) {
                     var psState = cm.getPlayer().toggleRecvPartySearchInvite();
-                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
+                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "开启" : "关闭") + "#k。想要改变状态时随时找我。");
                     cm.dispose();
                 } else if (selection == 2) {
                     cm.sendOk("#e#b<女神之塔组队任务>#k#n\r\n我们的女神已经失踪了一段时间，有传言说她最后一次被看到是在女神之塔内。此外，我们的圣地已经被精灵们的压倒性力量夺取，这些生物最近一直在奥比斯的边缘徘徊。他们的领袖，皮克西爸爸，目前掌握着王位，可能知道她的下落，因此我们迫切需要找到一支由勇敢的英雄组成的队伍，冲进去夺回我们的圣地并拯救她。如果你的团队能够包含每个职业（战士，魔法师，弓箭手，飞侠和海盗），你们将得到我的祝福来帮助你们战斗。你们会帮助我们吗？");
@@ -92,12 +92,12 @@ function action(mode, type, selection) {
                 }
             } else if (status == 2) {
                 if (selection == 0) {
-                    if (!cm.haveItem(1082232) && cm.haveItem(4001158, 10)) {
+                    if (cm.haveItem(4001158, 10) && cm.canHold(1082232)) {
                         cm.gainItem(1082232, 1);
-                        cm.gainItem(4001158, -10);
+                        cm.gainItem(4001158, -5);
                         cm.dispose();
                     } else {
-                        cm.sendOk("你要么已经拥有女神手镯，要么没有10个#t4001158#。");
+                        cm.sendOk("你没有5个#t4001158#。");
                         cm.dispose();
                     }
                 }

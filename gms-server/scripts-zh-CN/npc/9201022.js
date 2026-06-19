@@ -29,7 +29,7 @@ status = -1;
 
 function start() {
     if (cm.getPlayer().getMapId() == 100000000) {
-        cm.sendYesNo("我可以带你去婚礼公园。你准备好了吗？");
+        cm.sendYesNo("我可以带你去婚礼村。你准备好了吗？");
     } else {
         cm.sendYesNo("我可以带你回到射手村。你准备好了吗？");
     }
@@ -39,7 +39,7 @@ function action(mode, type, selection) {
     status++;
     if (mode != 1) {
         if (mode == 0) {
-            cm.sendOk("好的，随时可以在这里等到你准备好走！");
+            cm.sendOk("好的，随时可以在这里等你准备好！");
         }
         cm.dispose();
         return;

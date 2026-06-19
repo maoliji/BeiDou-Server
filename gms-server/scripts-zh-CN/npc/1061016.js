@@ -12,9 +12,9 @@ function action(mode, type, selection) {
     }
     status++;
     if (status == 0) {
-        cm.sendSimple("你好，#h0#。我可以交换你的巴尔洛克皮革。\r\n\r\n#r#L1#兑换物品#l#k");
+        cm.sendSimple("你好, #h0#.如果你有#e#r#z4001261##k#n,可以找我换#e#b#z1072375##k#n的专用卷轴。\r\n\r\n#r#L1#兑换物品#l#k");
     } else if (status == 1) {
-        var selStr = "Well, okay. These are what you can redeem...\r\n\r\n#b";
+        var selStr = "好的，这些是你可以兑换的...\r\n\r\n#b";
         for (var i = 0; i < itemids.length; i++) {
             selStr += "#L" + i + "##i" + itemids[i] + "##z" + itemids[i] + "##l\r\n";
         }
@@ -23,7 +23,7 @@ function action(mode, type, selection) {
         if (!cm.canHold(itemids[selection], 1)) {
             cm.sendOk("请腾出空间");
         } else if (!cm.haveItemWithId(4001261)) {
-            cm.sendOk("你没有足够的皮革。");
+            cm.sendOk("你没有足够的#z4001261#。");
         } else {
             cm.gainItem(4001261, -1);
             cm.gainItem(itemids[selection], 1);

@@ -62,7 +62,7 @@ function action(mode, type, selection) {
             cm.sendYesNo("飞机马上就要起飞了，你确定要现在离开吗？机票是不可退的。");
             airport = 1;
         } else if (cm.getMapId() == 540010002) {
-            cm.sendOk("我们马上就要到达昆明市，请坐下等一会儿。");
+            cm.sendOk("我们马上就要到达废弃都市，请坐下等一会儿。");
             cm.dispose();
             s2k = 1;
         } else if (cm.getMapId() == 540010101) {

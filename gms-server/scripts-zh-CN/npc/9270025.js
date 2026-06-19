@@ -46,7 +46,7 @@ function action(mode, type, selection) {
             cm.sendSimple("嗨，你好！欢迎来到莲花花护肤中心！你想要像我一样拥有紧致健康的肌肤吗？使用#b#tCBD护肤券##k，让我们来照顾你的肌肤，让你拥有一直想要的肌肤！\r\n\#L1#听起来不错！（使用#i5153010# #t5153010#）#l");
         } else if (status == 1) {
             if (!cm.haveItem(5153010)) {
-                cm.sendOk("看起来你没有需要接受治疗的优惠券。很抱歉，看起来我们不能为你做这件事。");
+                cm.sendOk("看起来你没有护肤会员卡。很抱歉，看起来我们不能为你做这件事。");
                 cm.dispose();
                 return;
             }

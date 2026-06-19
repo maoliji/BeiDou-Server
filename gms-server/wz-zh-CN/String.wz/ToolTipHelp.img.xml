@@ -130,7 +130,7 @@
                 <string name="Desc" value="向南港"/>
             </imgdir>
             <imgdir name="3">
-                <string name="Title" value="Amherst"/>
+                <string name="Title" value="彩虹村"/>
             </imgdir>
         </imgdir>
         <imgdir name="1010000">
@@ -960,18 +960,18 @@
         </imgdir>
         <imgdir name="230020100">
             <imgdir name="0">
-                <string name="Title" value="The Sharp Unknown"/>
+                <string name="Title" value="秘密之村"/>
             </imgdir>
             <imgdir name="1">
-                <string name="Title" value="Blue Seaweed Road"/>
+                <string name="Title" value="蓝海草路"/>
             </imgdir>
         </imgdir>
         <imgdir name="230030000">
             <imgdir name="0">
-                <string name="Title" value="Mushroom Coral Hill"/>
+                <string name="Title" value="蘑菇珊瑚山丘"/>
             </imgdir>
             <imgdir name="1">
-                <string name="Title" value="Big Fish Valley"/>
+                <string name="Title" value="大鱼峡谷"/>
             </imgdir>
         </imgdir>
         <imgdir name="230030200">
@@ -981,7 +981,7 @@
         </imgdir>
         <imgdir name="230020200">
             <imgdir name="0">
-                <string name="Title" value="Mushroom Coral Hill"/>
+                <string name="Title" value="蘑菇珊瑚山丘"/>
             </imgdir>
         </imgdir>
         <imgdir name="240000000">
@@ -1321,31 +1321,31 @@
         </imgdir>
         <imgdir name="680000000">
             <imgdir name="0">
-                <string name="Title" value="Amoria Wedding Shop"/>
+                <string name="Title" value="婚礼村商店"/>
             </imgdir>
             <imgdir name="1">
-                <string name="Title" value="Saint Maple Altar"/>
+                <string name="Title" value="神圣婚礼圣坛"/>
             </imgdir>
             <imgdir name="2">
-                <string name="Title" value="Amoria Plastic Surgery "/>
+                <string name="Title" value="婚礼村整形外科"/>
             </imgdir>
             <imgdir name="3">
-                <string name="Title" value="Amoria Hair Salon"/>
+                <string name="Title" value="婚礼村美发店"/>
             </imgdir>
             <imgdir name="4">
-                <string name="Title" value="White Wedding Altar"/>
+                <string name="Title" value="白色婚礼圣坛"/>
             </imgdir>
             <imgdir name="5">
-                <string name="Title" value="Amoria"/>
+                <string name="Title" value="婚礼村"/>
             </imgdir>
             <imgdir name="6">
-                <string name="Title" value="Purple Plains 1"/>
+                <string name="Title" value="紫色平原1"/>
             </imgdir>
             <imgdir name="7">
-                <string name="Title" value="Wedding Cathedral"/>
+                <string name="Title" value="婚礼大教堂"/>
             </imgdir>
             <imgdir name="8">
-                <string name="Title" value="Wedding Chapel"/>
+                <string name="Title" value="婚礼小教堂"/>
             </imgdir>
         </imgdir>
         <imgdir name="500020100">
@@ -1719,19 +1719,19 @@
         </imgdir>
         <imgdir name="261020200">
             <imgdir name="0">
-                <string name="Title" value="毒喷射器"/>
+                <string name="Title" value="                      毒喷射器                      "/>
                 <string name="Desc" value="击退陆陆猫时使用的毒喷射器.卡帕莱特的炼金术士只能在击退陆陆猫时使用.到底是谁偷走了喷射器里的毒啊?!"/>
             </imgdir>
         </imgdir>
         <imgdir name="261020400">
             <imgdir name="0">
-                <string name="Title" value="毒喷射器"/>
+                <string name="Title" value="                      毒喷射器                      "/>
                 <string name="Desc" value="击退陆陆猫时使用的毒喷射器.卡帕莱特的炼金术士只能在击退陆陆猫时使用.到底是谁偷走了喷射器里的毒啊?!"/>
             </imgdir>
         </imgdir>
         <imgdir name="261020600">
             <imgdir name="0">
-                <string name="Title" value="毒喷射器"/>
+                <string name="Title" value="                      毒喷射器                      "/>
                 <string name="Desc" value="击退陆陆猫时使用的毒喷射器.卡帕莱特的炼金术士只能在击退陆陆猫时使用.到底是谁偷走了喷射器里的毒啊?!"/>
             </imgdir>
         </imgdir>
@@ -1804,7 +1804,7 @@
             </imgdir>
         </imgdir>
         <imgdir name="100040105">
-            <string name="quest00" value="Rotten Tree Trail"/>
+            <string name="quest00" value="腐树通道"/>
             <imgdir name="0">
                 <string name="Title" value="巫婆森林II"/>
             </imgdir>
@@ -1881,8 +1881,8 @@
                 <string name="Title" value="老虎山坡"/>
             </imgdir>
             <imgdir name="2">
-                <string name="Title" value="Tower"/>
-                <string name="Desc" value="All those that pass Fox Valley should throw Samiho&apos;s tail from the top of the tower to pay off it&apos;s scores"/>
+                <string name="Title" value="                      塔                      "/>
+                <string name="Desc" value="所有经过狐狸山坡的人都应当在塔顶上扔三尾狐的尾巴来作为补偿。"/>
             </imgdir>
         </imgdir>
         <imgdir name="261000000">
@@ -2209,7 +2209,7 @@
                 <string name="Title" value="勇士部落西部(勇士部落方向)"/>
             </imgdir>
             <imgdir name="2">
-                <string name="Title" value="Abandoned Subway Station"/>
+                <string name="Title" value="废弃的地铁站"/>
             </imgdir>
         </imgdir>
         <imgdir name="102050000">
@@ -2770,7 +2770,7 @@
         </imgdir>
         <imgdir name="105090311">
             <imgdir name="0">
-                <string name="Title" value="Mini Dungeon: Drake&apos;s Blue Cave"/>
+                <string name="Title" value="迷你地图：青龙的蓝色洞穴"/>
             </imgdir>
         </imgdir>
         <imgdir name="2000000">
@@ -2946,7 +2946,7 @@
         </imgdir>
         <imgdir name="251010402">
             <imgdir name="0">
-                <string name="Title" value="Mini Dungeon: Pillage of Treasure Island "/>
+                <string name="Title" value="迷你地图：金银岛的战利品"/>
             </imgdir>
         </imgdir>
         <imgdir name="240010900">
@@ -7263,8 +7263,8 @@
             <string name="MD00" value="迷你地图:复活的记忆"/>
         </imgdir>
         <imgdir name="240020600">
-            <string name="out00" value="그리프의 숲"/>
-            <string name="out01" value="마뇽의 숲"/>
+            <string name="out00" value="格瑞芬多森林"/>
+            <string name="out01" value="喷火龙栖息地"/>
         </imgdir>
         <imgdir name="240020402">
             <string name="in00" value="偏僻的森林"/>
@@ -7433,8 +7433,8 @@
     <imgdir name="MTS">
         <imgdir name="Button">
             <imgdir name="Check">
-                <string name="Title" value="Check Points"/>
-                <string name="Desc" value="Checking the remaining points."/>
+                <string name="Title" value="查看Points"/>
+                <string name="Desc" value="查看所剩的Points."/>
             </imgdir>
         </imgdir>
     </imgdir>

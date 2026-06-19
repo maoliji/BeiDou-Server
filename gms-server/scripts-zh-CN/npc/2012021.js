@@ -8,7 +8,7 @@ function start() {
             cm.dispose();
         }
     } else {
-        cm.sendOk("确保你有一张叶尔弗航班的机票。检查你的背包。");
+        cm.sendOk("确保你有一张该航班的机票。检查你的背包。");
         cm.dispose();
     }
 }

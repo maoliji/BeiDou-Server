@@ -25,13 +25,13 @@
 function enter(pi) {
     if (pi.getPlayer().getJob().getId() == 2000) {
         if (pi.isQuestStarted(21015)) {
-            pi.showInfoText("You must exit to the right in order to find Murupas.");
+            pi.showInfoText("你必须向右拐才能找到香肠嘴雪精灵。");
             return false;
         } else if (pi.isQuestStarted(21016)) {
-            pi.showInfoText("You must exit to the right in order to find Murupias.");
+            pi.showInfoText("你必须向右拐才能找到囧囧雪精灵。");
             return false;
         } else if (pi.isQuestStarted(21017)) {
-            pi.showInfoText("You must exit to the right in order to find MuruMurus.");
+            pi.showInfoText("你必须向右拐才能找到趴趴雪精灵。");
             return false;
         }
     }

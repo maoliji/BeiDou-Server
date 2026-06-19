@@ -46,11 +46,12 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendAcceptDecline("这个魔法五角星还没有完成。您想完成这个魔法五角星的绘制吗？");
-            
+            cm.sendAcceptDecline("这个魔法五芒星是不完整的, 你想把魔法五芒星画完吗?");
+            return;
         } else if (status == 1) {
-            cm.weakenAreaBoss(8090000, "魔法五角星已经完成。用于消除迪特（Deet）和罗伊（Roi）的咒语已经被启动了。");
-			cm.dispose();
+            cm.weakenAreaBoss(8090000, "魔法五芒星已经完成, 消灭迪特和罗伊的咒语已被召唤.");
         }
+
+        cm.dispose();
     }
 }

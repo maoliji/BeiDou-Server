@@ -5,7 +5,7 @@
  *
  */
 
-const QuestMode = true; //true = 采用任务模式，false = 采用脚本模式
+const QuestMode = false; //true = 采用任务模式，false = 采用脚本模式
 const QuestID = 4109;	//任务ID，收集50个黑羊毛
 const itemID = 4000194;//黑羊毛
 const itemCount = 50;

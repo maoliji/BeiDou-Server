@@ -8,15 +8,15 @@ function start() {
     const GameConstants = Java.type('org.gms.constants.game.GameConstants');
     if (parseInt(cm.getJobId() / 100) == jobType && cm.canSpawnPlayerNpc(GameConstants.getHallOfFameMapid(cm.getJob()))) {
         spawnPnpc = true;
-
-        var sendStr = "You have walked a long way to reach the power, wisdom and courage you hold today, haven't you? What do you say about having right now #ra NPC on the Hall of Fame holding the current image of your character#k? Do you like it?";
-        if (spawnPnpcFee > 0) {
-            sendStr += " I can do it for you, for the fee of #b " + cm.numberWithCommas(spawnPnpcFee) + " mesos.#k";
+        
+        var sendStr = "你已经走了很长的路，才能达到今天的力量、智慧和勇气，不是吗？你想要#r名人堂里有你的位置吗#k?";
+        if(spawnPnpcFee > 0) {
+            sendStr += "我可以为你做，收费为#b " + cm.numberWithCommas(spawnPnpcFee) + "金币.#k";
         }
 
         cm.sendYesNo(sendStr);
     } else {
-        cm.sendOk("瞧，这里是利恩的杰出勇敢英雄！那些坚定的心灵一直以来一直在保护我们的人民，他们是我们勇敢的战友。");
+        cm.sendOk("瞧，这里是利恩的杰出英雄！那些坚定的心灵一直以来一直在保护我们的人民，他们是我们勇敢的战友。");
         cm.dispose();
     }
 }

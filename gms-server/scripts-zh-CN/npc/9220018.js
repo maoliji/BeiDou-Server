@@ -64,7 +64,7 @@ function action(mode, type, selection) {
                     cm.sendOk("只有当你加入一个队伍时，才能参加派对任务。");
                     cm.dispose();
                 } else if (!cm.isLeader()) {
-                    cm.sendOk("你的队长必须与我交谈才能开始这个组队任务。");
+                    cm.sendOk("必须由你的队长与我交谈才能开始这个组队任务。");
                     cm.dispose();
                 } else {
                     var eli = em.getEligibleParty(cm.getParty());
@@ -80,7 +80,7 @@ function action(mode, type, selection) {
                 }
             } else if (selection == 1) {
                 var psState = cm.getPlayer().toggleRecvPartySearchInvite();
-                cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
+                cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "开启" : "关闭") + "#k。想要改变状态时随时找我。");
                 cm.dispose();
             } else {
                 cm.sendOk("#e#b<组队任务：MV的巢穴>#k#n\r\nMV再次出现，打乱了新叶城居民的安宁。与其他冒险岛玩家联手抵御这次突如其来的攻击。在击败MV和他的手下之后，到MV的宝藏房间领取你的奖励。");

@@ -30,6 +30,6 @@
 */
 
 function start() {
-    cm.sendOk("搞清楚你的立场！你是泽纳米斯特还是阿尔卡德诺？");
+    cm.sendOk("明确你的立场！蒙特鸠还是卡帕莱特？");
     cm.dispose();
 }

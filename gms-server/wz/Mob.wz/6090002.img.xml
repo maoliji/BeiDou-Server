@@ -28,7 +28,7 @@
       </imgdir>
     </imgdir>
     <imgdir name="ban">
-      <string name="banMsg" value="The Bamboo Warrior&apos;s force of will has driven you out to the Mushroom Shrine."/>
+      <string name="banMsg" value="青竹武士用意志力把你赶回了蘑菇神社。"/>
       <imgdir name="banMap">
         <imgdir name="0">
           <int name="field" value="800000000"/>

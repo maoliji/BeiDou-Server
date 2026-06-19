@@ -50,7 +50,7 @@ function action(mode, type, selection) {
                 cm.setSkin(skin[selection]);
                 cm.sendOk("享受你的新肤色吧！");
             } else {
-                cm.sendOk("嗯...您没有需要接受护肤折扣的券。抱歉，恐怕我们不能为您服务...");
+                cm.sendOk("嗯...您没有我们的护肤会员卡。抱歉，恐怕我们不能为您服务...");
             }
         }
     }

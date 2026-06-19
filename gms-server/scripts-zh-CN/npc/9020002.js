@@ -46,16 +46,16 @@ function action(mode, type, selection) {
     var mapId = cm.getPlayer().getMapId();
     if (mapId == 103000890) {
         if (status == 0) {
-            cm.sendNext("返回城市的路上，请沿着这条路走。");
+            cm.sendNext("返回城市，请沿着这条路走。");
         } else {
             cm.warp(103000000);
             cm.dispose();
         }
     } else {
         if (status == 0) {
-            var outText = "一旦你离开这个地图，你还想再来试一次，就必须重新开始整个任务。你仍然想离开这个地图吗？";
+            var outText = "如果出去了,如果想要再挑战就要从头再来了.确定要离开吗?";
             if (mapId == 103000805) {
-                outText = "你准备好离开这张地图了吗？";
+                outText = "确定要离开吗?";
             }
             cm.sendYesNo(outText);
         } else if (mode == 1) {

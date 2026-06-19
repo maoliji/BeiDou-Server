@@ -57,7 +57,7 @@ function action(mode, type, selection) {
             if (status == 0) {
                 em = cm.getEventManager("HorntailPQ");
                 if (em == null) {
-                    cm.sendOk("霍恩尾巴洞窟遭遇了一个错误。");
+                    cm.sendOk("黑龙组队任务遭遇了一个错误。");
                     cm.dispose();
                     return;
                 } else if (cm.isUsingOldPqNpcStyle()) {
@@ -65,11 +65,11 @@ function action(mode, type, selection) {
                     return;
                 }
 
-                cm.sendSimple("#e#b<组队任务：暴君蛋龙试炼场>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n这是通往暴君蛋龙巢穴的路径。如果你想面对他，你和你的队伍将在前方的试炼场上接受考验。#b\r\n#L0#让我们通过试炼场。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想听更多细节。");
+                cm.sendSimple("#e#b<组队任务：暗黑龙王试炼场>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n这是通往暗黑龙王巢穴的路径。如果你想面对他，你和你的队伍将在前方的试炼场上接受考验。#b\r\n#L0#让我们通过试炼场。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想听更多细节。");
             } else if (status == 1) {
                 if (selection == 0) {
                     if (cm.getParty() == null) {
-                        cm.sendOk("只有当你加入一个队伍时，才能参加派对任务。");
+                        cm.sendOk("只有当你加入一个队伍时，才能参加组队任务。");
                         cm.dispose();
                     } else if (!cm.isLeader()) {
                         cm.sendOk("你的队长必须与我交谈才能开始这个组队任务。");
@@ -88,16 +88,16 @@ function action(mode, type, selection) {
                     }
                 } else if (selection == 1) {
                     var psState = cm.getPlayer().toggleRecvPartySearchInvite();
-                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
+                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "开启" : "关闭") + "#k。想要改变状态时随时找我。");
                     cm.dispose();
                 } else {
-                    cm.sendOk("#e#b<组队任务：暴君之地>#k#n\r\n作为暴君巢穴的守门人，我只会允许值得的人进入。即使是对于那些人来说，内部的路径也像迷宫一样，充满了分支和考验。然而，那些擅长与团队BOSS战斗的人有更好的机会站在我们的领袖面前，尽管我们这种人也有机会。");
+                    cm.sendOk("#e#b<组队任务：暗黑龙王试炼场>#k#n\r\n作为暗黑龙王巢穴的守门人，我只会允许值得的人进入。即使是对于有资格的人来说，内部的路径也像迷宫一样，充满了分支和考验。那些擅长与团队BOSS战斗的人才有更好的机会站在我们的领袖面前。");
                     cm.dispose();
                 }
             }
         } else {
             if (!cm.isEventLeader()) {
-                cm.sendOk("只有你的队伍领袖才能与日程表进行交互。");
+                cm.sendOk("只有你的队伍领袖才能进行互动。");
             } else if (cm.getMapId() == 240050100) {
                 if (cm.haveItem(4001087) && cm.haveItem(4001088) && cm.haveItem(4001089) && cm.haveItem(4001090) && cm.haveItem(4001091)) {
                     cm.gainItem(4001087, -1);

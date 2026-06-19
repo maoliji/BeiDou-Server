@@ -74,7 +74,7 @@ function action(mode, type, selection) {
                     }
                     cm.gainItem(2280003, 1);
                 } else {
-                    cm.sendOk("请在#b使用#k的物品栏中留出一个空位，以便接收技能书。");
+                    cm.sendOk("请在物品的#b消耗#k栏中留出一个空位，以便接收技能书。");
                 }
             } else if (mode >= 1 && cm.getJobId() % 100 % 10 == 2) {
                 if (cm.getJobId() == 412) {

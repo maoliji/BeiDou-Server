@@ -28,7 +28,7 @@ function start() {
     if (cm.isQuestStarted(3367)) {
         var c = cm.getQuestProgressInt(3367, 30);
         if (c >= 30) {
-            cm.sendNext("（所有文件已整理好。向尤莱特报告找到的文件。）");
+            cm.sendNext("（所有文件已整理好。向犹泰报告找到的文件。）");
             cm.dispose();
             return;
         }

@@ -22,7 +22,7 @@
 var status = 0;
 
 function start() {
-    cm.sendYesNo("你就在藏身处前面！什么？你想返回#m801000000#？");
+    cm.sendYesNo("你到了火狸金融大门前了。什么？你想返回#m801000000#？");
 }
 
 function action(mode, type, selection) {

@@ -29,7 +29,7 @@ function enter(pi) {
         pi.warp(260000201, 1);
         return true;
     } else {
-        pi.message("仅限沙匪队成员进入。");
+        pi.message("仅限沙子图团成员进入。");
         return false;
     }
 }

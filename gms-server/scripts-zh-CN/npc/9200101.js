@@ -41,7 +41,7 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            cm.sendSimple("你好，我是Rhomes博士，是奥比斯整形外科店的美瞳部门主任。\r\n我的目标是通过美瞳的奇迹为每个人的眼睛增添个性，而且通过#b#t5152011##k或者#b#t5152014##k，我也可以为你做同样的事情！现在，你想要使用哪个？\r\n#L1#美瞳：#i5152011##t5152011##l\r\n#L2#美瞳：#i5152014##t5152014##l\r\n#L3#一次性美瞳：#i5152104#（任何颜色）#l");
+            cm.sendSimple("你好，我是Rhomes博士，是天空之城整形外科店的美瞳部门主任。\r\n我的目标是通过美瞳的奇迹为每个人的眼睛增添个性，而且通过#b#t5152011##k或者#b#t5152014##k，我也可以为你做同样的事情！现在，你想要使用哪个？\r\n#L1#美瞳：#i5152011##t5152011##l\r\n#L2#美瞳：#i5152014##t5152014##l\r\n#L3#一次性美瞳：#i5152104#（任何颜色）#l");
         } else if (status == 1) {
             if (selection == 1) {
                 beauty = 1;
@@ -75,7 +75,7 @@ function selectedRegularCoupon() {
     }
     colors = Array();
     pushIfItemsExists(colors, [current + 100, current + 300, current + 400, current + 700]);
-    cm.sendYesNo("如果你使用普通优惠券，你将获得一副随机的化妆隐形眼镜。你打算使用#b#t5152011##k，真的改变你的眼睛吗？");
+    cm.sendYesNo("如果你使用普通会员卡，你将获得一副随机的化妆隐形眼镜。你打算使用#b#t5152011##k，真的改变你的眼睛吗？");
 }
 
 function selectedVipCoupon() {
@@ -168,5 +168,5 @@ function selectedOneTimeStyle(selection) {
 }
 
 function sendLackingCoupon() {
-    cm.sendOk("对不起，但我觉得你现在没有我们的美瞳优惠券。没有优惠券，恐怕我不能为你办理。");
+    cm.sendOk("对不起，但我觉得你现在没有我们的美瞳会员卡。没有会员卡，恐怕我不能为你办理。");
 }

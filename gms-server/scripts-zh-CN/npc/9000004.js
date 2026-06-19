@@ -41,7 +41,7 @@ function action(mode, type, selection) {
             status--;
         }
         var eim = cm.getPlayer().getEventInstance();
-        var nthtext = "last";
+        var nthtext = "最终";
         if (status == 0) {
             party = eim.getPlayers();
             preamble = eim.getProperty("leader" + nthtext + "preamble");
@@ -60,7 +60,7 @@ function action(mode, type, selection) {
                     }
                 }
                 if (mobcount == null) {
-                    cm.sendYesNo("你完了？！");
+                    cm.sendYesNo("这就结束了？！");
                 }
             }
         } else if (status == 1) {

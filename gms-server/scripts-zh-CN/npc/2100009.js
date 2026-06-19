@@ -68,7 +68,7 @@ function action(mode, type, selection) {
                                 % 100));
                     }
                 }
-                cm.sendYesNo("如果你使用普通的优惠券，你的脸可能会变成一个随机的新样子...你还想用#b#t5152029##k来做吗？");
+                cm.sendYesNo("如果你使用普通会员卡，你的脸可能会变成一个随机的新样子...你还想用#b#t5152029##k来做吗？");
             } else if (selection == 2) {
                 beauty = 1;
                 if (cm.getPlayer().getGender() == 0) {
@@ -81,7 +81,7 @@ function action(mode, type, selection) {
                 }
                 colors = Array();
                 pushIfItemsExists(colors, [current, current + 100, current + 300, current + 600, current + 700]);
-                cm.sendYesNo("如果你使用普通优惠券，你将获得一副随机的化妆隐形眼镜。你打算使用#b#t5152048##k，真的改变你的眼睛吗？");
+                cm.sendYesNo("如果你使用普通会员卡，你将获得一副随机的化妆隐形眼镜。你打算使用#b#t5152048##k，真的改变你的眼睛吗？");
             }
         } else if (status == 2) {
             cm.dispose();
@@ -92,7 +92,7 @@ function action(mode, type, selection) {
                     cm.setFace(facenew[Math.floor(Math.random() * facenew.length)]);
                     cm.sendOk("享受你的新面容吧！");
                 } else {
-                    cm.sendNext("嗯...看起来你没有这个地方特定的优惠券...很抱歉要说这个，但没有优惠券的话，你就不能进行整形手术了。");
+                    cm.sendNext("嗯...看起来你没有这个地方的会员卡...很抱歉要说这个，但没有会员卡的话，你就不能进行整形手术了。");
                 }
             } else if (beauty == 1) {
                 if (cm.haveItem(5152048)) {
@@ -100,7 +100,7 @@ function action(mode, type, selection) {
                     cm.setFace(colors[Math.floor(Math.random() * colors.length)]);
                     cm.sendOk("享受你的新款和升级版的隐形眼镜吧！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                    cm.sendOk("嗯...看起来你没有这个地方的会员卡。很抱歉要说这个，但没有会员卡，你就不能进行整形手术了...");
                 }
             }
         }

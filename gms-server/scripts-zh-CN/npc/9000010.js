@@ -27,7 +27,9 @@ function start() {
 function action(mode, type, selection) {
     if (mode == -1) {
         cm.dispose();
-    }
+   }
+   else if(selection) {
     cm.warp(cm.getPlayer().getSavedLocation("EVENT"));
     cm.dispose();
+}
 }  

@@ -6,7 +6,7 @@
     <int name="town" value="0"/>
     <int name="returnMap" value="800000000"/>
     <int name="forcedReturn" value="800020120"/>
-    <float name="mobRate" value="1.0"/>
+    <float name="mobRate" value="1.9"/>
     <string name="bgm" value="BgmJp/BizarreForest"/>
     <string name="mapMark" value="jipangu"/>
     <int name="hideMinimap" value="0"/>

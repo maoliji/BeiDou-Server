@@ -40,7 +40,7 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendOk("我是高级骑士 #b#p1103000##k。多亏了你的勇敢，我和Ereve的所有人都从Eleanor的控制中被解救出来了。感谢我们女皇的仁慈，我们战斗得很顺利！");
+            cm.sendOk("我是高级骑士 #b#p1103000##k。多亏了你的勇敢，我和圣地的所有人都从Eleanor的控制中被解救出来了。感谢我们女皇的仁慈，我们战斗得很顺利！");
             cm.dispose();
         }
     }

@@ -30,7 +30,7 @@
 status = -1;
 
 function start() {
-    if ((cm.getPlayer().getLevel() < 19 || cm.getPlayer().getLevel() > 30) && !cm.getPlayer().isGM()) {
+    if ((cm.getPlayer().getLevel() < 19 || cm.getPlayer().getLevel() > 201) && !cm.getPlayer().isGM()) { //不限制等级
         cm.sendNext("你的等级不在20级到30级之间。抱歉，你不能参加。");
         cm.dispose();
         return;
@@ -40,11 +40,7 @@ function start() {
 
 function action(mode, type, selection) {
     status++;
-    if (status == 4) {
-        cm.getPlayer().saveLocation("MIRROR");
-        cm.warp(980010000, 3);
-        cm.dispose();
-    }
+
     if (mode != 1) {
         if (mode == 0 && type == 0) {
             status -= 2;
@@ -54,12 +50,18 @@ function action(mode, type, selection) {
         }
     }
     if (status == 0) {
-        cm.sendNext("我已经在阿里安特为冒险岛的伟大战士们准备了一个盛大的节日。它被称为#b阿里安特角斗场挑战#k。");
+        cm.sendNext("我在阿里安特为冒险岛最伟大的冒险家们准备了一个盛大的庆典.暂且称作#b阿里安特竞技赛#k.");
     } else if (status == 1) {
-        cm.sendNextPrev("阿里安特角斗场挑战是一项比赛，将怪物战斗技能与其他人进行比拼。在这项比赛中，你的目标不是猎杀怪物；相反，你需要从怪物身上消耗一定量的HP，然后用宝石吸收它。最终拥有最多宝石的战士将赢得比赛。");
+        cm.sendNextPrev("阿里安特竞技赛是怪物之间的技能竞赛. 在这里,你的任务不是打败怪物; 你需要#b降低怪物的血量,然后将怪物的灵魂封印到一块石头里面#k. #b最后获得最多灵魂石的玩家获得胜利.#k");
     } else if (status == 2) {
-        cm.sendSimple("如果你是来自#b佩里安#k，在巴尔洛克舞者指导下训练的强大勇士，那么你对参加阿里安竞技场挑战感兴趣吗？！\r\n#b#L0# 我很想参加这场盛大的比赛。#l");
+        cm.sendSimple("如果你是来自#b勇士部落#k的强大勇士,接受过武术教练的训练, 你应该会很感兴趣参加我们的比赛吧?!\r\n#b#L0#我想参加比赛.#l");
     } else if (status == 3) {
         cm.sendNext("好的，现在我会把你送到战斗竞技场。我希望看到你取得胜利！");
+    } else if (status == 4) {
+        cm.getPlayer().saveLocation("MIRROR");
+        cm.warp(980010000, 3);
+        cm.dispose();
+    } else {
+        cm.dispose();
     }
 }

@@ -75,26 +75,26 @@ function start() {
                             //cm.playerMessage("Results - Correct: " + results[0] + " | Incorrect: " + results[1] + " | Unknown: " + results[2]);
                             if (correct != 0) {
                                 if (correct == 1) {
-                                    string += "1 vassal is pleased with their offering.\r\n";
+                                    string += "1位封臣对他们的贡品感到满意。\r\n";
                                 } else {
-                                    string += correct + " vassals are pleased with their offerings.\r\n";
+                                    string += correct + "位封臣对他们的贡品感到满意。\r\n";
                                 }
                             }
                             if (incorrect != 0) {
                                 if (incorrect == 1) {
-                                    string += "1 vassal has received an incorrect offering.\r\n";
+                                    string += "1位封臣收到了错误的供品。\r\n";
                                 } else {
-                                    string += incorrect + " vassals have received incorrect offerings.\r\n";
+                                    string += incorrect + "位封臣收到了错误的供品。\r\n";
                                 }
                             }
                             if (unknown != 0) {
                                 if (unknown == 1) {
-                                    string += "1 vassal has received an unknown offering.\r\n";
+                                    string += "1位封臣收到了一份没见过的供品。\r\n";
                                 } else {
-                                    string += unknown + " vassals have received unknown offerings.\r\n";
+                                    string += unknown + "位封臣收到了一份没见过的供品。\r\n";
                                 }
                             }
-                            string += "This is your ";
+                            string += "这是你们的第";
                             switch (attempt) {
                                 case 1:
                                     string += "1st";
@@ -109,7 +109,7 @@ function start() {
                                     string += attempt + "th";
                                     break;
                             }
-                            string += " attempt.";
+                            string += " 次尝试。";
 
                             //spawn one black and one myst knight
                             spawnMob(9300036, -350, 150, cm.getPlayer().getMap());
@@ -120,7 +120,7 @@ function start() {
                         } else {
                             //reset the combo and mass spawn monsters
                             eim.setProperty("stage3combo", "reset");
-                            cm.sendOk("你已经失败了测试。请冷静下来，稍后再试。");
+                            cm.sendOk("测试失败了。请冷静下来，稍后再试。");
 
                             for (var i = 0; i < 6; i++) {
                                 //keep getting new monsters, lest we spawn the same monster five times o.o!

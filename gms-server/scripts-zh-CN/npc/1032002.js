@@ -52,7 +52,7 @@ function action(mode, type, selection) {
     }
     if (status == 0 && mode == 1) {
         var selStr = "欢迎来到我的生态安全精炼工厂！今天你想要什么？#b"
-        var options = ["制作手套", "升级手套", "升级帽子", "制作魔杖", "制作法杖"];
+        var options = ["制作手套", "升级手套", "升级帽子", "制作短杖", "制作长杖"];
         for (var i = 0; i < options.length; i++) {
             selStr += "\r\n#L" + i + "# " + options[i] + "#l";
         }

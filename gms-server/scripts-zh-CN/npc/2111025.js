@@ -46,10 +46,12 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendAcceptDecline("你可以使用控制单元来操作自动安全系统。是否要关闭自动安全系统？");
+            cm.sendAcceptDecline("您可以使用控制单元操作自动安全系统, 您想停用自动安全系统吗?");
+            return;
         } else if (status == 1) {
-            cm.weakenAreaBoss(7090000, "自动安全系统已关闭，入侵警报也将停止工作。");
-			cm.dispose();
+            cm.weakenAreaBoss(7090000, "自动安全系统已停用, 入侵者报警器将关闭.");
         }
+
+        cm.dispose();
     }
 }

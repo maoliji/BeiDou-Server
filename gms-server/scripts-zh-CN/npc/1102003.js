@@ -37,9 +37,9 @@ function start() {
     if (jobType >= minJobType && jobType <= maxJobType && cm.canSpawnPlayerNpc(GameConstants.getHallOfFameMapid(cm.getJob()))) {
         spawnPnpc = true;
 
-        var sendStr = "You have walked a long way to reach the power, wisdom and courage you hold today, haven't you? What do you say about having right now #ra NPC on the Hall of Fame holding the current image of your character#k? Do you like it?";
+        var sendStr = "你已经修炼了很久，才能达到今天的力量、智慧和勇气，不是吗？你想在#r名人堂里留下你的位置吗#k?你喜欢吗?";
         if (spawnPnpcFee > 0) {
-            sendStr += " I can do it for you, for the fee of #b " + cm.numberWithCommas(spawnPnpcFee) + " mesos.#k";
+            sendStr += "我可以为你做一塑雕像，需要花费#b " + cm.numberWithCommas(spawnPnpcFee) + "金币.#k";
         }
 
         cm.sendYesNo(sendStr);
@@ -61,7 +61,7 @@ function action(mode, type, selection) {
         if (spawnPnpc) {
             if (mode > 0) {
                 if (cm.getMeso() < spawnPnpcFee) {
-                    cm.sendOk("抱歉，您没有足够的冒险币购买在名人堂上的位置。");
+                    cm.sendOk("抱歉，您没有足够的金币币购买在名人堂上的位置。");
                     cm.dispose();
                     return;
                 }

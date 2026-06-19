@@ -20,5 +20,5 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 function act() {
-    rm.weakenAreaBoss(6090001, "The light at the altar appeases the hatred of the Snow Witch. The force of the Witch has weakened.");
+    rm.weakenAreaBoss(6090001, "祭坛上的光平息了雪山魔女的仇恨，魔女的力量减弱了。");
 }

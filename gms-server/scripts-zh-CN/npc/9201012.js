@@ -90,14 +90,14 @@ function action(mode, type, selection) {
             }
 
             if (hasEngagement) {
-                var text = "你好呀。要不要和你的未婚妻一起，让今天变得超甜蜜呢~？";
-                var choice = new Array("我们已经准备好举行婚礼了。");
+                var text = "你好。和你的未婚妻宝贝一起度过一天怎么样~?";
+                var choice = new Array("我们准备结婚了.");
                 for (x = 0; x < choice.length; x++) {
                     text += "\r\n#L" + x + "##b" + choice[x] + "#l";
                 }
                 cm.sendSimple(text);
             } else {
-                cm.sendOk("嗨，朋友们。有没有想过在阿莫利亚举行婚礼？一谈到婚礼，每个人首先想到的就是阿莫利亚，这一点毋庸置疑。我们这里的教堂在枫之世界中以为冒险家提供最好的婚礼服务而闻名！");
+                cm.sendOk("嗨，朋友们。有没有想过在婚礼村举行婚礼？一谈到婚礼，每个人首先想到的就是婚礼村，这一点毋庸置疑。我们这里的教堂在枫之世界中以为冒险家提供最好的婚礼服务而闻名！");
                 cm.dispose();
             }
         } else if (status == 1) {
@@ -109,11 +109,11 @@ function action(mode, type, selection) {
                     var partner = cserv.getPlayerStorage().getCharacterById(cm.getPlayer().getPartnerId());
                     if (!(partner == null || !cm.getMap().equals(partner.getMap()))) {
                         if (!cm.canHold(4000313)) {
-                            cm.sendOk("请确保有一个空余的杂项栏位，以便获取#b#t4000313##k。");
+                            cm.sendOk("请确保有一个空余的其他栏位，以便获取#b#t4000313##k。");
                             cm.dispose();
                             return;
                         } else if (!partner.canHold(4000313)) {
-                            cm.sendOk("请让你的伙伴知道，他们必须有一个空闲的ETC槽位才能获得#b#t4000313##k。");
+                            cm.sendOk("请让你的伙伴知道，他们必须有一个空闲的其他栏位才能获得#b#t4000313##k。");
                             cm.dispose();
                             return;
                         } else if (!isSuitedForWedding(cm.getPlayer(), false)) {

@@ -69,9 +69,9 @@ function action(mode, type, selection) {
                 if (!cm.isQuestCompleted(100400)) {
                     if (!cm.isQuestStarted(100400)) {
                         state = 0;
-                        cm.sendNext("所以你想要制作订婚戒指，是吗？好的，当你从#b#p9201003##k那里得到#rblessings#k后，我可以提供一个。");
+                        cm.sendNext("所以你想要制作订婚戒指，是吗？好的，当你从#b#p9201003##k那里得到#r祝福#k后，我可以提供一个。");
                     } else {
-                        cm.sendOk("在尝试制作订婚戒指之前，先从#b#p9201003#k那里得到祝福。他们一定在你家等着你，就在#r射手村狩猎场#k的那边。");
+                        cm.sendOk("在尝试制作订婚戒指之前，先从#b#p9201003##k那里得到祝福。他们一定在你家等着你，就在#r射手村狩猎场#k的那边。");
                         cm.dispose();
                     }
                 } else {
@@ -125,14 +125,14 @@ function action(mode, type, selection) {
 
                 if (mats instanceof Array) {
                     for (var i = 0; i < mats.length; i++) {
-                        prompt += "\r\n#i" + mats[i] + "# " + matQty[i] + " #t" + mats[i] + "#";
+                        prompt += "\r\n#i" + mats[i] + "# " + matQty[i] + "个#t" + mats[i] + "#";
                     }
                 } else {
-                    prompt += "\r\n#i" + mats + "# " + matQty + " #t" + mats + "#";
+                    prompt += "\r\n#i" + mats + "# " + matQty + "个#t" + mats + "#";
                 }
 
                 if (cost > 0) {
-                    prompt += "\r\n#i4031138# " + cost + " meso";
+                    prompt += "\r\n#i4031138# " + cost + "金币";
                 }
 
                 cm.sendYesNo(prompt);

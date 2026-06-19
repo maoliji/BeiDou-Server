@@ -87,26 +87,36 @@ function action(mode, type, selection) {
                 cm.sendOk("#e#b<组队任务：毒雾森林>#k#n\r\n在这个组队任务中，你的任务是逐步穿越森林，对抗路上的所有坏家伙，解决你遇到的许多谜题，并团结一致，充分发挥团队合作的优势，以克服时间限制和强大的生物。击败最终BOSS后，你的团队有机会获得一个大理石，#b当它被喷泉在出口地图上掉落时#k，将会确保团队获得额外的奖励。祝你好运。");
                 cm.dispose();
             } else {
-                cm.sendSimple("那么，你想要获得什么奖品？\r\n#b#L0##t1032060#\r\n#L1##t1032061#");
+                cm.sendSimple("那么你想要什么奖励?\r\n#b#L0##z1032060##l.\r\n#L1##z1032061##l.\r\n#L2##z1032072##l");
             }
         } else if (status == 2) {
             if (selection == 0) {
-                if (!cm.haveItem(1032060) && cm.haveItem(4001198, 10)) {
+                if (cm.haveItem(4001198, 10)) {
                     cm.gainItem(1032060, 1);
                     cm.gainItem(4001198, -10);
                     cm.dispose();
                 } else {
-                    cm.sendOk("你要么已经有了 #t1032060#，要么没有 10 个 #t4001198#。");
+                    cm.sendOk("你没有10个#z4001198#.");
                     cm.dispose();
                 }
             } else if (selection == 1) {
-                if (cm.haveItem(1032060) && !cm.haveItem(1032061) && cm.haveItem(4001198, 10)) {
+                if (cm.haveItem(1032060) && cm.haveItem(4001198, 10)) {
                     cm.gainItem(1032060, -1);
                     cm.gainItem(1032061, 1);
                     cm.gainItem(4001198, -10);
                     cm.dispose();
                 } else {
-                    cm.sendOk("你要么还没有 #t1032060#，要么没有 10 个 #t4001198#。");
+                    cm.sendOk("你没有#z1032060#或者10个#z4001198#.");
+                    cm.dispose();
+                }
+            } else if (selection == 2) {
+                if (cm.haveItem(1032061) && cm.haveItem(4001198, 10)) {
+                    cm.gainItem(1032061, -1);
+                    cm.gainItem(1032072, 1);    // thanks yuxaij for noticing unexpected itemid here
+                    cm.gainItem(4001198, -10);
+                    cm.dispose();
+                } else {
+                    cm.sendOk("你没有#z1032061#或者10个#z4001198#.");
                     cm.dispose();
                 }
             }

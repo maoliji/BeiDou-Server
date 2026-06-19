@@ -16,22 +16,22 @@ function start() {
  */
 function levelStart() {
     let text = "用以下物品可兑换 #r#t2430033##k #i2430033# 一本\r\n\r\n";
-    text += "#L0#1000万金币#l\r\n";
+    text += "#L0#100万金币#l\r\n";
     text += "#L1#1000点券#l\r\n";
-    text += "#L2#1万枫叶#l\r\n";
+    text += "#L2#100枫叶#l\r\n";
     text += "#L3#兑换码#l\r\n";
     cm.sendSelectLevel(text);
 }
 
 function level0() {
-    if (cm.getMeso() < 10000000) {
+    if (cm.getMeso() < 1000000) {
         cm.sendOk("金币不足");
         cm.dispose();
     } else if (!cm.canHold(BEI_DOU_SATELLITE_MANUAL, 1)) {
         cm.sendOk("背包空间不足");
         cm.dispose();
     } else {
-        cm.gainMeso(-10000000);
+        cm.gainMeso(-1000000);
         successGain(1);
     }
 }
@@ -54,7 +54,7 @@ function level1() {
  */
 function level2() {
     let itemQuantity = cm.getItemQuantity(4001126);
-    if (itemQuantity >= 10000) {
+    if (itemQuantity >= 100) {
         cm.getInputNumberLevel("21", "请输入兑换数量", 1, 1, 999);
     } else {
         cm.sendOk("枫叶不足");
@@ -69,7 +69,7 @@ function level2() {
  */
 function level21(inputNum) {
     let itemQuantity = cm.getItemQuantity(MAPLE_LEAF);
-    let cost = inputNum * 10000;
+    let cost = inputNum * 100;
     if (itemQuantity < cost) {
         cm.sendOk("枫叶不足");
         cm.dispose();

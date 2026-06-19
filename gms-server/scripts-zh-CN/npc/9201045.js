@@ -101,9 +101,9 @@ function action(mode, type, selection) {
 
                     if (state == -1) {           // preamble
                         if (stage == 4) {
-                            cm.sendOk("嗨。欢迎来到阿莫利亚挑战的#b舞台#k。在这个阶段，从这里周围的怪物身上收集#b50个#t4031597##k。");
+                            cm.sendOk("嗨。欢迎来到婚礼村挑战的第#b" + stage + "#k关。在这个阶段，从这里周围的怪物身上收集#b50个#t4031597##k。");
                         } else if (stage == 5) {
-                            cm.sendOk("嗨。欢迎来到阿莫利亚挑战的#b舞台#k。要到达这里可是一场不小的奔跑，是吧？好吧，无论如何，这个阶段的任务就是生存！首先，确保有人活着聚集在这里，然后再挑战boss。");
+                            cm.sendOk("嗨。欢迎来到婚礼村挑战的第#b" + stage + "#k关。要到达这里可是一场不小的奔跑，是吧？好吧，无论如何，这个阶段的任务就是生存！首先，确保有人活着聚集在这里，然后再挑战boss。");
                         }
 
                         var st = (debug) ? 2 : 0;
@@ -116,7 +116,7 @@ function action(mode, type, selection) {
                                 var tl = eim.getTimeLeft();
                                 if (tl >= 5 * 60 * 1000) {
                                     eim.setProperty("timeLeft", tl.toString());
-                                    eim.restartEventTimer(4 * 60 * 1000);
+                                    eim.restartEventTimer(10 * 60 * 1000);
                                 }
 
                                 cm.sendNext("干得好！现在让我为你打开大门。");
@@ -182,7 +182,7 @@ function action(mode, type, selection) {
                     if (cm.isEventLeader()) {
                         if (cm.haveItem(4031594, 1)) {
                             cm.gainItem(4031594, -1);
-                            cm.sendNext("恭喜！你的队伍打败了鬼魂巴尔洛格，因此#b完成了阿莫利亚挑战#k！再次与我交谈以开始奖励阶段。");
+                            cm.sendNext("恭喜！你的队伍打败了鬼魂巴尔洛格，因此#b完成了婚礼村挑战#k！再次与我交谈以开始奖励阶段。");
 
                             clearStage(stage, eim, curMap);
                             eim.clearPQ();

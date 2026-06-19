@@ -23,7 +23,8 @@
  *@author Jvlaple <eat268@hotmail.com>
  */
 
-var status = 0;
+var cost = 1000000;
+var status;
 
 function start() {
     status = -1;
@@ -47,18 +48,29 @@ function action(mode, type, selection) {
             const GameConfig = Java.type('org.gms.config.GameConfig');
             if (cm.haveItem(4001086)) {
                 cm.sendYesNo("你现在想要进入 #b#m240050400##k 吗？");
+
             } else if (GameConfig.getServerBoolean("use_enable_solo_expeditions")) {
                 if (canBypassHTPQ()) {
                     cm.sendYesNo("你现在想要进入 #b#m240050400##k 吗？");
+
+                } else if (cm.getMeso() >= cost) {
+                cm.sendYesNo("你没有#v4001086#，或者没有集齐#v4001083# #v4001084# #v4001085#来证明自己实力和勇气。你现在只能付出#b100W金币#k才能进入 #b#m240050400##k...要进入吗？");	
                 } else {
-                    cm.sendOk("那些没有#r#t4001086##k的人必须在挑战#b暴风龙#k之前证明他们的勇气。拿着证明你们有资格完成任务的#r3张证书#k来这里。");    // NPC picture is so long it goes through some section of text, || to fill up that space
-                    cm.dispose();
-                }
+                cm.sendOk("在你们挑战#b暗黑龙王#k之前，如果没有#v4001086#，至少要集齐#v4001083# #v4001084# #v4001085#来证明自己实力和勇气。\r\n可如果都没有，那就付出金钱来证明自己有资格吧。");    // NPC picture is so long it goes through some section of text, || to fill up that space
+		cm.dispose();
+		}
             } else {
-                cm.sendOk("那些没有#r#t4001086##k的人必须在挑战#b暴风龙#k之前证明他们的勇气。");
+                cm.sendOk("那些没有#r#t4001086##k的人必须在挑战#b暗黑龙王#k之前证明他们的勇气。");
                 cm.dispose();
             }
+        } else if (cm.haveItem(4001086)) {
+            cm.warp(240050400);
+            cm.dispose();
+        } else if (cm.haveItem(4001083) && cm.haveItem(4001084) && cm.haveItem(4001085) ) {
+            cm.warp(240050400);
+            cm.dispose();
         } else {
+            cm.gainMeso(-cost);	
             cm.warp(240050400);
             cm.dispose();
         }

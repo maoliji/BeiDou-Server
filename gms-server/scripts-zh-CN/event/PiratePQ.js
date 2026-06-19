@@ -42,8 +42,8 @@ const maxLobbies = 1;
 
 const GameConfig = Java.type('org.gms.config.GameConfig');
 minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
-if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最高200级。
+    minLevel = 55 , maxLevel = 200;
 }
 
 
@@ -219,8 +219,6 @@ function respawnStages(eim) {
     }
 
     eim.getMapInstance(925100400).instanceMapRespawn();
-    eim.getMapInstance(925100202).instanceMapForceRespawn();
-    eim.getMapInstance(925100302).instanceMapForceRespawn();
     eim.schedule("respawnStages", 10 * 1000);
 }
 
@@ -368,12 +366,6 @@ function passedGrindMode(map, eim) {
 
 function monsterKilled(mob, eim) {
     var map = mob.getMap();
-    var mapId = map.getId();
-
-    // 仆人地图是过道房间，怪物自生自灭，不处理clear特效
-    if (mapId == 925100202 || mapId == 925100302) {
-        return;
-    }
 
     if (isLordPirate(mob)) {  // lord pirate defeated, spawn the little fella!
         map.broadcastStringMessage(5, "随着海盗领主死亡，无恙被释放了！");
@@ -381,13 +373,13 @@ function monsterKilled(mob, eim) {
     }
 
     if (map.countMonsters() == 0) {
-        var stage = ((mapId % 1000) / 100) + 1;
+        var stage = ((map.getId() % 1000) / 100) + 1;
 
         if ((stage == 1 || stage == 3 || stage == 4) && passedGrindMode(map, eim)) {
-            eim.showClearEffect(mapId);
+            eim.showClearEffect(map.getId());
         } else if (stage == 5) {
             if (map.getReactorByName("sMob1").getState() >= 1 && map.getReactorByName("sMob2").getState() >= 1 && map.getReactorByName("sMob3").getState() >= 1 && map.getReactorByName("sMob4").getState() >= 1) {
-                eim.showClearEffect(mapId);
+                eim.showClearEffect(map.getId());
             }
         }
     }

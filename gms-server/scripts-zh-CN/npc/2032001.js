@@ -30,7 +30,7 @@ var status = 0;
 
 function start() {
     if (cm.isQuestCompleted(3034)) {
-        cm.sendYesNo("你对我帮助很大……如果你有任何黑暗水晶矿石，我可以为你精炼，每个只需#b500000金币#k。");
+        cm.sendYesNo("你对我帮助很大……如果你有#i4004004#, 我可以帮你制作#i4005004#，每个只需#b500000金币#k。");
     } else {
         cm.sendOk("走开，我在冥想。");
         cm.dispose();
@@ -44,7 +44,7 @@ function action(mode, type, selection) {
     }
     status++;
     if (status == 1) {
-        cm.sendGetNumber("Okay, so how many do you want me to make?", 1, 1, 100);
+        cm.sendGetNumber("那么你想做多少个#i4005004#?", 1, 1, 100);
     } else if (status == 2) {
         var complete = true;
 

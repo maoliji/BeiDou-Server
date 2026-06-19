@@ -37,7 +37,7 @@ var amount;
 var totalcost;
 var item = [2050003, 2050004, 4006000, 4006001];
 var cost = [300, 400, 5000, 5000];
-var msg = ["that cures the state of being sealed and cursed", "that cures all", ", possessing magical power, that is used for high-quality skills", ", possessing the power of summoning that is used for high-quality skills"];
+var msg = ["治愈被封印和诅咒的状态","解除全部异常状态","高级魔法","高级技能所需"];
 var status;
 
 function start() {
@@ -70,7 +70,7 @@ function action(mode, type, selection) {
         cm.sendSimple("多亏了你，#b#t4031056##k 已经安全封印了。当然，作为结果，我用掉了我在过去大约800年中积累的一半能量...但现在我可以安心地死去了。哦，顺便问一下... 你是不是在寻找稀有物品？作为对你辛勤工作的感激，我会向你出售一些我拥有的物品，而且只有你可以购买。挑选出你想要的吧！" + selStr);
     } else if (status == 1) {
         selected = selection;
-        cm.sendGetNumber("Is #b#t" + item[selected] + "##k really the item that you need? It's the item " + msg[selected] + ". It may not be the easiest item to acquire, but I'll give you a good deal on it. It'll cost you #b" + cost[selected] + " mesos#k per item. How many would you like to purchase?", 0, 1, 100);
+        cm.sendGetNumber("#b#t" + item[selected] + "##k就是你需要的东西吗?这是"+msg[selected]+". 这可能不是最容易得到的东西，但我会给你.每个将会花费你 #b"+cost[selected]+"金币#k.你想要多少?", 0, 1, 100);
     } else if (status == 2) {
         amount = selection;
         totalcost = cost[selected] * amount;
@@ -78,7 +78,7 @@ function action(mode, type, selection) {
             cm.sendOk("如果你不打算买任何东西，那我也没有东西可以卖给你。");
             cm.dispose();
         }
-        cm.sendYesNo("你确定要购买 #r" + amount + " #t" + item[selected] + "(s)##k 吗？每个 #t" + item[selected] + "# 的价格是 " + cost[selected] + " 冒险币，总共需要支付 #r" + totalcost + " 冒险币#k。");
+        cm.sendYesNo("想买#r"+amount+"个#t"+item[selected]+"##k? 费用是"+cost[selected]+"金币#t"+item[selected]+"#/个,总共是#r"+totalcost+"金币#k。");
     } else if (status == 3) {
         if (cm.getMeso() < totalcost || !cm.canHold(item[selected])) {
             cm.sendNext("你确定你有足够的金币吗？请检查一下你的杂项或使用的物品栏是否已满，或者你至少有 #r" + totalcost + "#k 金币。");

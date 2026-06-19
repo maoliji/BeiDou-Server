@@ -4,8 +4,8 @@
     <int name="boss" value="1"/>
     <int name="bodyAttack" value="1"/>
     <int name="level" value="128"/>
-    <int name="maxHP" value="15375000"/>
-    <int name="maxMP" value="120000"/>
+    <int name="maxHP" value="37500"/>
+    <int name="maxMP" value="1200"/>
     <int name="speed" value="-50"/>
     <int name="PADamage" value="170"/>
     <int name="PDDamage" value="180"/>
@@ -28,7 +28,7 @@
       </imgdir>
     </imgdir>
     <imgdir name="ban">
-      <string name="banMsg" value="The scolding Master Dummy has kicked you out of the Training Center."/>
+      <string name="banMsg" value="仙人玩偶把你赶出了训练中心。"/>
       <imgdir name="banMap">
         <imgdir name="0">
           <int name="field" value="250000000"/>

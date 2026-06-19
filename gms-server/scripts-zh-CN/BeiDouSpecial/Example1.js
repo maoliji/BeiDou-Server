@@ -22,22 +22,22 @@ function action(mode, type, selection) {
 
     if (status === 0) {
         let text = "用以下物品可兑换 #r#t2430033##k #i2430033# 一本\r\n\r\n";
-        text += "#L0#1000万金币#l\r\n";
+        text += "#L0#100万金币#l\r\n";
         text += "#L1#1000点券#l\r\n";
-        text += "#L2#1万枫叶#l\r\n";
+        text += "#L2#100枫叶#l\r\n";
         text += "#L3#兑换码#l\r\n";
         cm.sendSimple(text);
     } else if (status === 1) {
         firstSelection = selection;
         if (selection === 0) {
-            if (cm.getMeso() < 10000000) {
+            if (cm.getMeso() < 1000000) {
                 cm.sendOk("金币不足");
                 cm.dispose();
             } else if (!cm.canHold(BEI_DOU_SATELLITE_MANUAL, 1)) {
                 cm.sendOk("背包空间不足");
                 cm.dispose();
             } else {
-                cm.gainMeso(-10000000);
+                cm.gainMeso(-1000000);
                 successGain(1);
             }
         } else if (selection === 1) {
@@ -53,7 +53,7 @@ function action(mode, type, selection) {
             }
         } else if (selection === 2) {
             let itemQuantity = cm.getItemQuantity(MAPLE_LEAF);
-            if (itemQuantity >= 10000) {
+            if (itemQuantity >= 100) {
                 cm.sendGetNumber("请输入兑换数量", 1, 1, 999);
             } else {
                 cm.sendOk("枫叶不足");
@@ -67,7 +67,7 @@ function action(mode, type, selection) {
     } else if (status === 2) {
         if (firstSelection === 2) {
             let itemQuantity = cm.getItemQuantity(MAPLE_LEAF);
-            let cost = selection * 10000;
+            let cost = selection * 100;
             if (itemQuantity < cost) {
                 cm.sendOk("枫叶不足");
                 cm.dispose();

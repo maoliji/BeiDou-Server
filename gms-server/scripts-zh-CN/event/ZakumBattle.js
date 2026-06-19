@@ -24,8 +24,8 @@
  */
 
 var isPq = true;
-var minPlayers = 6, maxPlayers = 30;
-var minLevel = 50, maxLevel = 255;
+var minPlayers = 2, maxPlayers = 30;
+var minLevel = 50, maxLevel = 200;
 var entryMap = 280030000;
 var exitMap = 211042400;
 var recruitMap = 211042400;
@@ -40,8 +40,8 @@ const maxLobbies = 1;
 
 const GameConfig = Java.type('org.gms.config.GameConfig');
 minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
-if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低50级，最高200级。
+    minLevel = 50 , maxLevel = 200;
 }
 
 
@@ -131,16 +131,9 @@ function playerEntry(eim, player) {
 
     // 将玩家传送到入口地图的第一个传送点
     player.changeMap(map, map.getPortal(0));
-
-    //开启伤害记录
-    if(GameConfig.getServerBoolean("damage_ranking")) {
-        eim.startDamageRecording();
-        player.dropMessage(6, "当前副本已开启伤害统计。");
-    }
 }
 
 function scheduledTimeout(eim) {
-    eim.broadcastDamageRanking();   // 时间结束时通报
     end(eim);
 }
 
@@ -230,7 +223,6 @@ function monsterKilled(mob, eim) {
     if (isZakum(mob)) {
         eim.setIntProperty("defeatedBoss", 1);
         eim.showClearEffect(mob.getMap().getId());
-        eim.broadcastDamageRanking();
         eim.clearPQ();
 
         mob.getMap().broadcastZakumVictory();

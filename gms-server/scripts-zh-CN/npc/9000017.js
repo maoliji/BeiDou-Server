@@ -45,7 +45,7 @@ function action(mode, type, selection) {
     if (mode == 1) {
         status++;
     } else {
-        cm.sendOk("好吧...如果你想合成卷轴，再来找我们。");
+        cm.sendOk("哦，好吧... 你想做生意的时候再来找我们吧。");
         cm.dispose();
         return;
     }
@@ -58,10 +58,10 @@ function action(mode, type, selection) {
             return;
         }
 
-        var selStr = "嘿，旅行者！靠近点...我们这里有一桩#b不错的生意#k。想知道是什么，就继续听我说。";
+        var selStr = "嘿，旅行者！过来，靠近一点...我们为您提供#b一个大商机#k。如果你想知道它是什么，请继续听...";
         cm.sendNext(selStr);
     } else if (status == 1) {
-        var selStr = "我们掌握了合成#b#t2049100##k的方法！当然，制作它并不轻松。不过别担心，只要准备材料并支付#b1,200,000金币#k的手续费，我就能帮你合成。还要继续吗？";
+        var selStr = "我们已经掌握了合成强大的#b#t2049100##k的知识！当然，制作一个并非易事。..但别担心！只需为我收集一些材料，并支付#b200000金币#k，用于我们的服务来获得它。你还想这样做吗？";
         cm.sendYesNo(selStr);
     } else if (status == 2) {
         //selectedItem = selection;
@@ -76,20 +76,20 @@ function action(mode, type, selection) {
         matQty = matQtySet[selectedItem];
         cost = costSet[selectedItem];
 
-        var prompt = "你想让我们制作多少个#t" + item + "#？";
+        var prompt = "所以，你想让我们做一些#t" + item + "#?那样的话，你想让我们做多少？";
         cm.sendGetNumber(prompt, 1, 1, 100)
     } else if (status == 3) {
         qty = (selection > 0) ? selection : (selection < 0 ? -selection : 1);
         last_use = false;
 
-        var prompt = "你要制作";
+        var prompt = "你想我们制造";
         if (qty == 1) {
-            prompt += "1个#t" + item + "#吗？";
+            prompt += "一张#t" + item + "#？";
         } else {
-            prompt += qty + "个#t" + item + "#吗？";
+            prompt += qty + "张#t" + item + "#？";
         }
 
-        prompt += "那么我们需要以下材料才能开始合成。请先确认你的消耗栏有足够空间！#b";
+        prompt += "我们需要您提供特定的物品才能完成。另外，请确保您的背包中有足够的空间。#b";
 
         if (mats instanceof Array) {
             for (var i = 0; i < mats.length; i++) {
@@ -100,16 +100,16 @@ function action(mode, type, selection) {
         }
 
         if (cost > 0) {
-            prompt += "\r\n#i4031138# " + cost * qty + " 金币";
+            prompt += "\r\n#i4031138# " + cost * qty + "金币";
         }
         cm.sendYesNo(prompt);
     } else if (status == 4) {
         var complete = true;
 
         if (cm.getMeso() < cost * qty) {
-            cm.sendOk("金币不够。我们做的是生意，不是免费帮忙。准备好费用后再来吧。");
+            cm.sendOk("快点！我们不是来帮你的忙的！我们都需要钱来过好生活，所以拿钱来让我们做成交并开始合成。");
         } else if (!cm.canHold(item, qty)) {
-            cm.sendOk("开始交易前，请先确认你的消耗栏有足够空位。");
+            cm.sendOk("在我们交易之前，你没有检查一下你的背包里是否有空位吗？");
         } else {
             if (mats instanceof Array) {
                 for (var i = 0; complete && i < mats.length; i++) {
@@ -124,7 +124,7 @@ function action(mode, type, selection) {
             }
 
             if (!complete) {
-                cm.sendOk("材料还不齐。没有所有材料，我们无法开始合成。把材料准备好后再来找我们。");
+                cm.sendOk("你在开玩笑吧？没有所有的材料在手，我们将无法启动这个过程。去把它们都拿来，然后再来找我们谈！");
             } else {
                 if (mats instanceof Array) {
                     for (var i = 0; i < mats.length; i++) {
@@ -135,7 +135,7 @@ function action(mode, type, selection) {
                 }
                 cm.gainMeso(-cost * qty);
                 cm.gainItem(item, qty);
-                cm.sendOk("完成了！当然会成功，我们的手艺可是很可靠的。很高兴和你做这笔生意。");
+                cm.sendOk("哇... 真不敢相信它起作用了！想想一会儿它竟然能够... 咳咳。当然它起作用了，我们所有的工作都非常高效！很高兴和你做生意。");
             }
         }
         cm.dispose();

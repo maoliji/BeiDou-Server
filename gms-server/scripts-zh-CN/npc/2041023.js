@@ -52,14 +52,14 @@ function action(mode, type, selection) {
 
         if (status == 0) {
             if (!(cm.isQuestCompleted(6316) && (cm.isQuestStarted(6225) || cm.isQuestStarted(6315)))) {
-                cm.sendOk("你似乎没有理由去遇见基于元素的萨那托斯。");
+                cm.sendOk("你似乎没有理由找元素黑甲凶灵啊。");
                 cm.dispose();
                 return;
             }
 
             em = cm.getEventManager("ElementalBattle");
             if (em == null) {
-                cm.sendOk("元素战斗遇到了一个错误。");
+                cm.sendOk("脚本遇到了一个错误。");
                 cm.dispose();
                 return;
             } else if (cm.isUsingOldPqNpcStyle()) {
@@ -67,14 +67,14 @@ function action(mode, type, selection) {
                 return;
             }
 
-            cm.sendSimple("#e#b<组队任务：元素塔纳托斯>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n你正在寻找元素塔纳托斯，对吗？如果你和另一个法师组队，而且他的元素属性与你相反，你们就能够克服它们。作为队长，当你准备好出发时，和我交谈。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想了解更多细节。");
+            cm.sendSimple("#e#b<组队任务：元素黑甲凶灵>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n你正在寻找元素黑甲凶灵，对吗？如果你和另一个法师组队，而且他的元素属性与你相反，你们就能够克服它们。作为队长，当你准备好出发时，和我交谈。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想了解更多细节。");
         } else if (status == 1) {
             if (selection == 0) {
                 if (cm.getParty() == null) {
-                    cm.sendOk("只有当你加入一个队伍时，你才能参加派对任务。");
+                    cm.sendOk("只有当你加入一个队伍时，你才能参加组队任务。");
                     cm.dispose();
                 } else if (!cm.isLeader()) {
-                    cm.sendOk("你的队长必须与我交谈才能开始这个组队任务。");
+                    cm.sendOk("必须由你的队长与我交谈才能开始这个组队任务。");
                     cm.dispose();
                 } else {
                     var eli = em.getEligibleParty(cm.getParty());
@@ -93,7 +93,7 @@ function action(mode, type, selection) {
                 cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
                 cm.dispose();
             } else {
-                cm.sendOk("#e#b<组队任务：元素死神>#k#n\r\n在进入舞台之前，与另一位具有#rdifferent elemental affinity#k的法师组队。这个团队合作对于克服内部的元素非常关键。");
+                cm.sendOk("#e#b<组队任务：元素黑甲凶灵>#k#n\r\n在进入关卡之前，与另一位具有#r不同元素属性#k的法师组队。这个团队合作对于克服内部的元素非常关键。");
                 cm.dispose();
             }
         }

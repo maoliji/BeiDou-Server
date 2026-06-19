@@ -22,7 +22,7 @@ function action(mode, type, selection) {
         if (status == 0) {
             const InventoryType = Java.type('org.gms.client.inventory.InventoryType');
             if (cm.getPlayer().getInventory(InventoryType.ETC).getNumFreeSlot() < 1) {
-                cm.sendNext("检查你的杂项物品栏是否有可用的空位。");
+                cm.sendNext("检查你的背包其他栏是否有可用的空位。");
                 cm.dispose();
                 return;
             }

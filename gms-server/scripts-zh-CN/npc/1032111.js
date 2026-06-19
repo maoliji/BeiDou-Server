@@ -29,7 +29,7 @@ function action(mode, type, selection) {
                     cm.gainItem(4032142, 1);
                     cm.sendOk("你装瓶了一些清澈的树液。#i4032142#");
                 } else {
-                    cm.sendOk("确保你的ETC背包有空位。");
+                    cm.sendOk("确保你的背包其他栏有空位。");
                 }
             } else {
                 cm.sendOk("这个小树桩上不断流出的树液。");

@@ -29,10 +29,10 @@
 
 function start() {
     if (cm.isQuestCompleted(6002)) {
-        cm.sendOk("谢谢你救了那只猪。");
+        cm.sendOk("谢谢你救了小浣猪。");
     } else if (cm.isQuestStarted(6002)) {
         if (cm.haveItem(4031507, 5) && cm.haveItem(4031508, 5)) {
-            cm.sendOk("谢谢你救了那只猪。");
+            cm.sendOk("谢谢你救了小浣猪。");
         } else {
             var em = cm.getEventManager("3rdJob_mount");
             if (em == null) {
@@ -47,7 +47,7 @@ function start() {
             }
         }
     } else {
-        cm.sendOk("只有少数来自特定公众的冒险者有资格保护守望者猪。");
+        cm.sendOk("只有少数特定的冒险者有资格保护小浣猪。");
     }
 
     cm.dispose();

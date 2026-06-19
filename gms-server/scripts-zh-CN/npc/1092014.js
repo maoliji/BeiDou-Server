@@ -27,11 +27,11 @@ function action(mode, type, selection) {
         if (status == 1) {
             var selStr = "";
             if (cm.getJobId() == 0) {
-                selStr += "We have a special 90% discount for beginners.";
+                selStr += "我们对新手有优惠。";
             }
-            selStr += "Choose your destination, for fees will change from place to place.#b";
+            selStr += "选择你的目的地，因为费用会因地而异。#b";
             for (var i = 0; i < maps.length; i++) {
-                selStr += "\r\n#L" + i + "##m" + maps[i] + "# (" + (cm.getJobId() == 0 ? cost[i] / 10 : cost[i]) + " mesos)#l";
+                selStr += "\r\n#L" + i + "##m" + maps[i] + "# (" + (cm.getJobId() == 0 ? cost[i] / 10 : cost[i]) + "金币)#l";
             }
             cm.sendSimple(selStr);
         } else if (status == 2) {

@@ -36,11 +36,11 @@ var check = 0;
 
 function start() {
     if (cm.getLevel() < 25) {
-        cm.sendOk("你必须达到更高的等级才能进入耐心森林。");
+        cm.sendOk("你必须达到25级才能进入忍苦森林。");
         cm.dispose();
         check = 1;
     } else {
-        cm.sendYesNo("嗨，我是谢恩。我可以让你进入耐心森林，只需要支付一小笔费用。你想用 #b5000#k 金币进入吗？");
+        cm.sendYesNo("嗨，我是谢恩。我可以让你进入忍苦森林，只需要支付一小笔费用。你想用 #b5000#k 金币进入吗？");
     }
 }
 

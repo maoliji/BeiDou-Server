@@ -63,7 +63,7 @@ function action(mode, type, selection) {
 
         if (status == 0) {
             if (cm.isEventLeader()) {
-                cm.sendNext("“在我以为会是永恒的沉睡之后，我终于找到了一个能够拯救夏雷尼安的人。这位老人现在将为你铺平道路，让你完成这项任务。”");
+                cm.sendNext("“在我以为会是永恒的沉睡之后，我终于找到了一个能够拯救圣端尼亚的人。这位老人现在将为你铺平道路，让你完成这项任务。”");
 
                 clearStage(4, eim);
                 cm.getGuild().gainGP(30);
@@ -71,7 +71,7 @@ function action(mode, type, selection) {
 
                 cm.dispose();
             } else {
-                cm.sendOk("我需要你们队伍的领袖和我交谈，其他人不要。");
+                cm.sendOk("我需要你们队伍的领袖和我交谈，而不是其他人。");
                 cm.dispose();
             }
         }

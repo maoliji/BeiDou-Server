@@ -4,7 +4,7 @@
     <int name="boss" value="1"/>
     <int name="bodyAttack" value="1"/>
     <int name="level" value="75"/>
-    <int name="maxHP" value="150000"/>
+    <int name="maxHP" value="50000"/>
     <int name="maxMP" value="500"/>
     <int name="speed" value="-30"/>
     <int name="PADamage" value="300"/>
@@ -28,7 +28,7 @@
       </imgdir>
     </imgdir>
     <imgdir name="ban">
-      <string name="banMsg" value="You have been kicked out of the Alcadno Lab by the Automated Security System."/>
+      <string name="banMsg" value="您已被自动化安全系统赶出卡帕莱特实验室。"/>
       <imgdir name="banMap">
         <imgdir name="0">
           <int name="field" value="261000000"/>

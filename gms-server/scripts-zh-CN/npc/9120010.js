@@ -63,7 +63,7 @@ function action(mode, type, selection) {
             status++;
         }
         if (status == 0) {
-            cm.sendYesNo("如果你正在寻找一个能够准确描述各种物品特征的人，那么你现在就找到了。我目前正在寻找一样东西。你想听听我的故事吗？");
+            cm.sendYesNo("如果你正在寻找一个能够准确描述各种物品特征的人，那么你现在就找到了。我目前正在收集一些东西。你想听听我的故事吗？");
         } else if (status == 1) {
             var eQuestChoice = makeChoices(eQuestChoices);
             cm.sendSimple(eQuestChoice);
@@ -88,7 +88,7 @@ function action(mode, type, selection) {
 }
 
 function makeChoices(a) {
-    var result = "The items I'm looking for are 1,2,3 ... phew, too many to\r\nmention. Anyhow, if you gather up 100 of the same items,\r\nthen i may trade it with something similiar. What? You may\r\nnot know this, but i keep my end of the promise, so you\r\nneed not worry. Now, shall we trade?\r\n";
+    var result = "看看\r\n这些东西你收集100个,\r\n我和你做笔交易怎么样?你可能不知道,但是我决不食言.\r\n";
     for (var x = 0; x < a.length; x++) {
         result += " #L" + x + "##v" + a[x] + "##t" + a[x] + "##l\r\n";
     }

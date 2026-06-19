@@ -74,7 +74,7 @@ function action(mode, type, selection) {
             cm.sendNextPrev("还不错，如果我这么说的话！我知道我学习的那些书会派上用场……");
             cm.dispose();
         } else {
-            cm.sendNext("嗯...你确定你有我们指定的免费优惠券吗？抱歉，没有优惠券就不能理发。");
+            cm.sendNext("嗯...你确定你有我们指定的免费会员卡吗？抱歉，没有会员卡就不能理发。");
             cm.dispose();
         }
     }

@@ -65,10 +65,10 @@ function action(mode, type, selection) {
                 cm.dispose();
             } else {
                 if (cm.getQuestProgressInt(100400, 1) == 0) {
-                    cm.sendNext("妈妈，爸爸，我有一个请求要向你们两个提出……我想更多地了解你们一直走过的道路，那条爱和关心我所珍爱的人的道路。");
+                    cm.sendNext("爸爸妈妈，我有一个请求要向你们两个提出……我想更多地了解你们一直走过的道路，那条爱和关心我所珍爱的人的道路。");
                 } else {
                     if (!hasProofOfLoves(cm.getPlayer())) {
-                        cm.sendOk("亲爱的，我们需要确保你真的准备好爱上你选择的伴侣，请带来 #b4 #t4031367#'s#k。");
+                        cm.sendOk("亲爱的，我们需要确保你真的准备好爱上你选择的伴侣，请带来 #b4个#t4031367##k。");
                         cm.dispose();
                     } else {
                         cm.sendNext("#b#h0##k，你今天让我们感到骄傲。你现在可以选择任何人作为你的未婚夫，接受我们的祝福。你现在可以咨询#p9201000#，婚礼珠宝商。祝你前程坦途，充满爱和关怀~~");
@@ -80,7 +80,7 @@ function action(mode, type, selection) {
             if (state == 0) {
                 cm.sendNextPrev("亲爱的！你真体贴，向我们求助。我们一定会帮助你的！");
             } else {
-                cm.sendOk("妈妈...爸爸...非常感谢你们的温柔支持！！！");
+                cm.sendOk("爸爸妈妈...非常感谢你们的温柔支持！！！");
 
                 cm.completeQuest(100400);
                 cm.gainExp(20000 * cm.getPlayer().getExpRate());
@@ -91,7 +91,7 @@ function action(mode, type, selection) {
                 cm.dispose();
             }
         } else if (status == 2) {
-            cm.sendNextPrev("当然，你一定已经在冒险岛世界中见过爱之仙子#rNanas#k了。从她们那里收集#b4个#t4031367#，然后带到这里来。这次旅程将解答你对爱情的一些疑问……");
+            cm.sendNextPrev("当然，你一定已经在冒险岛世界各地见过爱情精灵#r娜娜#k了。从她们那里收集#b4个#t4031367#，然后带到这里来。这次旅程将解答你对爱情的一些疑问……");
         } else if (status == 3) {
             cm.setQuestProgress(100400, 1, 1);
             cm.dispose();

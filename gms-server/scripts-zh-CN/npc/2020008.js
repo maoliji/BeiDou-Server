@@ -28,14 +28,14 @@ actionx = {"Mental": false, "Physical": false};
 function start() {
     if (cm.isQuestStarted(6192)) {
         if (cm.getParty() == null) {
-            cm.sendOk("组队开始这个副本。");
+            cm.sendOk("组队参加这个副本。");
             cm.dispose();
             return;
         }
 
         var em = cm.getEventManager("ElnathPQ");
         if (em == null) {
-            cm.sendOk("埃尔奈斯组队副本遇到了一个错误。");
+            cm.sendOk("组队副本遇到了一个错误。");
             cm.dispose();
             return;
         }
@@ -80,7 +80,7 @@ function action(mode, type, selection) {
         status -= 2;
     } else if (mode != 1 || (status > 2 && !actionx["Mental"]) || status > 3) {
         if (mode == 0 && type == 1) {
-            cm.sendNext("下定决心。");
+            cm.sendNext("做决定吧。");
         }
         cm.dispose();
         return;
@@ -93,7 +93,7 @@ function action(mode, type, selection) {
         } else if (status == 2) {
             if (cm.getPlayer().getRemainingSp() > 0) {
                 if (cm.getPlayer().getRemainingSp() > (cm.getLevel() - 70) * 3) {
-                    cm.sendNext("请在继续之前使用你所有的SP。");
+                    cm.sendNext("请在继续之前使用你所有的SP技能点。");
                     cm.dispose();
                     return;
                 }
@@ -105,14 +105,14 @@ function action(mode, type, selection) {
             }
 
             if (Math.floor(cm.getJobId() / 10) == 11) {
-                cm.sendNext("你刚刚成为了#b十字军#k。一些新的攻击技能，比如#b怒吼#k和#b连击#k都非常强大，而#b破甲#k将会削弱怪物的防御能力。最好集中精力学习你在战士时期掌握的武器技能。");
+                cm.sendNext("恭喜你，你现在是#b勇士#k了. 一些新的攻击技能，如#b虎咆哮#k和#b狂乱剑#k是具有毁灭性的,使用#b防御崩坏#k会削弱怪物的防御能力。最好集中精力用你在战斗中掌握的武器来获得技能。");
             } else if (Math.floor(cm.getJobId() / 10) == 12) {
-                cm.sendNext("你刚刚成为了#b白骑士#k。你将会接触到一本新的技能书，其中包含各种新的攻击技能以及基于元素的攻击。建议白骑士继续使用与骑士团成员相配的武器类型，无论是剑还是钝器。有一个名为#b冲锋#k的技能，可以给武器增加冰、火和闪电元素，使白骑士成为唯一能够进行基于元素的攻击的战士。用元素弱化怪物，然后用#b冲锋打击#k造成巨大伤害。这将使你在这里成为一股毁灭性的力量。");
+                cm.sendNext("恭喜你，你现在是#b骑士#k了. 你将获得新的技能栏，包括各种新的攻击技能以及基于元素的攻击。建议在这一栏中补充的武器类型，无论是剑还是钝器，都应该继续当骑士。有一种技能叫做#b元素合击#k,它为武器添加了冰、火和闪电元素，使骑士成为唯一一个可以执行基于元素的攻击的战士。给你的武器充能一个削弱怪物的元素，然后使用#b冰雷合击#k.这肯定会让你成为这里毁灭性的力量。");
             } else {
-                cm.sendNext("你从现在开始是#b龙骑士#k。你将学习一系列新的长矛和长柄武器的攻击技能，而作为长矛战士选择的武器也应该继续作为龙骑士的武器。像#b碎甲#k（对一个怪物造成最大伤害）和#b龙之怒#k（对多个怪物造成伤害）这样的技能被推荐作为主要的攻击技能，而一个名为#b龙之咆哮#k的技能将以毁灭性的力量对屏幕上的一切造成伤害。不足之处在于这个技能会消耗掉超过一半的可用生命值。");
+                cm.sendNext("恭喜你，你现在是龙骑士#k了.你将学习新的矛和枪系列武器的攻击技能，无论选择什么武器，龙骑士都是强大的存在。龙骑士的技能，如#b龙之献祭#k(对一个怪物的最大伤害)和#b龙咆哮#k(对多个怪物的伤害)被推荐为主要的攻击技能，#b龙咆哮#k是全屏幕强力攻击。缺点是技能会消耗一半以上的可用生命。");
             }
         } else if (status == 3) {
-            cm.sendNextPrev("我也给了你一些SP和AP，这将帮助你开始。你现在确实已经成为一个强大的战士。但请记住，现实世界将等待着你，那里会有更艰难的障碍需要克服。当你觉得无法自我训练来达到更高的境界时，那时候，只有那时候，来找我。我会在这里等着。");
+            cm.sendNextPrev("我也给了你一些技能点和能力值，这将帮助你开始。你现在确实已经成为一个强大的战士。但请记住，现实世界将等待着你，那里会有更艰难的障碍需要克服。当你觉得无法自我训练来达到更高的境界时，那时候，只有那时候，来找我。我会在这里等着。");
         }
     } else if (actionx["Physical"]) {
         if (status == 0) {
@@ -122,7 +122,7 @@ function action(mode, type, selection) {
                 cm.gainItem(4031057, -1);
                 cm.getPlayer().setPartyQuestItemObtained("JBQ");
             }
-            cm.sendNextPrev("这是测试的第二部分。这个测试将决定你是否足够聪明，可以迈向伟大的下一步。在Ossyria的雪地上有一个被雪覆盖的黑暗区域，被称为圣地，甚至怪物也无法到达。在这个区域的中心，有一块被称为圣石的巨大石头。你需要献上一件特殊的物品作为祭品，然后圣石将在当场测试你的智慧。");
+            cm.sendNextPrev("这是测试的第二部分。这个测试将决定你是否足够聪明，可以迈向伟大的下一步。在冰封雪域的雪原上有一个被雪覆盖的黑暗区域，被称为圣地，甚至怪物也无法到达。在这个区域的中心，有一块被称为圣石的巨大石头。你需要献上一件特殊的物品作为祭品，然后圣石将在当场测试你的智慧。");
         } else if (status == 2) {
             cm.sendNextPrev("你需要诚实而坚定地回答每一个问题。如果你能正确回答所有问题，那么圣石将正式接受你，并交给你#b#t4031058##k。把项链拿回来，我会帮助你迈向下一步。祝你好运。");
         }
@@ -142,14 +142,14 @@ function action(mode, type, selection) {
                     cm.sendYesNo("欢迎。我是#b#p2020008##k，所有战士的首领，负责激发每位需要我的指导的战士的潜力。你似乎是那种想要迈出进步的战士，准备迎接三转职业挑战的人。但我见过无数渴望像你一样迈出这一步的战士，最终却失败了。你呢？你准备接受考验，迈出三转职业的步伐吗？");
                 } else if (status == 1) {
                     cm.getPlayer().setPartyQuestItemObtained("JB3");
-                    cm.sendNext("好的。你将在战士的两个重要方面进行测试：力量和智慧。我现在会向你解释测试的物理部分。还记得在佩里安的#b#p1022000##k吗？去找他，他会告诉你测试的第一部分的细节。请完成任务，并从#p1022000#那里得到#b#t4031057##k。");
+                    cm.sendNext("好的。你将在战士的两个重要方面进行测试：力量和智慧。我现在会向你解释测试的物理部分。还记得在勇士部落的#b#p1022000##k吗？去找他，他会告诉你测试的第一部分的细节。请完成任务，并从#p1022000#那里得到#b#t4031057##k。");
                 } else if (status == 2) {
                     cm.sendNextPrev("测试的心理部分只能在你通过了测试的身体部分之后才能开始。#b#t4031057##k 将证明你确实通过了测试。我会提前告诉#b#p1022000##k你要前往那里，所以做好准备。这不会很容易，但我对你有最大的信心。祝你好运。");
                 }
             }
         } else {
             if (cm.getPlayer().getLevel() >= 50) {
-                cm.sendOk("首领居住委员会授予你#b特许#k，让你成为#r反击扎昆的团队的一部分#k。祝你前程似锦。");
+                cm.sendOk("长老会授予你#b特许#k，让你成为#r反击扎昆的团队的一部分#k。祝你一切顺利。");
                 if (!(cm.isQuestStarted(100200) || cm.isQuestCompleted(100200))) {
                     cm.startQuest(100200);
                 }
@@ -158,7 +158,7 @@ function action(mode, type, selection) {
                     cm.completeQuest(100201);
                 }
             } else {
-                cm.sendOk("你太弱了，无法成为#rcounteroffensive团队对抗扎昆#k的一部分。至少达到#blevel 50#k，然后再和我说话。");
+                cm.sendOk("你太弱了，还无法挑战扎昆#k。至少达到#b50级#k以后，再与我交谈。");
             }
             cm.dispose();
         }

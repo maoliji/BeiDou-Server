@@ -44,7 +44,7 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendOk("嘿，你喜欢婚礼吗？我现在会带你回 #b阿莫利亚#k。");
+            cm.sendOk("嘿，你喜欢婚礼吗？我现在会带你回 #b婚礼村#k。");
         } else if (status == 1) {
             var eim = cm.getEventInstance();
             if (eim != null) {
@@ -53,9 +53,9 @@ function action(mode, type, selection) {
                 if (cm.canHold(boxId, 1)) {
                     cm.gainItem(boxId, 1);
                     cm.warp(680000000);
-                    cm.sendOk("你刚刚收到了一个玛瑙宝箱。寻找#b#p9201014##k，她在阿莫利亚的顶部，她知道如何打开这些宝箱。");
+                    cm.sendOk("你刚刚收到了一个玛瑙宝箱。寻找#b#p9201014##k，她在婚礼村的顶部，她知道如何打开这些宝箱。");
                 } else {
-                    cm.sendOk("请在您的 ETC 背包中腾出空间，以便接收黑曜石宝箱。");
+                    cm.sendOk("请在您的背包其他栏中腾出空间，以便接收玛瑙宝箱。");
                     cm.dispose();
                     return;
                 }

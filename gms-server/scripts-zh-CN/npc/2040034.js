@@ -39,7 +39,7 @@ function action(mode, type, selection) {
                 return;
             }
 
-            cm.sendSimple("#e#b<组队任务：时空裂缝>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n由于上方有极其危险的生物，你无法再往上走。你想要和队友合作完成任务吗？如果是，请让你的#b队长#k和我交谈。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想了解更多详情。");
+            cm.sendSimple("#e#b<组队任务：时空裂缝>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n由于上方有极其危险的生物，你无法再往上走。你想要和队友合作完成任务吗？如果是，请让你的#b队长#k和我交谈。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想了解更多详情。\r\n#L3#我想要兑换奖品。");
         } else if (status == 1) {
             if (selection == 0) {
                 if (cm.getParty() == null) {
@@ -62,12 +62,27 @@ function action(mode, type, selection) {
                 }
             } else if (selection == 1) {
                 var psState = cm.getPlayer().toggleRecvPartySearchInvite();
-                cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
+                cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "开启" : "关闭") + "#k。想要改变状态时随时找我。");
                 cm.dispose();
-            } else {
-                cm.sendOk("#e#b<组队任务：时空裂缝>#k#n\r\n#b#m220000000#!#k出现了时空裂缝！我们迫切需要勇敢的冒险家来击败入侵的怪物。请和一些可靠的盟友组队，拯救#m220000000#! 你必须通过击败怪物和解决谜题来通过各个阶段，最终击败#r#o9300012##k。");
-                cm.dispose();
-            }
+                        } else if (selection == 2)  {
+                                cm.sendOk("#e#b<组队任务:时间裂隙>#k#n\r\n时间裂缝已经出现在#b#m220000000#!#k,我们需要勇敢的冒险家来打败入侵的怪物。拜托,请找几个可靠的队友帮我们拯救#e#m220000000#!你们需要进去挑战怪物,解开谜团,最终挑战#r#o9300012##k.");
+                                cm.dispose();
+                        }
+                                else {
+                                        cm.sendSimple("那么，你想得到什么奖品?\r\n#b#L0#给我#v1022073##z1022073#.\r\n");
+                                }
+                        } else if (status == 2) {
+                                if (selection == 0) {
+                                        if (cm.haveItem(4001246, 5) && cm.canHold(1022073)) {
+                                                cm.gainItem(4001246, -5); //温暖的阳光
+                                                cm.gainItem(1022073, 1);  //兑换划痕眼镜
+              			cm.sendOk("兑换成功!");
+                                                cm.dispose();
+                                        } else {
+                                                cm.sendOk("你没有5个#t4001246#.");
+                                                cm.dispose();
+                                        }
+                                }
+                        }
         }
-    }
 }

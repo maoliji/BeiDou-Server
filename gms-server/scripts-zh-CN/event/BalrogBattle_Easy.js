@@ -159,7 +159,6 @@ function spawnBalrog(eim) {
 }
 
 function spawnSealedBalrog(eim) {
-    const LifeFactory = Java.type('org.gms.server.life.LifeFactory');
     const Point = Java.type('java.awt.Point');
     eim.getInstanceMap(entryMap).spawnMonsterOnGroundBelow(LifeFactory.getMonster(bossMobId), new Point(412, 258));
 }

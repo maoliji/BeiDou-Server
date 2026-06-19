@@ -52,7 +52,7 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            cm.sendSimple("嗨，你好！欢迎来到阿莫利亚整形外科！你想把你的脸变成全新的样子吗？使用#b#t5152022##k，你可以让我们来照顾剩下的事情，拥有你一直想要的脸~！\r\n#L2#整形外科：#i5152022##t5152022##l");
+            cm.sendSimple("嗨，你好！欢迎来到婚礼村整形外科！你想把你的脸变成全新的样子吗？使用#b#t5152022##k，你可以让我们来照顾剩下的事情，拥有你一直想要的脸~！\r\n#L2#整形外科：#i5152022##t5152022##l");
         } else if (status == 1) {
             if (selection == 2) {
                 facenew = Array();
@@ -74,7 +74,7 @@ function action(mode, type, selection) {
                 cm.setFace(facenew[selection]);
                 cm.sendOk("享受你的新面容吧！");
             } else {
-                cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                cm.sendOk("嗯...看起来你没有这个地方专门的会员卡。很抱歉要说这个，但没有会员卡，你就不能进行整形手术了...");
                 cm.dispose();
             }
         }

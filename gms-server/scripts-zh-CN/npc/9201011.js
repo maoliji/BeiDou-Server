@@ -151,10 +151,10 @@ function action(mode, type, selection) {
                 var wstg = eim.getIntProperty("weddingStage");
 
                 if (wstg == 2) {
-"Awhoooooooooosh~, the guests have proclaimed their love to y'all. The time has come baby~, #rshould I make you Husband and Wife#k?"
+                    cm.sendYesNo("哇，客人们已经向你们表达了他们的祝福。宝贝，是时候了~，#r我该让你们成为夫妻吗？#k?");
                     state = 1;
                 } else if (wstg == 1) {
-                    cm.sendOk("哇-等一下，好吗？你的客人们正在给你们表达爱意。让我们来点动感，宝贝~~。");
+                    cm.sendOk("哇-等一下，好吗？你的客人们正在给你们表达祝福。让我们来点动感，宝贝~~。");
                     cm.dispose();
                 } else {
                     cm.sendOk("Wheeeeeeeeeeeeeew! 我们的节日现在已经结束了，和#b#p9201009#交谈一下，她会带领你和你的朋友去参加后派对。感谢你们的热情！");
@@ -179,7 +179,7 @@ function action(mode, type, selection) {
                     cm.sendOk("哇哦！现在这对夫妇的爱就像一个超级大闪亮的心一样！而且它将在这个节日之后继续下去。请准备好参加派对，宝贝~。跟着新婚夫妇的步伐走吧！");
                     cm.dispose();
                 } else {
-"It's now guys... Stay with your eyes and ears keened up! They are about to smooch it all over the place!!!"
+                    cm.sendOk("是时候了伙计们。..睁大眼睛，竖起耳朵！他们就要互相亲吻了！！！");
                     cm.dispose();
                 }
             }

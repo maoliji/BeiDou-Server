@@ -22,8 +22,9 @@
 //@Author Moogra, Ronan
 //Fixed grammar, javascript syntax
 
-var status = 0;
+var status;
 var price = 100000;
+var cost = 1000000;
 
 function isTransformed(ch) {
     const BuffStat = Java.type('org.gms.client.BuffStat');
@@ -31,37 +32,69 @@ function isTransformed(ch) {
 }
 
 function start() {
-    if (!(isTransformed(cm.getPlayer()) || cm.haveItem(4001086))) {
-        cm.sendOk("这是强大的霍恩尾巴龙的洞穴，他是利弗雷峡谷的至高统治者。只有那些被认为值得见他的人才能通过这里，外来者是不受欢迎的。滚开！");
-        cm.dispose();
-        return;
-    }
+    status = 0;
 
-    cm.sendSimple("欢迎来到生命之洞穴 - 入口！你想要进去和 #r暴君#k 战斗吗？如果你想要和他战斗，你可能需要一些 #b#v2000005##k，这样如果你被 #r暴君#k 击中了，你就可以恢复一些HP。\r\n#L1#我想花100,000金币购买10个！#l\r\n#L2#不用了，让我进去吧！#l");
+
+    //if (!( isTransformed(cm.getPlayer()) || cm.haveItem(4001086) || ( cm.haveItem(4001083) && cm.haveItem(4001084) && cm.haveItem(4001085) ) ) ) {
+     //   cm.sendNext("这是暗黑龙王的洞穴，他是米纳尔森林的至高统治者。只有那些被认为值得见他的人才能通过这里，外来者是不受欢迎的。滚开！\r\n除非...#b你给我点好处...#k");
+     //   return;
+    //}
+    
+    cm.sendSimple("这是暗黑龙王的洞穴，他是米纳尔森林的至高统治者。只有那些被认为值得见他的人才能通过这里，外来者是不受欢迎的。滚开！\r\n除非...#b你给我点好处...#k\r\n#L1#我想直接进去!#l\r\n\#L2#我要花100000金币购买10个#v2000005#!#l");
 }
 
 function action(mode, type, selection) {
+
+
     if (mode < 1) {
         cm.dispose();
-    } else if (selection == 1) {
+        return;
+    } 
+        if (mode == 1) {
+            status++;
+        } else {
+            status--;
+        }    
+        if (selection == 1) {
+    
+      if (!( isTransformed(cm.getPlayer()) || cm.haveItem(4001086) || ( cm.haveItem(4001083) && cm.haveItem(4001084) && cm.haveItem(4001085) ) ) ) {
+        cm.sendYesNo("你没有资格进入，除非你给我#b100W金币！#k\r\n还要进去吗？");
+
+        } else if (cm.getLevel() > 99) { //有敢死队象征，可直接进入
+            cm.warp(240050000, 0);
+        } else {
+            cm.sendOk("您需要至少达到100级或以上才能进入！");
+            cm.dispose();
+        }
+
+    } else if (selection == 2) {
         if (cm.getMeso() >= price) {
             if (!cm.canHold(2000005)) {
-                cm.sendOk("抱歉，你的背包里没有空位来存放这个物品！");
+                cm.sendOk("你的背包里没有空位来存放这个物品！");
+        	cm.dispose();
             } else {
                 cm.gainMeso(-price);
                 cm.gainItem(2000005, 10);
-                cm.sendOk("谢谢购买这个药水。记得好好使用它！");
+                cm.sendOk("好好使用这些药水吧！");
+        	cm.dispose();
             }
         } else {
-            cm.sendOk("抱歉，你没有足够的金币来购买它们！");
+            cm.sendOk("你没有足够的金币来购买它们！");
+            cm.dispose();
         }
-        cm.dispose();
-    } else if (selection == 2) {
+
+	
+    } else if (status == 2){
         if (cm.getLevel() > 99) {
+            cm.gainMeso(-cost);	    
             cm.warp(240050000, 0);
         } else {
-            cm.sendOk("对不起，您需要至少达到100级或以上才能进入。");
+            cm.sendOk("您需要至少达到100级或以上才能进入！");
+	
         }
+
+    } else {
         cm.dispose();
+
     }
 }

@@ -72,12 +72,12 @@ function action(mode, type, selection) {
                         var mobObj = LifeFactory.getMonster(9400518);
                         mapObj.spawnMonsterOnGroundBelow(mobObj, new Point(-245, 810));
 
-                        cm.sendOk("烈焰魔出现了！打败它就能获得#b#t4031596##k！");
+                        cm.sendOk("蝴蝶精出现了！打败它就能获得#b#t4031596##k！");
                     } else {
                         if (st < 1) {
                             cm.sendOk("你的任务是恢复魔镜的碎片。为此，你需要一枚#b#t4031596##k，这枚物品会在其他怪物全部被杀死后出现的火焰怪身上掉落。要进入怪物所在的房间，选择与你性别对应的传送门，然后消灭那里的所有怪物。女士们走左边，先生们走右边。");
                         } else {
-                            cm.sendOk("你的任务是找回魔镜碎片。打败火焰精灵就能得到#b#t4031596##k。");
+                            cm.sendOk("你的任务是找回魔镜碎片。打败蝴蝶精就能得到#b#t4031596##k。");
                         }
                     }
                 } else {

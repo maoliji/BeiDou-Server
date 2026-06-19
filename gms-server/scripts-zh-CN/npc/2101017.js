@@ -44,6 +44,8 @@ function action(mode, type, selection) {
             }
 
             if (expedicao == null) {
+	    	cm.mapMessage(5, "超时了，送你出去。");
+	    	cm.warp(980010000)
                 cm.dispose();
                 return;
             }
@@ -54,25 +56,25 @@ function action(mode, type, selection) {
                     cm.sendSimple("你想做什么？#b\r\n#L1#查看当前成员#l\r\n#L2#禁止成员#l\r\n#L3#开始战斗#l\r\n#L4#离开竞技场#l");
                     status = 1;
                 } else {
-                    var toSend = "Current members inside this arena:\r\n#b";
+                    var toSend = "这个竞技场里有:\r\n#b";
                     toSend += cm.getExpeditionMemberNames(exped);
                     cm.sendOk(toSend);
                     cm.dispose();
                 }
             } else if (status == 1) {
                 if (selection == 1) {
-                    var toSend = "Current members inside this arena:\r\n#b";
+                    var toSend = "当前有这些成员:\r\n#b";
                     toSend += cm.getExpeditionMemberNames(exped);
                     cm.sendOk(toSend);
                     cm.dispose();
                 } else if (selection == 2) {
                     var size = expedMembers.size();
                     if (size == 1) {
-                        cm.sendOk("你是探险队中唯一的成员。");
+                        cm.sendOk("你是唯一的成员。");
                         cm.dispose();
                         return;
                     }
-                    var text = "以下成员组成了你的探险队（点击成员名字可以将其踢出探险队）：\r\n";
+                    var text = "这些是队员名单 (点击名字可以将其移除队伍):\r\n";
                     text += "\r\n\t\t1." + expedicao.getLeader().getName();
                     for (var i = 1; i < size; i++) {
                         text += "\r\n#b#L" + (i + 1) + "#" + (i + 1) + ". " + expedMembers.get(i).getValue() + "#l\n";
@@ -98,7 +100,7 @@ function action(mode, type, selection) {
                         cm.dispose();
                     }
                 } else if (selection == 4) {
-                    cm.mapMessage(5, "The Leader of the arena left.");
+                    cm.mapMessage(5, "队长离开了.");
                     expedicao.warpExpeditionTeam(980010000);
                     cm.endExpedition(expedicao);
                     cm.dispose();
@@ -107,7 +109,7 @@ function action(mode, type, selection) {
                 if (selection > 0) {
                     var banned = expedMembers.get(selection - 1);
                     expedicao.ban(banned);
-                    cm.sendOk("你已经从远征中禁止了 " + banned.getValue() + "。");
+                    cm.sendOk("你已经从队伍中移除了 " + banned.getValue() + "。");
                     cm.dispose();
                 } else {
                     cm.sendSimple(list);
@@ -128,10 +130,10 @@ function action(mode, type, selection) {
             if (status == 0) {
                 var gotTheBombs = expedicao.getProperty("gotBomb" + cm.getChar().getId());
                 if (gotTheBombs != null) {
-                    cm.sendOk("我已经给了你炸弹，请立刻击败 #b天蝎座#k！");
+                    cm.sendOk("我已经给了你炸弹，请立刻击败#b蝎子#k！");
                     cm.dispose();
                 } else if (cm.canHoldAll([2270002, 2100067], [50, 5])) {
-                    cm.sendOk("我已经给了你(5) #b#e炸弹#k#n和(50) #b#e元素岩石#k#n。\r\n使用元素岩石来捕捉蝎子，以获取#r#e灵魂宝石#k#n！");
+                    cm.sendOk("我已经给了你5个#b#e炸弹#k#n和50个#b#e元素岩石#k#n。\r\n使用元素岩石来捕捉蝎子，以获取#r#e灵魂宝石#k#n！");
                     expedicao.setProperty("gotBomb" + cm.getChar().getId(), "1");
                     cm.gainItem(2270002, 50);
                     cm.gainItem(2100067, 5);
@@ -141,8 +143,8 @@ function action(mode, type, selection) {
                     cm.dispose();
                 }
             }
-        } else {
-            cm.sendOk("嗨，你听说过阿里安特角斗场战斗竞技场吗？这是一个供20级到30级玩家参与的竞争活动！");
+	} else {
+            cm.sendOk("嗨，你听说过阿里安特竞技场吗？这是一个供20级到30级玩家参与的竞争活动！");
             cm.dispose();
         }
     }

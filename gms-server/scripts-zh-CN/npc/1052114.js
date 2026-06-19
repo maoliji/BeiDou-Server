@@ -8,7 +8,7 @@ function start() {
 }
 
 function action(mode, type, selection) {
-    if (mode === 1) {
+    if (mode == 1) {
         status++;
     } else {
         if (status <= 1) {
@@ -17,19 +17,19 @@ function action(mode, type, selection) {
         }
         status--;
     }
-    if (status === 0) {
-        if (cm.getLevel() >= 20) {
-            cm.sendOk("只有低于20级才能进入训练中心。");
+    if (status == 0) {
+        if (cm.getLevel() >= 201) {
+            cm.sendOk("只有低于20级才能进入训练中心。(已调整为不限制等级）");
             cm.dispose();
             return;
         }
 
-        let selStr = "你要进入训练中心吗？";
+        let selStr = "你要进入训练中心吗？(已调整为不限制等级）";
         for (let i = 0; i < num; i++) {
             selStr += "\r\n#b#L" + i + "#训练中心 " + i + " (" + cm.getPlayerCount(map + i) + "/" + maxp + ")#l#k";
         }
         cm.sendSimple(selStr);
-    } else if (status === 1) {
+    } else if (status == 1) {
         if (selection < 0 || selection >= num) {
             cm.dispose();
         } else if (cm.getPlayerCount(map + selection) >= maxp) {

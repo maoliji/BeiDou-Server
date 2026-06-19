@@ -28,7 +28,7 @@ var status = 0;
 var MySelection = -1;
 
 function start() {
-    cm.sendSimple("我的名字是强壮的阿莫斯。你想做什么？\r\n#b#L0#参加阿莫利亚挑战！#l\r\n#L1#用10把钥匙交换门票！#l\r\n#k");
+    cm.sendSimple("我是勇者阿莫斯。你想做什么？\r\n#b#L0#参加婚礼村挑战！#l\r\n#L1#用5把钥匙交换门票！#l\r\n#k");
 }
 
 function action(mode, type, selection) {
@@ -61,7 +61,7 @@ function action(mode, type, selection) {
                 cm.sendYesNo("所以你想要一张门票？");
                 MySelection = selection;
             } else {
-                cm.sendOk("请先给我拿到10把钥匙！");
+                cm.sendOk("请先给我拿到5把钥匙！");
                 cm.dispose();
             }
         } else if (status == 2 && MySelection == 0) {
@@ -69,7 +69,7 @@ function action(mode, type, selection) {
             cm.gainItem(4031592, -1)
             cm.dispose();
         } else if (status == 2 && MySelection == 1) {
-            cm.gainItem(4031593, -10);
+            cm.gainItem(4031593, -5);
             cm.gainItem(4031592, 1);
             cm.dispose();
         }

@@ -63,7 +63,7 @@ function action(mode, type, selection) {
         } else if (status == 1) {
             if (selection == 0) {
                 beauty = 1;
-                cm.sendYesNo("如果你使用这张普通优惠券，你的头发可能会变成一个随机的新造型……你还想用 #b#t5150040##k 来做吗？我会帮你做。但别忘了，结果会是随机的！");
+                cm.sendYesNo("如果你使用这张普通会员卡，你的头发可能会变成一个随机的新造型……你还想用 #b#t5150040##k 来做吗？我会帮你做。但别忘了，结果会是随机的！");
             } else {
                 beauty = 2;
 
@@ -78,7 +78,7 @@ function action(mode, type, selection) {
                     }
                 }
 
-                cm.sendStyle("Using the SPECIAL coupon you can choose the style your hair will become. Pick the style that best provides you delight...", hairnew);
+                cm.sendStyle("使用高级会员卡，你可以选择你的发型。请选择最能给你带来快乐的款式。", hairnew);
             }
         } else if (status == 2) {
             if (beauty == 1) {
@@ -98,7 +98,7 @@ function action(mode, type, selection) {
                     cm.setHair(hairnew[Math.floor(Math.random() * hairnew.length)]);
                     cm.sendOk("享受你的新发型吧！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有我们指定的优惠券...恐怕我不能给你理发。对不起...");
+                    cm.sendOk("嗯...看起来你没有我们指定的会员卡...恐怕我不能给你理发。对不起...");
                 }
             } else if (beauty == 2) {
                 if (cm.haveItem(5150044) == true) {
@@ -106,7 +106,7 @@ function action(mode, type, selection) {
                     cm.setHair(hairnew[selection]);
                     cm.sendOk("享受你的新发型吧！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有我们指定的优惠券...恐怕我不能给你理发。对不起...");
+                    cm.sendOk("嗯...看起来你没有我们指定的会员卡...恐怕我不能给你理发。对不起...");
                 }
             }
 

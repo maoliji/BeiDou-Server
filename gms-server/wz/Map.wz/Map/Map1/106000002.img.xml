@@ -4,7 +4,7 @@
         <int name="version" value="10"/>
         <int name="cloud" value="1"/>
         <int name="town" value="0"/>
-        <float name="mobRate" value="0.6"/>
+        <float name="mobRate" value="1.2"/>
         <string name="bgm" value="Bgm01/HighlandStar"/>
         <int name="returnMap" value="102000000"/>
         <int name="forcedReturn" value="999999999"/>

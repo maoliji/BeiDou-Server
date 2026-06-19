@@ -19,7 +19,7 @@
       <int name="id" value="6090001"/>
       <int name="startHour" value="22"/>
       <int name="endHour" value="14"/>
-      <string name="message" value="The Snow Witch has appeared in the midst of a snowstorm. Offer drop items on the Altar of the Hunter to appease the angry Snow Witch."/>
+      <string name="message" value="雪山魔女的身影出现在暴风雪中！若想要平息魔女的怒火，需在祭坛放上战利品。"/>
     </imgdir>
   </imgdir>
   <imgdir name="back">
@@ -3610,7 +3610,7 @@
       <string name="id" value="2119006"/>
       <int name="x" value="-116"/>
       <int name="y" value="-759"/>
-      <int name="reactorTime" value="900"/>
+      <int name="reactorTime" value="100"/>
       <int name="f" value="0"/>
       <string name="name" value=""/>
     </imgdir>

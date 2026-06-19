@@ -66,7 +66,7 @@ function action(mode, type, selection) {
                         pushIfItemExists(facenew, fface_r[i] + cm.getPlayer().getFace() % 1000 - (cm.getPlayer().getFace() % 100));
                     }
                 }
-                cm.sendYesNo("如果你使用普通的优惠券，你的脸可能会变成一个随机的新样子...你还想用#b#t5152021##k来做吗？");
+                cm.sendYesNo("如果你使用普通的会员卡，你的脸可能会变成一个随机的新样子...你还想用#b#t5152021##k来做吗？");
             }
         } else if (status == 2) {
             if (cm.haveItem(5152021) == true) {
@@ -74,7 +74,7 @@ function action(mode, type, selection) {
                 cm.setFace(facenew[Math.floor(Math.random() * facenew.length)]);
                 cm.sendOk("享受你的新面容吧！");
             } else {
-                cm.sendOk("嗯...看起来你没有这个地方专门的优惠券。很抱歉要说这个，但没有优惠券，你就不能进行整形手术了...");
+                cm.sendOk("嗯...看起来你没有这个地方专门的会员卡。很抱歉要说这个，但没有会员卡，你就不能进行整形手术了...");
                 cm.dispose();
             }
         }

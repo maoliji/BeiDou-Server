@@ -30,7 +30,7 @@ function start() {
     status = -1;
     dList = cm.getDriedPets();
     if (dList.size() == 0) {
-        cm.playerMessage(5, "You currently do not own a pet that needs to be treated with Water of Life.");
+        cm.playerMessage(5, "你现在没有需要使用生命之水的宠物.");
         cm.dispose();
         return;
     }
@@ -53,10 +53,10 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendYesNo("我是仙子玛尔。你有#b生命之水#k...有了这个，我可以用我的魔法让玩偶复活。你觉得怎么样？你想要使用这个物品来唤醒你的宠物吗...？");
+            cm.sendYesNo("我是妖精玛丽.你有#b生命之水#k... 我可以用这个使用魔法使宠物复活.你觉得怎么样 ...?");
 
         } else if (status == 1) {
-            var talkStr = "So which pet you want to reawaken? Please choose the pet you'd most like to reawaken...\r\n\r\n";
+            var talkStr = "你想让哪个宠物复活？请选择一个宠物...\r\n\r\n";
 
             var listStr = "";
             var i = 0;
@@ -65,7 +65,7 @@ function action(mode, type, selection) {
             while (dIter.hasNext()) {
                 var dPet = dIter.next();
 
-                listStr += "#b#L" + i + "# " + dPet.getName() + " #k - Lv " + dPet.getLevel() + " Closeness " + dPet.getTameness();
+                listStr += "#b#L" + i + "# " + dPet.getName() + " #k - Lv " + dPet.getLevel() + " 亲密度 " + dPet.getTameness();
                 listStr += "#l\r\n";
 
                 i++;
@@ -76,7 +76,7 @@ function action(mode, type, selection) {
             var sPet = dList.get(selection);
 
             if (sPet != null) {
-                cm.sendNext("你的玩偶现在已经苏醒，成为了你的宠物！不过，我的魔法并不完美，所以我不能保证你的宠物会永生……请在生命之水干涸之前好好照顾你的宠物。那么，再见……");
+                cm.sendNext("你的宠物现在已经重获新生！不过，我的魔法并不完美，所以我不能保证你的宠物会永生……请在生命之水干涸之前好好照顾你的宠物。那么，再见……");
 
                 const InventoryType = Java.type('org.gms.client.inventory.InventoryType');
                 var it = cm.getPlayer().getInventory(InventoryType.CASH).getItem(sPet.getPosition());

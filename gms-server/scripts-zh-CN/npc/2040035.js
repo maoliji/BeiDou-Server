@@ -46,10 +46,12 @@ function action(mode, type, selection) {
         } else if (status == 1) {
             var eim = cm.getEventInstance();
 
-            if (!eim.giveEventReward(cm.getPlayer())) {
+            if (!eim.giveEventReward(cm.getPlayer()) && cm.canHold(4001246)) {
                 cm.sendNext("看起来你的#r装备#k、#r消耗#k或#r其他#k背包中都没有空位。请腾出一些空间，然后再试一次。");
             } else {
                 cm.warp(221024500);
+	cm.gainExp(80000);
+	cm.gainItem(4001246,1); //温暖的阳光，兑换划痕眼镜1022073
             }
 
             cm.dispose();

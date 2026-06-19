@@ -37,7 +37,7 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            cm.sendSimple("嘿！我是沙提，是马兹拉的学徒。如果你有 #b阿里安特发型券(REG)#k 或 #b阿里安特染发券(REG)#k，你愿意让我给你做头发吗？\r\n#L0#理发：#i5150026##t5150026##l\r\n#L1#染发：#i5151021##t5151021##l");
+            cm.sendSimple("嘿！我是沙提，是马兹拉的学徒。如果你有 #b阿里安特发型会员卡(REG)#k 或 #b阿里安特染发会员卡(REG)#k，你愿意让我给你做头发吗？\r\n#L0#理发：#i5150026##t5150026##l\r\n#L1#染发：#i5151021##t5151021##l");
         } else if (status == 1) {
             if (selection == 0) {
                 beauty = 1;
@@ -54,7 +54,7 @@ function action(mode, type, selection) {
                             % 10));
                     }
                 }
-                cm.sendYesNo("如果您使用REG优惠券，您的发型将会被随机更换成全新的造型。您还将获得我设计的一些全新发型，这些发型是VIP优惠券无法获得的。您想要使用#b阿里安特发型优惠券(REG)#k来获得一个华丽的新造型吗？");
+                cm.sendYesNo("如果您使用REG会员卡，您的发型将会被随机更换成全新的造型。您还将获得我设计的一些全新发型，这些发型是VIP会员卡无法获得的。您想要使用#b阿里安特发型会员卡(REG)#k来获得一个华丽的新造型吗？");
             } else if (selection == 1) {
                 beauty = 2;
                 haircolor = Array();
@@ -63,7 +63,7 @@ function action(mode, type, selection) {
                 for (var i = 0; i < 8; i++) {
                     pushIfItemExists(haircolor, current + i);
                 }
-                cm.sendYesNo("如果您使用普通的优惠券，您的发色将会随机变成一种新的颜色。您确定要使用 #b#t5151021##k 并随机改变您的发色吗？");
+                cm.sendYesNo("如果您使用普通会员卡，您的发色将会随机变成一种新的颜色。您确定要使用 #b#t5151021##k 并随机改变您的发色吗？");
             }
         } else if (status == 2) {
             cm.dispose();
@@ -73,7 +73,7 @@ function action(mode, type, selection) {
                     cm.setHair(hairnew[Math.floor(Math.random() * hairnew.length)]);
                     cm.sendOk("享受你的新发型吧！");
                 } else {
-                    cm.sendNext("只有你带来了优惠券，我才能帮你改变发型。你不会忘了吧？");
+                    cm.sendNext("只有你带来了会员卡，我才能帮你改变发型。你不会忘了吧？");
                 }
             }
             if (beauty == 2) {
@@ -82,7 +82,7 @@ function action(mode, type, selection) {
                     cm.setHair(haircolor[Math.floor(Math.random() * haircolor.length)]);
                     cm.sendOk("享受你的新发色吧！");
                 } else {
-                    cm.sendNext("只有你拿来了发型券，我才能帮你换发型。你不会忘了那个吧？");
+                    cm.sendNext("只有你拿来了会员卡，我才能帮你换发型。你不会忘了那个吧？");
                 }
             }
         }

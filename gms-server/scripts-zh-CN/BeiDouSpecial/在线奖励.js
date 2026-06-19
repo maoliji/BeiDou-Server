@@ -12,7 +12,7 @@ var OnlineLevel = [10, 30, 60, 120, 240, 360, 480];//, 600, 720
 var textMsg = ["恭喜领取成功！", "您未达到领取条件", "您已经领取过了。"];
 var getStatus = 0;//"0000000"
 var msg;
-var giftContent = [5, 10, 15, 20, 25, 30, 35];
+var giftContent = [1, 2, 3, 4, 5, 6, 7];
 var index = [0x01,0x10,0x100,0x1000,0x10000,0x100000,0x1000000];
 //Start
 function start() 

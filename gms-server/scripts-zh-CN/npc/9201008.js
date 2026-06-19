@@ -106,8 +106,8 @@ function action(mode, type, selection) {
             }
 
             if (status == 0) {
-                var text = "Welcome to the #bChapel#k! How can I help you?";
-                var choice = ["How do I prepare a wedding?", "I have an engagement and want to arrange the wedding", "I am the guest and I'd like to go into the wedding"];
+                var text = "欢迎来到#b小教堂#k!有什么事吗?";
+                var choice = ["我应该怎么准备婚礼?", "我订婚了，想安排婚礼", "我受邀请来参加婚礼"];
                 for (x = 0; x < choice.length; x++) {
                     text += "\r\n#L" + x + "##b" + choice[x] + "#l";
                 }
@@ -120,7 +120,7 @@ function action(mode, type, selection) {
             } else if (status == 1) {
                 switch (selection) {
                     case 0:
-                        cm.sendOk("首先，你需要和某人订婚。#p9201000# 制作订婚戒指。一旦获得订婚状态，购买一张#b#t" + weddingEntryTicketCommon + "##k。\r\n给我看你的订婚戒指和婚礼门票，我会为你预订并提供#r15张婚礼门票#k。使用它们邀请你的婚礼客人。他们每人需要一张门票才能进入。");
+                        cm.sendOk("Firstly you need to be #bengaged#k to someone. #p9201000# makes the engagement ring. Once attained the engagement status, purchase a #b#t" + weddingEntryTicketCommon + "##k.\r\nShow me your engagement ring and a wedding ticket, and I will book a reservation for you along with #r15 Wedding Tickets#k. Use them to invite your guests into the wedding. They need 1 each to enter.");
                         cm.dispose();
                         break;
 
@@ -256,7 +256,7 @@ function action(mode, type, selection) {
                                 var expirationTime = Channel.getRelativeWeddingTicketExpireTime(resStatus);
                                 cm.gainItem(weddingSendTicket, 3, false, true, expirationTime);
                             } else {
-                                cm.sendOk("请确保有一个空余的ETC槽位以获取更多的邀请。");
+                                cm.sendOk("请确保有一个空余的其他栏以获取更多的邀请。");
                             }
                         } else {
                             cm.sendOk("您目前没有预订在教堂制作额外的邀请函。");

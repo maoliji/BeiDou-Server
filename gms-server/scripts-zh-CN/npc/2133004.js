@@ -20,9 +20,9 @@ function action(mode, type, selection) {
 
         if (status == 0) {
             if (!cm.haveItem(4001163) || !cm.isEventLeader()) {
-                cm.sendYesNo("让你的队长在这里给我看魔法紫石。\r\n\r\n或者你想要#r离开这片森林#k吗？现在离开意味着抛弃你的伙伴，记住这一点。");
+                cm.sendYesNo("让你的队长在这里给我看#z4001163#。\r\n\r\n或者你想要#r离开这片森林#k吗？现在离开意味着抛弃你的伙伴，记住这一点。");
             } else {
-                cm.sendNext("太好了，你有了紫色魔法石。我会带你们去通往石头祭坛的路。跟我来吧。");
+                cm.sendNext("太好了，你有了#z4001163#。我会带你们去通往石头祭坛的路。跟我来吧。");
             }
         } else if (status == 1) {
             if (!cm.haveItem(4001163)) {

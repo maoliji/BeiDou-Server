@@ -85,7 +85,7 @@ function action(mode, type, selection) {
                     cm.setHair(hairnew[selection]);
                     cm.sendOk("享受你的新发型吧！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有我们指定的优惠券...恐怕我不能给你理发。对不起...");
+                    cm.sendOk("嗯...看起来你没有我们指定的会员卡...恐怕我不能给你理发。对不起...");
                 }
             }
             if (beauty == 2) {
@@ -94,7 +94,7 @@ function action(mode, type, selection) {
                     cm.setHair(haircolor[selection]);
                     cm.sendOk("享受你的新发色！");
                 } else {
-                    cm.sendOk("嗯...看起来你没有我们指定的优惠券...恐怕我不能给你染发。很抱歉...");
+                    cm.sendOk("嗯...看起来你没有我们指定的会员卡...恐怕我不能给你染发。很抱歉...");
                 }
             }
             if (beauty == 0) {
@@ -107,7 +107,7 @@ function action(mode, type, selection) {
                     cm.gainItem(5151001, 1);
                     cm.sendOk("享受！");
                 } else {
-                    cm.sendOk("你没有足够的金币来购买优惠券！");
+                    cm.sendOk("你没有足够的金币来购买会员卡！");
                 }
             }
         }

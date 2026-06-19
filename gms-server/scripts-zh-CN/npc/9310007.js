@@ -4,7 +4,7 @@
  * 作者：@Magical-H
  * 2025-01-02 17:33:23
  */
-var mapID_out = 701010320;
+var mapID_out = 701010321;
 
 function start() {
     cm.sendYesNoLevel('','Out',`你要离开#b#e#m${cm.getMapId()}##k#n 回到 #b#e#m${mapID_out}##k#n 吗？`);

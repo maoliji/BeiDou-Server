@@ -30,13 +30,13 @@ function enter(pi) {
             pi.playerMessage(5, "你当前未加入队伍，请创建队伍后再挑战BOSS。");
             return false;
         } else if (!pi.isLeader()) {
-            pi.playerMessage(5, "你的队伍队长必须进入传送门才能开始战斗。");
+            pi.playerMessage(5, "你的队伍必须由队长进入传送门才能开始战斗。");
             return false;
         } else {
             var eli = em.getEligibleParty(pi.getParty());
             if (eli.size() > 0) {
                 if (!em.startInstance(pi.getParty(), pi.getPlayer().getMap(), 1)) {
-                    pi.playerMessage(5, "你的队伍队长必须进入传送门才能开始战斗。");
+                    pi.playerMessage(5, "你的队伍必须由队长进入传送门才能开始战斗。");
                     return false;
                 }
             } else {  //this should never appear

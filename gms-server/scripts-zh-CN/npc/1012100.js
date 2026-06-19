@@ -38,16 +38,16 @@ function start() {
     if (parseInt(cm.getJobId() / 100) == jobType && cm.canSpawnPlayerNpc(GameConstants.getHallOfFameMapid(cm.getJob()))) {
         spawnPnpc = true;
 
-        var sendStr = "你已经走了很长的路，才能达到你今天所拥有的权力、智慧和勇气，不是吗？ 你觉得现在#r名人堂上哪一个NPC形象适合你#k? 你确定要这么做吗?";
+        var sendStr = "你已经走了很长的路，才能达到你今天所拥有的权力、智慧和勇气，不是吗？ 你觉得现在#r名人堂里有一个NPC拥有你角色的最新形象#k? 你确定要这么做吗?";
         if (spawnPnpcFee > 0) {
-            sendStr += " 我可以为你做，费用是 #b " + cm.numberWithCommas(spawnPnpcFee) + " 金币。#k";
+            sendStr += " 我可以为你做，费用是#b " + cm.numberWithCommas(spawnPnpcFee) + "金币。#k";
         }
 
         cm.sendYesNo(sendStr);
     } else {
         if (cm.getJobId() == 0) {
             actionx["1stJob"] = true;
-            cm.sendNext("所以你决定成为一个#rbowman#k？你知道吗，有一些标准要达到……#b你的等级至少应该是10级，至少有" + cm.getFirstJobStatRequirement(jobType) + "#k。让我看看。");   // thanks Vcoc for noticing a need to state and check requirements on first job adv starting message
+            cm.sendNext("所以你决定成为一个#r弓箭手#k？你知道吗，有一些标准要达到……#b你的等级至少应该是10级，至少有" + cm.getFirstJobStatRequirement(jobType) + "#k。让我看看。");   // thanks Vcoc for noticing a need to state and check requirements on first job adv starting message
         } else if (cm.getLevel() >= 30 && cm.getJobId() == 300) {
             actionx["2ndJob"] = true;
             if (cm.haveItem(4031012)) {
@@ -60,13 +60,13 @@ function start() {
             }
         } else if (actionx["3thJobI"] || (cm.getPlayer().gotPartyQuestItem("JB3") && cm.getLevel() >= 70 && cm.getJobId() % 10 == 0 && parseInt(cm.getJobId() / 100) == 3 && !cm.getPlayer().gotPartyQuestItem("JBP"))) {
             actionx["3thJobI"] = true;
-            cm.sendNext("你来了。几天前，奥西里亚的#b#p2020010##k跟我谈到了你。我看到你对成为弓箭手职业的第三次转职很感兴趣。为了实现这个目标，我需要测试你的实力，看看你是否配得上这个晋升。在金银岛的深林中有一个开口，会带你通往一个秘密通道。一旦进入，你将面对我的分身。你的任务是打败她，并带着#b#t4031059##k回来。");
+            cm.sendNext("你来了。几天前，冰峰雪域的#b#p2020010##k跟我谈到了你。我看到你对成为弓箭手职业的第三次转职很感兴趣。为了实现这个目标，我需要测试你的实力，看看你是否配得上这个晋升。在金银岛的深林中有一个开口，会带你通往一个秘密通道。一旦进入，你将面对我的分身。你的任务是打败她，并带着#b#t4031059##k回来。");
         } else if (cm.getPlayer().gotPartyQuestItem("JBP") && !cm.haveItem(4031059)) {
             cm.sendNext("请把#b#t4031059##k带给我。");
             cm.dispose();
         } else if (cm.haveItem(4031059) && cm.getPlayer().gotPartyQuestItem("JBP")) {
             actionx["3thJobC"] = true;
-            cm.sendNext("干得好。你打败了我的分身，并安全地带回了#b#t4031059##k。你现在已经从物理角度证明了自己配得上进行第三次职业转职。现在你应该把这条项链交给在奥西里亚的#b#p2020011##k，以进行测试的第二部分。祝你好运。你会需要的。");
+            cm.sendNext("干得好。你打败了我的分身，并安全地带回了#b#t4031059##k。你现在已经证明了自己配得上进行第三次职业转职。现在你应该把这条项链交给在奥西里亚的#b#p2020011##k，以进行测试的第二部分。祝你好运。你会需要的。");
         } else {
             cm.sendOk("你选择得很明智。");
             cm.dispose();
@@ -200,7 +200,7 @@ function action(mode, type, selection) {
         } else if (status == 5) {
             cm.sendNextPrev("我也给了你一点 #bSP#k。打开左下角的 #b技能菜单#k。你可以提升新获得的二级技能。不过要注意，你不能一次性提升它们。有些技能只有在学会其他技能后才能使用。记得要记住这一点。");
         } else if (status == 6) {
-            cm.sendNextPrev((job == 310 ? "Hunter" : "Crossbowman") + " 你需要坚强。但请记住，你不能滥用这种权力，把它用在弱者身上。请正确地使用你的巨大力量，因为……为了让你正确地使用这种力量，这比仅仅变得更强要困难得多。在你更进一步之后，请找到我。我等着你。");
+            cm.sendNextPrev((job == 310 ? "猎人" : "弩弓手") + " 你需要坚强。但请记住，你不能滥用这种权力，把它用在弱者身上。请正确地使用你的巨大力量，因为……为了让你正确地使用这种力量，这比仅仅变得更强要困难得多。在你更进一步之后，请找到我。我等着你。");
         }
     } else if (actionx["3thJobI"]) {
         if (status == 0) {
@@ -208,7 +208,7 @@ function action(mode, type, selection) {
                 cm.getPlayer().removePartyQuestItem("JB3");
                 cm.getPlayer().setPartyQuestItemObtained("JBP");
             }
-            cm.sendNextPrev("因为她是我的克隆，你可以预料到前方将会是一场艰难的战斗。他使用了许多特殊的攻击技能，与你以往所见的完全不同，你的任务是成功地与他一对一地战斗。在秘密通道中有一个时间限制，所以你必须在规定时间内打败他。祝你好运，希望你带着#b#t4031059##k。");
+            cm.sendNextPrev("因为她是我的分身，你可以预料到前方将会是一场艰难的战斗。他使用了许多特殊的攻击技能，与你以往所见的完全不同，你的任务是成功地与他一对一地战斗。在秘密通道中有一个时间限制，所以你必须在规定时间内打败他。祝你好运，希望你带着#b#t4031059##k。");
         }
     } else if (actionx["3thJobC"]) {
         cm.getPlayer().removePartyQuestItem("JBP");

@@ -14,7 +14,7 @@ function enter(pi) {
         pi.warp(914000200, 1);
         return true;
     } else {
-        pi.message("你只有在接受你右边的雅典娜·皮尔斯的任务后才能退出。");
+        pi.message("你只有在接受你右边的赫丽娜的任务后才能退出。");
         return false;
     }
 }

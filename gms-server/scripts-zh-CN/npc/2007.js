@@ -5,12 +5,12 @@ function start() {
 
 function action(mode, type, selection) {
     if (mode == -1) {
-        cm.sendNext("愉快旅行。");
+	cm.sendNext("祝你旅途愉快!");
         cm.dispose();
     } else {
         if (status == 0 && mode == 0) {
-            cm.sendNext("愉快旅行。");
-            cm.dispose();
+		cm.sendNext("祝你旅途愉快!");
+		cm.dispose();
         }
         if (mode == 1) {
             status++;

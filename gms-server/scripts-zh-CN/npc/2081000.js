@@ -25,7 +25,7 @@ var cost;
 var status = 0;
 
 function start() {
-    cm.sendSimple("...我可以帮你吗？\r\n#L0##b购买魔法种子#k#l\r\n#L1##b为利夫雷做点什么#k#l");
+    cm.sendSimple("...我可以帮你吗？\r\n#L0##b购买魔法种子#k#l\r\n#L1##b为神木村做点什么#k#l");
 }
 
 function action(mode, type, selection) {
@@ -40,21 +40,21 @@ function action(mode, type, selection) {
     status++;
     if (status == 1) {
         if (selection == 0) {
-            cm.sendSimple("你好像不是本地人。我能帮你吗？#L0##b我想要一些#t4031346#。#k#l");
+            cm.sendSimple("你好像不是本地人。我能帮你吗？\r\n#L0##b我想要一些#t4031346#。#k#l");
         } else {
             cm.sendNext("正在开发中...");
             cm.dispose();
         }
     } else if (status == 2) {
-        cm.sendGetNumber("#b#t4031346##k is a precious iteml I cannot give it to you just like that. How about doing me a little favor? Then I'll give it to you. I'll sell the #b#t4031346##k to you for #b30,000 mesos#k each. Are you willing to make the purchase? How many would you like, then?", 0, 0, 99);
+        cm.sendGetNumber("#b#t4031346##k是一件珍贵的东西，我不能那样给你。帮我个小忙怎么样?#b#t4031346##k我将会以#b30,000金币#k的单价出售. 你要购买吗?要多少个?", 0, 0, 99);
     } else if (status == 3) {
         if (selection == 0) {
-            cm.sendOk("我不能卖给你0。");
+            cm.sendOk("我不能卖给你。");
             cm.dispose();
         } else {
             temp = selection;
             cost = temp * 30000;
-            cm.sendYesNo("购买 #b" + temp + " #t4031346#(s)#k 将花费你 #b" + cost + " 金币#k。你确定要购买吗？");
+            cm.sendYesNo("购买#b"+temp+"个#t4031346##k将花费#b"+cost+"金币#k.要交易吗?");
         }
     } else if (status == 4) {
         if (cm.getMeso() < cost || !cm.canHold(4031346)) {

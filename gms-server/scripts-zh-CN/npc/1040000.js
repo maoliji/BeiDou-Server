@@ -43,9 +43,9 @@ function action(mode, type, selection) {
             if (cm.isQuestStarted(28177) && !cm.haveItem(4032479)) {
                 if (cm.canHold(4032479)) {
                     cm.gainItem(4032479, 1);
-                    cm.sendOk("哼，你在找我吗？是Stan长官派你来的，对吧？但是嘿，我不是你要找的嫌疑人。如果我有证据呢？拿着这个，把它还给 #b#p1012003##k。");
+                    cm.sendOk("哼，你在找我吗？是长老斯坦派你来的，对吧？但是嘿，我不是你要找的人。如果我有证据呢？拿着这个，把它还给 #b#p1012003##k。");
                 } else {
-                    cm.sendOk("嘿，在和我交谈之前先腾出一个槽位。");
+                    cm.sendOk("嘿，在和我交谈之前先在背包留一些空间。");
                 }
             } else {
                 cm.sendOk("呼呼呼...");

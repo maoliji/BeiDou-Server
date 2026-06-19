@@ -28,7 +28,7 @@
       </imgdir>
     </imgdir>
     <imgdir name="ban">
-      <string name="banMsg" value="You have been relocated by the vengeful spirit of the Scholar Ghost."/>
+      <string name="banMsg" value="因为书生鬼的报复，你被迁移走了。"/>
       <imgdir name="banMap">
         <imgdir name="0">
           <int name="field" value="222000000"/>

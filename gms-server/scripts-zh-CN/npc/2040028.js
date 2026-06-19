@@ -46,13 +46,13 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            var greeting = "感谢你找到了摆锤。你准备好返回伊欧斯塔了吗？";
+            var greeting = "谢谢你找到了摆锤.现在要回到#m221024400#吗?";
             if (cm.isQuestStarted(3230)) {
                 if (cm.haveItem(4031094)) {
                     cm.completeQuest(3230);
                     cm.gainItem(4031094, -1);
                 } else {
-                    greeting = "你还没有找到那个摆锤。你想回到伊俄斯塔吗？";
+                    greeting = "你还没有找到摆锤.现在要回到#m221024400#吗?";
                 }
             }
             cm.sendYesNo(greeting);

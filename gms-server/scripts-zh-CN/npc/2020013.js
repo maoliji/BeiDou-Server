@@ -66,7 +66,7 @@ function action(mode, type, selection) {
         } else if (status == 2) {
             if (cm.getPlayer().getRemainingSp() > 0) {
                 if (cm.getPlayer().getRemainingSp() > (cm.getLevel() - 70) * 3) {
-                    cm.sendNext("请在继续之前使用你所有的SP。");
+                    cm.sendNext("请在继续之前使用你所有的技能点SP。");
                     cm.dispose();
                     return;
                 }
@@ -78,12 +78,12 @@ function action(mode, type, selection) {
             }
 
             if (Math.floor(cm.getJobId() / 10) == 51) {
-                cm.sendNext("太棒了！你现在是一个#b掠夺者#k。作为一个掠夺者，你将学习一些与近战攻击相关的最复杂的技能。#b能量充能#k是一种技能，它允许你将你的力量和受到的伤害储存到一种特殊形式的能量中。一旦这团能量充满了，你可以使用#b能量爆发#k对敌人造成最大的伤害，也可以使用#b能量吸取#k来偷取敌人的生命值来恢复自己的生命。#b变身#k将允许你变身为一个具有毁灭性近战攻击的超人类存在，而在变身状态下，你可以使用#b冲击波#k来引发一次小型地震并对敌人造成巨大的伤害。");
+                cm.sendNext("太好了！你现在是#b斗士#k了.关于斗士, 你将学习一些与近战攻击相关的最高级技能。#b能量获得#k是一种技能，允许你储存你的力量和伤害，你收到一种特殊形式的能量。一旦这个能量球充满电，你可以使用#b能量爆破#k对敌人造成最大伤害，同时使用#b能量耗转#k偷你敌人的生命来恢复你自己的生命。#b超人变身#k将允许你转化为一个具有毁灭性近战攻击的超人，并且在转化的同时，你可以使用#b冲击波#k引起一场小地震并对你的敌人造成巨大的伤害。");
             } else {
-                cm.sendNext("太棒了！你现在成为了一个#bOutlaw#k。作为一个Outlaw，你将成为一个真正的枪手，掌握所有已知的枪支攻击技能，以及一些其他技能来帮助你消灭邪恶。#bBurst Fire#k 是Double Shot的更强大版本，可以同时射出更多子弹，造成更多伤害。你现在还可以召唤一只忠诚的#bOctopus#k 和一只俯冲的#bGaviota#k 作为你的忠实盟友，同时使用#bBullseye#k 攻击你的敌人。你还可以使用基于元素的攻击，比如#bFlamethrower#k 和#bIce Splitter#k。");
+                cm.sendNext("太好了！你现在是#b大副#k了.作为一个大副，你将成为一个真正的火枪手，每一个已知的枪械攻击，以及一些其他技能，帮助你战胜邪恶。#b双管枪射击#k是一个更强大的版本的双重射击，射击更多的子弹，同时造成更多的伤害。你现在也有能力召唤一个忠诚的#b章鱼炮台#k以及俯冲#b海欧空袭#k作为你信任的盟友，在你用#b靶心#k攻击敌人时. 也可以使用基于元素的攻击#b烈焰喷射#k和#b寒冰喷射#k。");
             }
         } else if (status == 3) {
-            cm.sendNextPrev("我也给了你一些SP和AP，这将帮助你开始。你现在确实成为了一个强大的海盗。但请记住，现实世界将等待着你，那里会有更艰难的障碍需要克服。当你觉得自己无法训练自己达到更高的境界时，那时候，只有那时候，来找我。我会在这里等着你。");
+            cm.sendNextPrev("我也给了你一些技能点和能力值，这将帮助你开始。你现在确实成为了一个强大的海盗。但请记住，现实世界将等待着你，那里会有更艰难的障碍需要克服。当你觉得自己无法训练自己达到更高的境界时，那时候，只有那时候，来找我。我会在这里等着你。");
         }
     } else if (actionx["Physical"]) {
         if (status == 0) {
@@ -120,7 +120,7 @@ function action(mode, type, selection) {
             }
         } else {
             if (cm.getPlayer().getLevel() >= 50) {
-                cm.sendOk("首领居住委员会授予你#b特许#k，成为#r反击扎昆团队#k的一部分。祝你前程似锦。");
+                cm.sendOk("长老员会授予你#b特许#k，成为#r反击扎昆团队#k的一部分。祝你一切顺利。");
                 if (!(cm.isQuestStarted(100200) || cm.isQuestCompleted(100200))) {
                     cm.startQuest(100200);
                 }
@@ -129,7 +129,7 @@ function action(mode, type, selection) {
                     cm.completeQuest(100201);
                 }
             } else {
-                cm.sendOk("你太弱了，无法成为#rcounteroffensive团队对抗扎昆#k的一部分。至少达到#blevel 50#k，然后再和我说话。");
+                cm.sendOk("你太弱了，无法挑战#r扎昆#k. 至少达到#b50级#k以后，再与我交谈。");
             }
             cm.dispose();
         }

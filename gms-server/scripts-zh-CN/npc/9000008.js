@@ -21,6 +21,6 @@
 */
 
 function start() {
-    cm.sendOk("如果你有一个想要打开的锁定的盒子，把它带给我。");
+    cm.sendOk("如果你想打开一个上锁的盒子，把它带给我。");
     cm.dispose();
 }

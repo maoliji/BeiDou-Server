@@ -31,7 +31,7 @@
 var status = -1;
 
 function start() {
-    cm.sendSimple("等一下！由于装修，该区域的进入受到限制。我只能允许符合特定条件的人进入这里。#b\n\r\n#L0#我现在正在帮助#eBlake#n。#l\r\n#L1#我是这家购物中心的#rVIP#b！#l");
+    cm.sendSimple("等一下！由于装修，该区域的进入受到限制。我只能允许符合特定条件的人进入这里。\r\n(单机版进入无需条件)#b\n\r\n#L0#我现在正在帮助#eBlake#n。#l\r\n#L1#我是这家购物中心的#rVIP#b！#l");
 }
 
 function action(mode, type, selection) {
@@ -46,7 +46,8 @@ function action(mode, type, selection) {
     }
     if (status == 0) {
         if (selection == 0) {
-            if (cm.isQuestStarted(2286) || cm.isQuestStarted(2287) || cm.isQuestStarted(2288)) {
+//            if (cm.isQuestStarted(2286) || cm.isQuestStarted(2287) || cm.isQuestStarted(2288)) {
+               if (status == 0) {  //单机版进入无需条件
                 var em = cm.getEventManager("RockSpirit");
                 if (!em.startInstance(cm.getPlayer())) {
                     cm.sendOk("嗯...看起来前面的房间有点拥挤。请在这里等一会，好吗？");
@@ -64,7 +65,7 @@ function action(mode, type, selection) {
                     cm.sendOk("VIP区域只有在完成“进入VIP区域”的任务并交出#r#t4032521#s#k后才能进入。");
                 }
             } else {
-                cm.sendOk("#rVIP#k？是的，这很有趣 #rVIP先生#k，现在赶紧滚开，否则我就叫保安了。");
+                cm.sendOk("#rVIP#k? 听起来可真有趣 #rVIP先生#k?别骗我,快走吧.");
             }
         }
         cm.dispose();

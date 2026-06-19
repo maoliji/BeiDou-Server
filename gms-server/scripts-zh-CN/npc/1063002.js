@@ -27,7 +27,7 @@ var repeatablePrizes = [[4010006, 4], [4010007, 4], [4020007, 4]];
 function start() {
     if (cm.isQuestStarted(2054) && !cm.haveItem(4031028, 30)) {
         if (!cm.canHold(4031028, 30)) {
-            cm.sendNext("Check for a available slot on your ETC inventory.")
+            cm.sendNext("检查你的背包其他栏是否有可用的空位。")
             cm.dispose();
             return;
         }
@@ -36,7 +36,7 @@ function start() {
     } else {
         const InventoryType = Java.type('org.gms.client.inventory.InventoryType');
         if (cm.getPlayer().getInventory(InventoryType.ETC).getNumFreeSlot() < 1) {
-            cm.sendNext("检查你的杂项物品栏是否有可用的空位。");
+            cm.sendNext("检查你的背包其他栏是否有可用的空位。");
             cm.dispose();
             return;
         }

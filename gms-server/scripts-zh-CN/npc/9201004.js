@@ -68,33 +68,30 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            var questionStr = ["我该如何与他人订婚？", "我该怎么办理结婚？", "我要怎样办理离婚？"]
+            var questionStr = ["我怎样才能吸引到某人?", "我怎么能结婚?", "我怎么能离婚?"]
 
             if (!(!cm.getPlayer().isMarried() && getWeddingRingItemId(cm.getPlayer()))) {
-                questionStr.push("我想办理离婚……");
+                questionStr.push("我想要离婚...");
             } else {
-                questionStr.push("我想摘除我的旧婚戒……");
+                questionStr.push("我想拿掉我的旧结婚戒指...");
             }
-			var text = "你好，欢迎来到#b阿莫利亚#k，这是一个美丽的地方，枫叶冒险家可以在这里找到爱情，甚至如果足够激动人心，还可以结婚。你对阿莫利亚有任何问题吗？跟我说说吧。#b\r\n\r\n";
-			for(let i=0;i < questionStr.length;i++){
-				text += `#L${i}#${questionStr[i]}#l\r\n`;
-			}
-            cm.sendSimple(text);
+
+            cm.sendSimple("你好，欢迎来到#b婚礼村#k，这是一个美丽的地方，枫叶冒险家可以在这里找到爱情，甚至如果足够激动人心，还可以结婚。你对阿莫利亚有任何问题吗？跟我说说吧。#b\r\n\r\n" + generateSelectionMenu(questionStr));
         } else if (status == 1) {
             switch (selection) {
                 case 0:
-                    cm.sendOk("订婚流程非常简单。从#b婚礼珠宝商人, #p9201000# #k那里接受一个预请求，然后在整个冒险岛世界中收集#b#t4031367#。#k完成后，你就可以制作一枚订婚戒指。拿着戒指向你喜欢的人表白，希望对方也有同样的感觉。");
-                    status = -1;
+                    cm.sendOk("订婚流程非常简单。从#b戒指制作商人#k#p9201000#那里预约制作，然后在整个冒险岛世界中收集#b#t4031367##k。完成后，你就可以制作一枚订婚戒指。拿着戒指向你喜欢的人表白，希望对方也有同样的感觉。");
+                    cm.dispose();
                     break;
 
                 case 1:
                     cm.sendOk("在#b结婚流程#k中，你必须已经订婚。恋人必须选择他们想举行婚礼的场所。阿莫利亚提供两个选择：#r大教堂#k和#r小教堂#k。\r\n然后，其中一位伴侣必须购买一张#b婚礼门票#k，可以通过现金商店购买，并与婚礼助手预订他们的仪式。每位伴侣将收到#r客人门票#k，可以分发给他们的熟人。");
-                     status = -1;
+                    cm.dispose();
                     break;
 
                 case 2:
                     cm.sendOk("很遗憾，长久的爱有一天可能会消退。嗯，我希望对于任何一对曾经结婚、正在结婚或者将要结婚的恋人来说，情况并非如此。但是，如果真的发生了，我愿意以#r" + divorceFee + "#k金币的费用来提供安全的离婚服务。");
-                     status = -1;
+                    cm.dispose();
                     break;
 
                 case 3:
@@ -108,7 +105,7 @@ function action(mode, type, selection) {
                         } else if (hasEquippedWeddingRing(cm.getPlayer())) {
                             cm.sendOk("如果你想要移除你的旧婚戒，请在和我对话之前先将它卸下。");
                         } else {
-                            cm.sendOk("你不需要离婚才能要求离婚。");
+                            cm.sendOk("你没有结婚，不需要离婚。");
                         }
 
                         cm.dispose();
@@ -138,4 +135,12 @@ function action(mode, type, selection) {
             cm.dispose();
         }
     }
+}
+
+function generateSelectionMenu(array) {
+    var menu = "";
+    for (var i = 0; i < array.length; i++) {
+        menu += "#L" + i + "#" + array[i] + "#l\r\n";
+    }
+    return menu;
 }

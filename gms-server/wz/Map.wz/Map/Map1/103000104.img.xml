@@ -6,7 +6,7 @@
     <string name="mapDesc" value=""/>
     <int name="town" value="0"/>
     <int name="returnMap" value="103000000"/>
-    <float name="mobRate" value="1.0"/>
+    <float name="mobRate" value="1.5"/>
     <string name="bgm" value="Bgm03/Subway"/>
     <int name="hideMinimap" value="0"/>
     <int name="forcedReturn" value="999999999"/>

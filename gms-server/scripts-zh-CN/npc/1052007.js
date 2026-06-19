@@ -1,12 +1,12 @@
 var status = 0;
 var ticketSelection = -1;
-var text = "这是检票口。";
+var text = "这里是检票口。";
 var hasTicket = false;
 var NLC = false;
 var em;
 
 function start() {
-    cm.sendSimple("选择你的目的地。\r\n#L0##b废都广场#l\r\n#L1#进入建筑工地#l\r\n#L2#新叶城#l");
+    cm.sendSimple("选择你的目的地。\r\n#L0##b废都广场#l\r\n#L1#进入建筑工地#l\r\n#L2#新叶城#l\r\n#L3#台湾西门町#l");
 }
 
 function action(mode, type, selection) {
@@ -32,7 +32,7 @@ function action(mode, type, selection) {
 
         } else if (selection == 1) {
             if (cm.haveItem(4031036) || cm.haveItem(4031037) || cm.haveItem(4031038)) {
-                text += "您将立即被带进去。您想使用哪张票？#b";
+                text += "你可以进去,要用哪张票?#b";
                 for (var i = 0; i < 3; i++) {
                     if (cm.haveItem(4031036 + i)) {
                         text += "\r\n#b#L" + (i + 1) + "##t" + (4031036 + i) + "#";
@@ -41,13 +41,13 @@ function action(mode, type, selection) {
                 cm.sendSimple(text);
                 hasTicket = true;
             } else {
-                cm.sendOk("看起来你好像没有门票！");
+                cm.sendOk("看起来你好像没有票！");
                 cm.dispose();
 
             }
         } else if (selection == 2) {
             if (!cm.haveItem(4031711) && cm.getPlayer().getMapId() == 103000100) {
-                cm.sendOk("看起来你没有门票！你可以从贝尔那里买一张。");
+                cm.sendOk("看起来你没有票！你可以从贝尔那里买一张。");
                 cm.dispose();
                 return;
             }
@@ -58,6 +58,9 @@ function action(mode, type, selection) {
                 cm.dispose();
 
             }
+        }   else    if (selection == 3) {
+	cm.warp(740000100,2)
+	cm.dispose();
         }
     } else if (status == 2) {
         if (hasTicket) {

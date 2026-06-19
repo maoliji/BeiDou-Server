@@ -41,19 +41,19 @@ function action(mode, type, selection) {
     }
     if (status == 0) {
         if (cm.getPlayer().getGuildId() < 1 || cm.getPlayer().getGuildRank() != 1) {
-            cm.sendNext("你好！我是#b#p2010009##k。只有家族会长才能尝试组建家族联盟。");
+            cm.sendNext("你好！我是#b#p2010009##k。只有家族领袖才能尝试组建家族联盟。");
             cm.dispose();
             return;
         }
 
-        cm.sendSimple("你好！我是#bLenario#k。\r\n#b#L0#你能告诉我家族联盟是什么吗？#l\r\n#L1#我如何创建家族联盟？#l\r\n#L2#我想创建一个家族联盟。#l\r\n#L3#我想为家族联盟添加更多公会。#l\r\n#L4#我想解散家族联盟。#l");
+        cm.sendSimple("你好！我是#b#p2010009##k。\r\n#b#L0#你能告诉我家族联盟是什么吗？#l\r\n#L1#我如何创建家族联盟？#l\r\n#L2#我想创建一个家族联盟。#l\r\n#L3#我想为家族联盟添加更多公会。#l\r\n#L4#我想解散家族联盟。#l");
     } else if (status == 1) {
         choice = selection;
         if (selection == 0) {
-            cm.sendNext("家族联盟就像它的名字一样，是由多个公会组成的超级团体。我负责管理这些家族联盟。");
+            cm.sendNext("家族联盟就像它的名字一样，是由多个家族组成的超级团体。我负责管理这些家族联盟。");
             cm.dispose();
         } else if (selection == 1) {
-            cm.sendNext("要创建家族联盟，需要两位且仅限两位公会会长组成一个队伍，并且必须在同一个频道的房间内。该队伍的队长将被指定为家族联盟的主人。\r\n最初，只有两个公会可以加入新的联盟，但随着时间的推移，你可以通过在特定时机与我交谈并投资一定费用来扩大联盟的容量。");
+            cm.sendNext("要创建家族联盟，需要两位且仅限两位家族会长组成一个队伍，并且必须在同一个频道的房间内。该队伍的队长将被指定为家族联盟的盟主。\r\n最初，只有两个家族可以加入新的联盟，但随着时间的推移，你可以通过在特定时机与我交谈并投资一定费用来扩大联盟的容量。");
             cm.dispose();
         } else if (selection == 2) {
             if (!cm.isLeader()) {
@@ -67,19 +67,19 @@ function action(mode, type, selection) {
                 return;
             }
 
-            cm.sendYesNo("哦，你对组建家族联盟感兴趣吗？目前这项操作的费用是 #b" + allianceCost + " 金币#k。");
+            cm.sendYesNo("哦，你对组建家族联盟感兴趣吗？\r\n目前这项操作的费用是 #b" + allianceCost + " 金币#k。");
         } else if (selection == 3) {
             if (cm.getPlayer().getMGC() == null) {
-                cm.sendOk("如果你没有公会，就无法扩展家族联盟。");
+                cm.sendOk("如果你没有家族，就无法扩展家族联盟。");
                 cm.dispose();
                 return;
             }
 
             var rank = cm.getPlayer().getMGC().getAllianceRank();
             if (rank == 1) {
-                cm.sendYesNo("你想要增加 #r1个家族联盟#k 位置吗？这个手续的费用是 #b" + increaseCost + " 金币#k。");
+                cm.sendYesNo("你想要增加你的家族联盟 #rone guild#k 的位置吗？这个手续的费用是 #b" + increaseCost + " 金币#k。");
             } else {
-                cm.sendNext("只有家族联盟会长才能扩大家族联盟中的公会数量。");
+                cm.sendNext("只有家族联盟会长才能扩大家族联盟中的家族数量。");
                 cm.dispose();
             }
         } else if (selection == 4) {
@@ -104,10 +104,10 @@ function action(mode, type, selection) {
                 cm.dispose();
                 return;
             }
-            cm.sendGetText("请输入新家族联盟的名称（最多12个字符）。");
+            cm.sendGetText("现在,请给你的联盟取个好听的名字吧(最多6个汉字或12个字符)");
         } else if (choice == 3) {
             if (cm.getAllianceCapacity() == allianceLimit) {
-                cm.sendOk("你的联盟已经达到了公会的最大容量。");
+                cm.sendOk("你的联盟已经达到了家族的最大容量。");
                 cm.dispose();
                 return;
             }
@@ -119,7 +119,7 @@ function action(mode, type, selection) {
 
             cm.upgradeAlliance();
             cm.gainMeso(-increaseCost);
-            cm.sendOk("你的联盟现在可以接受一个额外的公会。");
+            cm.sendOk("你的联盟现在可以接受一个额外的家族。");
             cm.dispose();
         } else if (choice == 4) {
             if (cm.getPlayer().getGuild() == null || cm.getPlayer().getGuild().getAllianceId() <= 0) {
@@ -141,7 +141,7 @@ function action(mode, type, selection) {
             choice = 2;
         } else {
             if (cm.createAlliance(guildName) == null) {
-                cm.sendOk("请检查一下你和另一个公会领袖是否都在这个房间里，确保两个公会目前都没有在联盟中注册。在这个过程中，除了你们两个，不应该有其他公会领袖在场。");
+                cm.sendOk("请检查一下你和另一个家族领袖是否都在这个房间里，确保两个家族目前都没有在联盟中注册。在这个过程中，除了你们两个，不应该有其他家族领袖在场。");
             } else {
                 cm.gainMeso(-allianceCost);
                 cm.sendOk("你已成功组建了家族联盟。");

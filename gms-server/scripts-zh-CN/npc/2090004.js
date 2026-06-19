@@ -49,8 +49,9 @@ function action(mode, type, selection) {
                 return;
             }
         }
-        var selStr = "I am a man of many talents. Let me know what you'd like to do. #b"
-        var options = ["Make a medicine", "Make a scroll", "Donate medicine ingredients"];
+		var selStr = "我是个方面的天才.让我知道你想做什么. #b"
+		var options = new Array("做药", "做卷轴", "捐赠制药材料");
+
         for (var i = 0; i < options.length; i++) {
             selStr += "\r\n#L" + i + "# " + options[i] + "#l";
         }
@@ -71,7 +72,7 @@ function action(mode, type, selection) {
                 return;
             }
 
-            selStr = "What kind of medicine are you interested in making?#b";
+            selStr = "你想制作什么药?#b";
 
             for (var i = 0; i < itemSet.length; i++) {
                 selStr += "\r\n#L" + i + "# #v" + itemSet[i] + "# #t" + itemSet[i] + "##l";
@@ -80,20 +81,16 @@ function action(mode, type, selection) {
         } else if (selectedType == 1) { //Make a scroll
             status++;
 
-            selStr = "What kind of scrolls are you interested in making?#b";
-            itemSet = ["Scroll for One-Handed Sword for ATT", "Scroll for One-Handed Axe for ATT", "Scroll for One-Handed BW for ATT",
-                "Scroll for Dagger for ATT", "Scroll for Wand for Magic Att.", "Scroll for Staff for Magic Att.",
-                "Scroll for Two-handed Sword for ATT.", "Scroll for Two-handed Axe for ATT", "Scroll for Two-handed BW for ATT",
-                "Scroll for Spear for ATT", "Scroll for Pole Arm for ATT", "Scroll for Bow for ATT", "Scroll for Crossbow for ATT ",
-                "Scroll for Claw for ATT", "Scroll for Knuckle for ATT", "Scroll for Gun for ATT#k"];
+            selStr = "你想做什么卷轴?#b";
+            itemSet = [2043000, 2043100, 2043200, 2043300, 2043700, 2043800, 2044000, 2044100, 2044200, 2044300, 2044400, 2044500, 2044600, 2044700, 2044800, 2044900];
 
             for (var i = 0; i < itemSet.length; i++) {
-                selStr += "\r\n#L" + i + "# " + itemSet[i] + "#l";
+                selStr += "\r\n#L" + i + "# #z" + itemSet[i] + "##l";
             }
         } else {//Donate medicine ingredients
             status++;
 
-            selStr = "So you wish to donate some medicine ingredients? This is great news! Donations will be accepted in the unit of #b100#k. The donator will receive a marble that enables one to make a scroll. Which of these would you like to donate? #b";
+            selStr = "你想捐赠一些材料?太棒了!捐赠以#b100#k个位单位.捐赠的人将会得到一块用来制作卷轴的石头.你要捐赠什么? #b";
             itemSet = [4000276, 4000277, 4000278, 4000279, 4000280, 4000291, 4000292, 4000286, 4000287, 4000293, 4000294, 4000298, 4000284, 4000288, 4000285, 4000282, 4000295, 4000289, 4000296, 4000297];
 
             for (var i = 0; i < itemSet.length; i++) {
@@ -104,7 +101,7 @@ function action(mode, type, selection) {
         cm.sendSimple(selStr);
     } else if (status == 2) {
         selectedItem = selection;
-        cm.sendGetText("How many #b#t" + itemSet[selectedItem] + "##k do you want to make?");
+        cm.sendGetText("想制做多少个#b#t" + itemSet[selectedItem] + "##k?");
     } else if (status == 3) {
         if (selectedType == 0) { //Medicines
             var text = cm.getText();
@@ -118,7 +115,7 @@ function action(mode, type, selection) {
             matQty = matQtySet[selectedItem];
             matMeso = matQtyMeso[selectedItem];
 
-            var prompt = "You want to make #b" + makeQty + " #t" + item + "##k? In order to make " + makeQty + " #t" + item + "#, you'll need the following items:\r\n";
+            var prompt = "你想制作#b" + makeQty + "个#t" + item + "##k?你需要准备一下材料:\r\n";
             if (mats instanceof Array) {
                 for (var i = 0; i < mats.length; i++) {
                     prompt += "\r\n#i" + mats[i] + "# " + matQty[i] * makeQty + " #t" + mats[i] + "#";
@@ -128,7 +125,7 @@ function action(mode, type, selection) {
             }
 
             if (matMeso > 0) {
-                prompt += "\r\n#i4031138# " + matMeso * makeQty + " meso";
+                prompt += "\r\n#i4031138# " + matMeso * makeQty + "金币";
             }
 
             cm.sendYesNo(prompt);
@@ -145,7 +142,7 @@ function action(mode, type, selection) {
             item = itemSet[selectedItem];
             mats = matSet[selectedItem];
             matQty = matQtySet[selectedItem];
-            var prompt = "You want to make #b#t" + item + "##k? In order to make #t" + item + "# you'll need the following items:";
+            var prompt = "你想制作#b#t" + item + "##k?你需要准备一下材料:";
             if (mats instanceof Array) {
                 for (var i = 0; i < mats.length; i++) {
                     prompt += "\r\n#i" + mats[i] + "# " + matQty[i] + " #t" + mats[i] + "#";
@@ -162,7 +159,7 @@ function action(mode, type, selection) {
             rewdSet = [7, 7, [7, 8], 10, 11, 8, [7, 8], [7, 9], [7, 8], 9, 10, [10, 11], 11, [11, 12], 13, 13, 14, 15, [15, 16], 17];
 
             item = itemSet[selectedItem];
-            var prompt = "Are you sure you want to donate #b100 #t " + item + "##k?";
+            var prompt = "确定要捐赠#b100个#t" + item + "##k吗?";
             cm.sendYesNo(prompt);
         }
     } else if (status == 4) {

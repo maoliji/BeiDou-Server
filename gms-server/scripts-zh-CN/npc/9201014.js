@@ -75,8 +75,8 @@ function action(mode, type, selection) {
             }
         } else if (marriageAction == 1) {     // onyx prizes
             if (status == 0) {
-                var msg = "Hello I exchange Onyx Chest for Bride and Groom and the Onyx Chest for prizes!#b";
-                var choice1 = ["I have an Onyx Chest for Bride and Groom", "I have an Onyx Chest"];
+                var msg = "你好，我可以兑换新郎新娘的玛瑙宝箱和玛瑙宝箱!#b";
+                var choice1 = ["我有新郎新娘的玛瑙宝箱", "我有玛瑙宝箱"];
                 for (var i = 0; i < choice1.length; i++) {
                     msg += "\r\n#L" + i + "#" + choice1[i] + "#l";
                 }
@@ -92,7 +92,7 @@ function action(mode, type, selection) {
                                 cm.gainItem(4031424, -1);
                                 cm.dispose();
                             } else {
-                                cm.sendOk("你现在没有空闲的使用槽位。");
+                                cm.sendOk("你现在没有空闲的背包消耗栏。");
                                 cm.dispose();
                             }
                         } else {
@@ -100,7 +100,7 @@ function action(mode, type, selection) {
                             cm.dispose();
                         }
                     } else {
-                        cm.sendOk("你没有新人用的缟玛瑙宝箱。");
+                        cm.sendOk("你没有新郎新娘的玛瑙宝箱。");
                         cm.dispose();
                     }
                 } else if (selection == 1) {
@@ -112,17 +112,17 @@ function action(mode, type, selection) {
                             cm.gainItem(4031423, -1);
                             cm.dispose();
                         } else {
-                            cm.sendOk("你现在没有空闲的使用槽位。");
+                            cm.sendOk("你现在没有空闲的背包消耗栏。");
                             cm.dispose();
                         }
                     } else {
-                        cm.sendOk("你没有黑檀宝箱。");
+                        cm.sendOk("你没有玛瑙宝箱。");
                         cm.dispose();
                     }
                 }
             }
         } else {
-            cm.sendOk("嗨，欢迎来到阿莫利亚的婚礼礼品登记保留处。我们为新人和幸运的仪式参与者重新分配和提供礼物。");
+            cm.sendOk("嗨，欢迎来到婚礼村的婚礼礼品登记保留处。我们为新人和幸运的仪式参与者重新分配和提供礼物。");
             cm.dispose();
         }
     }

@@ -47,7 +47,7 @@ function action(mode, type, selection) {
             if (cm.getMapId() != 925010400) {
                 em = cm.getEventManager("DelliBattle");
                 if (em == null) {
-                    cm.sendOk("德利战斗遇到了一个错误。");
+                    cm.sendOk("拯救粉红天书任务有问题。");
                     cm.dispose();
                     return;
                 } else if (cm.isUsingOldPqNpcStyle()) {
@@ -55,7 +55,7 @@ function action(mode, type, selection) {
                     return;
                 }
 
-                cm.sendSimple("#e#b<组队任务：拯救 Delli>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n啊，#r#p1095000##k 让你来的？她担心我吗？... 很抱歉听到这个消息，但我现在真的不能回去，一些怪物受到黑魔法师的影响，我需要解救它们！... 你似乎也不会接受这个事实，对吗？你愿意和队友一起帮助我吗？如果愿意，请让你的 #b队长#k 和我交谈。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启") + " 组队搜索。\r\n#L2#我想了解更多细节。");
+                cm.sendSimple("#e#b<组队任务：拯救粉红天书>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n啊，#r#p1095000##k 让你来的？她担心我吗？... 很抱歉听到这个消息，但我现在真的不能回去，一些怪物受到黑魔法师的影响，我需要解救它们！... 你似乎也不会接受这个事实，对吗？你愿意和队友一起帮助我吗？如果愿意，请让你的 #b队长#k 和我交谈。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启") + " 组队搜索。\r\n#L2#我想了解更多细节。");
             } else {
                 cm.sendYesNo("任务成功了，感谢你的护送！我可以带你去#b#m120000104##k，你准备好了吗？");
             }
@@ -82,10 +82,10 @@ function action(mode, type, selection) {
                     }
                 } else if (selection == 1) {
                     var psState = cm.getPlayer().toggleRecvPartySearchInvite();
-                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
+                    cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "开启" : "关闭") + "#k。想要改变状态时随时找我。");
                     cm.dispose();
                 } else {
-                    cm.sendOk("#e#b<组队任务：拯救戴利>#k#n\r\n 一场伏击正在进行中！我必须在战场上站立大约6分钟才能完成解放，请在此期间保护我，以便完成我的任务。");
+                    cm.sendOk("#e#b<组队任务：拯救粉红天书>#k#n\r\n 一场伏击正在进行中！我必须在战场上坚持大约6分钟才能完成解放，请在此期间保护我，以便完成我的任务。");
                     cm.dispose();
                 }
             } else {

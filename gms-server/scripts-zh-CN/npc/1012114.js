@@ -37,9 +37,9 @@ function action(mode, type, selection) {
 
       if (status == 0) {
           if (cm.isEventLeader()) {
-              cm.sendSimple("吼！我是兴儿，时刻准备守护这片地方。你来这儿干什么？\r\n#b#L0# 请告诉我这片地方是怎么回事。#l\r\n#L1# 我带来了 #t4001101#。#l\r\n#L2# 我想离开这片地方。#l");
+              cm.sendSimple("吼！我是#p1012114#，时刻准备守护这片地方。你来这儿干什么？\r\n#b#L0# 请告诉我这片地方是怎么回事。#l\r\n#L1# 我带来了 #t4001101#。#l\r\n#L2# 我想离开这片地方。#l");
           } else {
-              cm.sendSimple("吼！我是兴儿，时刻准备守护这片地方。你来这儿干什么？\r\n#b#L0# 请告诉我这片地方是怎么回事。#l\r\n#L2# 我想离开这片地方。#l");
+              cm.sendSimple("吼！我是#p1012114#，时刻准备守护这片地方。你来这儿干什么？\r\n#b#L0# 请告诉我这片地方是怎么回事。#l\r\n#L2# 我想离开这片地方。#l");
           }
       } else if (status == 1) {
           if (chosen == -1) {

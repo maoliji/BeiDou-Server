@@ -30,8 +30,8 @@
 ---------------------------------------------------------------------------------------------------
 */
 
-var toMagatia = "Would you like to take the #bCamel Cab#k to #bMagatia#k, the town of Alchemy? The fare is #b1500 mesos#k.";
-var toAriant = "Would you like to take the #bCamel Cab#k to #bAriant#k, the town of Burning Roads? The fare is #b1500 mesos#k.";
+var toMagatia = "你想乘坐#b骆驼中巴#k去#b玛加提亚#k吗?费用是#b1500金币#k.";
+var toAriant = "你想乘坐#b骆驼中巴#k去#b阿里安特#k吗??费用是#b1500金币#k.";
 
 function start() {
     cm.sendYesNo(cm.getPlayer().getMapId() == 260020000 ? toMagatia : toAriant);

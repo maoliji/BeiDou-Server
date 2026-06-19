@@ -1,4 +1,5 @@
 /* @Author SharpAceX
+法师雕像
 */
 
 function start() {
@@ -11,18 +12,20 @@ function start() {
     } else if (cm.getPlayer().getMapId() == 610030521) {
         if (cm.getPlayer().getMap().countMonsters() == 0) {
             var eim = cm.getEventInstance();
-            var stgStatus = eim.getIntProperty("glpq5_room");
+            var stgStatus = eim.getIntProperty("glpq5_room2");
             var jobNiche = cm.getPlayer().getJob().getJobNiche();
 
-            if ((stgStatus >> jobNiche) % 2 == 0) {
+            //if ((stgStatus >> jobNiche) % 2 == 0) {
+               if (stgStatus == 0) {
                 if (cm.canHold(4001257, 1)) {
                     cm.gainItem(4001257, 1);
                     cm.sendOk("干得好。");
 
-                    stgStatus += (1 << jobNiche);
-                    eim.setIntProperty("glpq5_room", stgStatus);
+                    //stgStatus += (1 << jobNiche);
+                    stgStatus += 1;
+                    eim.setIntProperty("glpq5_room2", stgStatus);
                 } else {
-                    cm.sendOk("先在你的杂项物品栏腾出空间。");
+                    cm.sendOk("先在你的背包其他栏腾出空间。");
                 }
             } else {
                 cm.sendOk("这个房间里的武器已经被取走了。");

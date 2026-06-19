@@ -56,10 +56,10 @@ function action(mode, type, selection) {
         if (status == 0) {
             if (cm.haveItem(4031013, 30)) {
                 completed = true;
-                cm.sendOk("你是一个真正的英雄！拿着这个，雅典娜会承认你的。");
+                cm.sendOk("你已经收集了30个黑珠!!拿着这个#b#z4031012##k，赫丽娜会承认你的。");
             } else {
                 completed = false;
-                cm.sendSimple("你需要收集 #b30 #t4031013##k。祝你好运。\r\n#b#L1#我想离开#l");
+                cm.sendSimple("你需要收集#b30个#t4031013##k。祝你好运。\r\n#b#L1#我想离开#l");
             }
         } else if (status == 1) {
             if (completed) {

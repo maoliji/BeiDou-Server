@@ -38,7 +38,7 @@ var vipcost = 999;
 var iwantreg = 0;
 
 function start() {
-    cm.sendNext("欢迎光临。我们是冬青树镇酒店。我们的酒店一直努力为您提供最好的服务。如果您因打猎而感到疲惫不堪，不妨在我们的酒店放松一下吧？");
+    cm.sendNext("欢迎光临。我们是林中之城桑拿房。我们的酒店一直努力为您提供最好的服务。如果您因打猎而感到疲惫不堪，不妨在我们的酒店放松一下吧？");
 }
 
 function action(mode, type, selection) {
@@ -46,13 +46,13 @@ function action(mode, type, selection) {
         cm.dispose();
     } else {
         if (mode == 0 && status == 2) {
-"We offer other kinds of services, too, so please think carefully and then make your decision."
+            cm.sendNext("我们也提供其他种类的服务，所以请仔细考虑后再做决定。");
             cm.dispose();
             return;
         }
         status++;
         if (status == 1) {
-            cm.sendSimple("我们提供两种房间供您选择。请选择您喜欢的一种。\r\n#b#L0#普通桑拿房（每次使用" + regcost + " 枚金币）#l\r\n#L1#VIP桑拿房（每次使用" + vipcost + " 枚金币）#l");
+            cm.sendSimple("我们提供两种房间供您选择。请选择您喜欢的一种。\r\n#b#L0#普通桑拿房（每次使用" + regcost + " 枚迷宫币）#l\r\n#L1#VIP桑拿房（每次使用" + vipcost + " 枚迷宫币）#l");
             iwantreg = 1;
         } else if (status == 2) {
             if (selection == 0) {

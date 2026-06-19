@@ -32,7 +32,7 @@ function action(mode, type, selection) {
         var mapobj = cm.getMap();
 
         if (mode == 0 && type > 0) {
-            cm.getPlayer().dropMessage(5, "Eleanor: Oh, lost the Empress and still challenging us? Now you've done it! Prepare yourself!!!");
+            cm.getPlayer().dropMessage(5, "#p1104002#: 女皇祝福都没有了还敢挑战我们!!!");
 
             const LifeFactory = Java.type('org.gms.server.life.LifeFactory');
             const Point = Java.type('java.awt.Point');
@@ -55,7 +55,7 @@ function action(mode, type, selection) {
                 return;
             }
 
-            cm.sendAcceptDecline("Hahahahaha! This place's Empress is already under my domain, that's surely a great advance on the #bBlack Wings#k' overthrow towards Maple World... And you, there? Still wants to face us? Or, better yet, since you seem strong enough to be quite a supplementary reinforcement at our service, #rwill you meet our expectations and fancy joining us#k since there's nothing more you can do?");
+            cm.sendAcceptDecline("哈哈哈哈哈!这里的女皇已经被我控制住了,这将是#b黑色之翼#k倾覆冒险岛世界的一大进展... 你还想恨我们作对吗? 还是说你想为我们效力?#r你够资格加入我们吗?");
         } else if (status == 1) {
             cm.sendOk("“哈，懦夫在#r黑魔法师#k的军队中没有立足之地。滚吧！”");
             cm.dispose();

@@ -19,7 +19,6 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 /*      Author: Xterminator, Moogra
 	NPC Name: 		Fourth Eos Rock
 	Map(s): 		Ludibrium : Eos Tower 1st Floor (221020000)
@@ -27,10 +26,10 @@
 */
 
 function start() {
-    if (cm.haveItem(4001020)) {
-        cm.sendYesNo("您可以使用#b#t4001020##k来激活#b#p2040027##k。您要前往第41层的#b#p2040026##k吗？");
-    } else {
-        cm.sendOk("有一块魔法石可以让你传送到#b#p2040026##k，但如果没有卷轴就无法激活。");
+    if (cm.haveItem(4001020))
+    cm.sendYesNo("你可以使用#b#z4001020##k开启#b#p2040027##k，现在去41层的#b#p2040026##k吗?");
+    else {
+        cm.sendOk("这个石头可以传送到41层的#b#p2040026##k，但是需要#b#z4001020##k.");
         cm.dispose();
     }
 }

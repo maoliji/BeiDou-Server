@@ -25,10 +25,10 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendYesNo("前方等待着大师本人。你准备好面对他了吗？");
+            cm.sendYesNo("人偶师在前面等待着你。你准备好面对他了吗？");
         } else {
             if (cm.getClient().getChannelServer().getMapFactory().getMap(925020010).getCharacters().size() > 0) {
-                cm.sendOk("有人已经在挑战大师了。请稍后再试。");
+                cm.sendOk("有人已经在挑战人偶师了。请稍后再试。");
             } else {
                 const LifeFactory = Java.type('org.gms.server.life.LifeFactory');
                 const Point = Java.type('java.awt.Point');

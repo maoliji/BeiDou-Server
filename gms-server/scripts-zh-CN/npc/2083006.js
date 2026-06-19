@@ -4,24 +4,24 @@
 */
 
 var quests = [3719, 3724, 3730, 3736, 3742, 3748];
-var array = ["Year 2021 - Average Town Entrance", "Year 2099 - Midnight Harbor Entrance", "Year 2215 - Bombed City Center Retail District", "Year 2216 - Ruined City Intersection", "Year 2230 - Dangerous Tower Lobby", "Year 2503 - Air Battleship Bow"/*, "Year 2227 - Dangerous City Intersection"*/];
+var array = ["2021年 - 平凡的村庄入口", "2099年 - 深夜港口入口", "2215年 - 遭到攻击的城区中心", "2216年 - 变成废墟的城市交叉路", "2230年 - 危险的塔大厅", "2503年 - 天空战舰船头", "2227年 - 森林古树"];
 var limit;
 
 function start() {
     if (!cm.isQuestCompleted(3718)) {
-        cm.sendOk("时间机器尚未启动。");
+        cm.sendOk("时间机器尚未启动。(70级后在玛加提亚后街小贩领取任务)");
         cm.dispose();
         return;
     }
 
-    for (limit = 0; limit < quests.length; limit++) {
+    for (limit = 0; limit < quests.length; limit++) {   // limit改为0即恢复原版，改为7即跳过所有前置
         if (!cm.isQuestCompleted(quests[limit])) {
             break;
         }
     }
 
     if (limit == 0) {
-        cm.sendOk("在解锁下一个新奥城地图之前，向#b守护者尼克斯#k证明你的勇气。");
+        cm.sendOk("在解锁下一个逆奥之城地图之前，向#b守护者努克斯(布索)#k证明你的勇气。");
         cm.dispose();
         return;
     }
@@ -69,9 +69,12 @@ function action(mode, type, selection) {
                 case 5:
                     mapid = 240070600;
                     break;
-                /*case 6:
+                case 6:
+                    mapid = 240070010;
+                    break;
+                case 7:
                     mapid = 683070400;
-                    break;*/
+                    break;
             }
 
             if (mapid > 0) {

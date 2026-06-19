@@ -56,7 +56,7 @@ function action(mode, type, selection) {
                     eim.setIntProperty("npcShocked", 1);
 
                     cm.sendNext("哦？你给我信？像这样的时候，应该是什么…… 哇！伙计们，有大事发生了。集合起来，从现在开始，事情会比以往更加艰难！");
-                    eim.dropMessage(6, "Romeo seemed very much in shock after reading Juliet's Letter.");
+                    eim.dropMessage(6, "罗密欧读了朱丽叶的信后，似乎非常震惊。");
 
                     cm.dispose();
 
@@ -76,7 +76,7 @@ function action(mode, type, selection) {
                     if (cm.isEventLeader()) {
                         cm.gainItem(4001134, -1);
                         cm.gainItem(4001135, -1);
-                        cm.sendNext("太好了！你手头上有艾尔卡德诺和泽尼玛斯特的文件。现在我们可以继续了。");
+                        cm.sendNext("太好了！你手头上有卡帕莱特和蒙特鸠的文件。现在我们可以继续了。");
 
                         eim.showClearEffect();
                         eim.giveEventPlayersStageReward(4);
@@ -85,7 +85,7 @@ function action(mode, type, selection) {
                         cm.getMap().killAllMonsters();
                         cm.getMap().getReactorByName("rnj3_out3").hitReactor(cm.getClient());
                     } else {
-                        cm.sendOk("请让你们的领导把文件传给我。");
+                        cm.sendOk("请让你们的队长把文件传给我。");
                     }
 
                     cm.dispose();
@@ -110,6 +110,7 @@ function action(mode, type, selection) {
             } else if (status == 2) {
                 if (cm.canHold(4001159)) {
                     cm.gainItem(4001159, 1);
+	    cm.gainExp(160000);
 
                     if (eim.getIntProperty("normalClear") == 1) {
                         cm.warp(926100600, 0);
@@ -117,7 +118,7 @@ function action(mode, type, selection) {
                         cm.warp(926100500, 0);
                     }
                 } else {
-                    cm.sendOk("确保你的杂项物品栏有空间。");
+                    cm.sendOk("请确保你的背包其他栏有空间。");
                 }
 
                 cm.dispose();

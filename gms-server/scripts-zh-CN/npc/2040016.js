@@ -89,7 +89,7 @@ function action(mode, type, selection) {
             cm.sendSimple(selStr);
         } else if (selectedType == 3) { //crystal refine
             var selStr = "水晶矿石吗？在这里很难找到啊...#b";
-            var crystals = ["#i4005000##t4005000#", "#i4005001##t4005001#", "#i4005002##t4005002#", "#i4005003##t4005003#", "#i4005004##t4005004#"];
+            var crystals = ["#i4005000##t4005000#", "#i4005001##t4005001#", "#i4005002##t4005002#", "#i4005003##t4005003#"];
             for (var i = 0; i < crystals.length; i++) {
                 selStr += "\r\n#L" + i + "# " + crystals[i] + "#l";
             }
@@ -145,10 +145,10 @@ function action(mode, type, selection) {
             matQty = matQtySet[selectedItem];
             cost = costSet[selectedItem];
         } else if (selectedType == 3) { //crystal refine
-            var itemSet = [4005000, 4005001, 4005002, 4005003, 4005004];
-            var matSet = [4004000, 4004001, 4004002, 4004003, 4004004];
-            var matQtySet = [10, 10, 10, 10, 10];
-            var costSet = [4500, 4500, 4500, 4500, 1000000];
+            var itemSet = [4005000, 4005001, 4005002, 4005003];
+            var matSet = [4004000, 4004001, 4004002, 4004003];
+            var matQtySet = [10, 10, 10, 10];
+            var costSet = [4500, 4500, 4500, 4500];
             item = itemSet[selectedItem];
             mats = matSet[selectedItem];
             matQty = matQtySet[selectedItem];
@@ -190,7 +190,7 @@ function action(mode, type, selection) {
 
         var prompt = "你想让我制作多少 ";
         if (qty == 1) {
-            prompt += "一个 #i" + item + "##t" + item + "#?";
+            prompt += "一个#i" + item + "##t" + item + "#?";
         } else {
             prompt += qty + " #t" + item + "#?";
         }
@@ -206,7 +206,7 @@ function action(mode, type, selection) {
         }
 
         if (cost > 0) {
-            prompt += "\r\n#i4031138# " + cost * qty + " meso";
+            prompt += "\r\n#i4031138# " + cost * qty + "金币";
         }
 
         cm.sendYesNo(prompt);
@@ -228,7 +228,7 @@ function action(mode, type, selection) {
         }
 
         if (!cm.canHold(recvItem, recvQty)) {
-            cm.sendOk("恐怕您在此交易中没有可用的插槽。");
+            cm.sendOk("你背包满了。");
         } else if (cm.getMeso() < cost * qty) {
             cm.sendOk("恐怕你支付不起我的服务费。");
         } else {

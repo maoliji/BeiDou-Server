@@ -212,8 +212,7 @@ function action(mode, type, selection) {
         } else if (status === 5) {
             cm.sendNextPrev("我还给了你一点二转的 #bSP#k，打开技能栏学习二转技能。");
         } else if (status === 6) {
-            cm.sendNext("好了继续你的旅途吧。");
-			cm.dispose();
+            cm.sendNextPrev("好了继续你的旅途吧，下一次转职要等你70级了再来找我。");
         }
     } else if (actionx["3thJobI"]) {
         if (status === 0) {
@@ -221,8 +220,7 @@ function action(mode, type, selection) {
                 cm.getPlayer().removePartyQuestItem("JB3");
                 cm.getPlayer().setPartyQuestItemObtained("JBP");
             }
-            cm.sendNext("我的分身相当强大，他会使用特殊技能，你应该跟他一对一战斗，击败他并带回#b#t4031059##k，祝你好运！");
-			cm.dispose();
+            cm.sendNextPrev("我的分身相当强大，他会使用特殊技能，你应该跟他一对一战斗，击败他并带回#b#t4031059##k，祝你好运！");
         }
     } else if (actionx["3thJobC"]) {
         cm.getPlayer().removePartyQuestItem("JBP");

@@ -41,7 +41,7 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendOk("你能帮我找到古老的书吗？我在埃尔奈斯的某个地方把它弄丢了……");
+            cm.sendOk("你能帮我找到古书吗？我在神秘岛的某个地方把它弄丢了……");
             cm.dispose();
         }
     }

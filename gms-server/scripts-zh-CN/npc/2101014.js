@@ -35,7 +35,7 @@ function action(mode, type, selection) {
             status--;
         }
         if (cm.getPlayer().getMapId() == 980010000) {
-            if (cm.getLevel() > 30) {
+            if (cm.getLevel() > 201) { //不限制等级
                 cm.sendOk("你已经超过了#r等级30#k，因此你不能再参与这个副本了。");
                 cm.dispose();
                 return;
@@ -47,23 +47,23 @@ function action(mode, type, selection) {
                 var expedicao2 = cm.getExpedition(exped2);
 
                 var channelMaps = cm.getClient().getChannelServer().getMapFactory();
-                var startSnd = "What would you like to do? \r\n\r\n\t#e#r(Choose a Battle Arena)#n#k\r\n#b";
+                var startSnd = "你想干什么? \r\n\r\n\t#e#r(选择一个阿里安特竞技场)#n#k\r\n#b";
                 var toSnd = startSnd;
 
                 if (expedicao == null) {
-                    toSnd += "#L0#Battle Arena (1) (Empty)#l\r\n";
+                    toSnd += "#L0#竞技场(1) (空)#l\r\n";
                 } else if (channelMaps.getMap(980010101).getCharacters().isEmpty()) {
-                    toSnd += "#L0#Join Battle Arena (1)  Owner (" + expedicao.getLeader().getName() + ")" + " Current Member: " + cm.getExpeditionMemberNames(exped) + "\r\n";
+                    toSnd += "#L0#参加竞技场(1)  擂主(" + expedicao.getLeader().getName() + ")" + "当前有: " + cm.getExpeditionMemberNames(exped) + "\r\n";
                 }
                 if (expedicao1 == null) {
-                    toSnd += "#L1#Battle Arena (2) (Empty)#l\r\n";
+                    toSnd += "#L1#竞技场(2) (空)#l\r\n";
                 } else if (channelMaps.getMap(980010201).getCharacters().isEmpty()) {
-                    toSnd += "#L1#Join Battle Arena (2)  Owner (" + expedicao1.getLeader().getName() + ")" + " Current Member: " + cm.getExpeditionMemberNames(exped1) + "\r\n";
+                    toSnd += "#L1#参加竞技场(2)  擂主(" + expedicao1.getLeader().getName() + ")" + " 当前有: " + cm.getExpeditionMemberNames(exped1) + "\r\n";
                 }
                 if (expedicao2 == null) {
-                    toSnd += "#L2#Battle Arena (3) (Empty)#l\r\n";
+                    toSnd += "#L2#竞技场(3) (空)#l\r\n";
                 } else if (channelMaps.getMap(980010301).getCharacters().isEmpty()) {
-                    toSnd += "#L2#Join Battle Arena (3)  Owner (" + expedicao2.getLeader().getName() + ")" + " Current Member: " + cm.getExpeditionMemberNames(exped2) + "\r\n";
+                    toSnd += "#L2#参加竞技场(3)  擂主(" + expedicao2.getLeader().getName() + ")" + " 当前有: " + cm.getExpeditionMemberNames(exped2) + "\r\n";
                 }
                 if (toSnd === startSnd) {
                     cm.sendOk("所有的战斗竞技场都已经被占用。我建议你稍后再回来，或者换个频道。");
@@ -82,7 +82,7 @@ function action(mode, type, selection) {
                 if (expedicao != null) {
                     enterArena(-1);
                 } else {
-                    cm.sendGetText("Up to how many partipants can join in this match? (2~5 people)");
+                    cm.sendGetText("想允许多少人参加战斗? (2~5人)");
                 }
             } else if (status == 2) {
                 var players = parseInt(cm.getText());   // AriantPQ option limit found thanks to NarutoFury (iMrSiN)
@@ -136,14 +136,14 @@ function enterArena(arenaPlayers) {
             var res = cm.createExpedition(exped, true, 0, arenaPlayers);
             if (res == 0) {
                 cm.warp(map, 0);
-                cm.getPlayer().dropMessage("Your arena was created successfully. Wait for people to join the battle.");
+                cm.getPlayer().dropMessage("请等其他玩家加入.");
             } else if (res > 0) {
-                cm.sendOk("抱歉，您已经达到了此次远征的尝试配额！请另选他日再试……");
+                cm.sendOk("对不起,你今天的次数已经用完...");
             } else {
-                cm.sendOk("在启动远征时发生了意外错误，请稍后重试。");
+                cm.sendOk("出错了,请汇报管理员.");
             }
         } else {
-            cm.sendOk("在定位远征队时发生了意外错误，请稍后重试。");
+            cm.sendOk("出错了,请汇报管理员.");
         }
 
         cm.dispose();
@@ -163,7 +163,7 @@ function enterArena(arenaPlayers) {
                 cm.warp(map, 0);
                 cm.dispose();
             } else if (playerAdd == 2) {
-                cm.sendOk("抱歉，领袖不允许你进入。");
+                cm.sendOk("对不起,队长不让你进去.");
                 cm.dispose();
             } else {
                 cm.sendOk("错误。");

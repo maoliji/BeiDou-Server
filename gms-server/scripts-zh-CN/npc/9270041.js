@@ -34,7 +34,7 @@ status = -1;
 oldSelection = -1;
 
 function start() {
-    cm.sendSimple("你好，我是来自新加坡机场的艾琳。我可以帮助你迅速到达新加坡。你想去新加坡吗？\r\n#b#L0#我想买一张去新加坡的飞机票\r\n#b#L1#让我进入出发点。");
+    cm.sendSimple("你好，我是来自新加坡机场的#p9270041#。我可以帮助你迅速到达新加坡。你想去新加坡吗？\r\n#b#L0#我想买一张去新加坡的飞机票\r\n#b#L1#让我进入出发点。");
 }
 
 function action(mode, type, selection) {
@@ -60,7 +60,7 @@ function action(mode, type, selection) {
                     cm.sendOk("谢谢您选择北斗航空！祝您旅途愉快！");
                     cm.dispose();
                 } else {
-                    cm.sendOk("你的ETC库存中没有空闲的插槽来放置这张票，请提前创建一个房间。");
+                    cm.sendOk("你的其他栏没有空闲的位置来放置这张票，请提前留一个位置。");
                     cm.dispose();
                 }
             } else {

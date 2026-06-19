@@ -28,9 +28,9 @@
           Blue Wish Ticket - Lv120+
  */
 
-var wishPrizes = [2000000, 2010004, 2020011, 2000004, 2000006, 2022015, 2000005, 1082174, 1002579, 1032039, 1002578, 1002580, 1002577, 1102078];
-var wishPrizesQty = [10, 10, 5, 5, 5, 5, 10, 1, 1, 1, 1, 1, 1, 1];
-var wishPrizesCst = [10, 15, 20, 30, 30, 50, 100, 400, 450, 500, 500, 530, 550, 600];
+var wishPrizes = [2022007, 2022244,2020031, 2020011, 2000004, 2022015, 2000005, 2022251, 2012008,2022179,2022121, 2022123, 2022273, 2022282];
+var wishPrizesQty = [100, 100,100 , 100, 100, 100, 100, 10, 10, 1, 1, 1, 1, 1];
+var wishPrizesCst = [5, 7 ,8 , 10, 12, 16, 20, 10, 20, 40, 50, 20, 10, 50];
 
 var slctTicket;
 var amntTicket;
@@ -75,16 +75,16 @@ function action(mode, type, selection) {
         advance = true;
 
         if (status == 0) {
-            cm.sendNext("嗨，你好吗？既然你路过阿莫利亚，你听说过我哥哥阿莫斯主持的副本吗？这就是 #b阿莫利亚挑战#k，一个供40级以上玩家参与的副本。\r\n\r\n在那里，你可以找到 #i4031543# #i4031544# #i4031545# #b祝愿券#k，可以带到这里兑换奖品。");
+            cm.sendNext("嗨，你好吗？既然你路过婚礼村，你听说过我哥哥阿莫斯主持的副本吗？这就是 #b婚礼村挑战#k，一个供40级以上玩家参与的副本。\r\n\r\n在那里，你可以找到 #i4031543# #i4031544# #i4031545# #b希望票#k，可以带到这里兑换奖品。");
         } else if (status == 1) {
             var listStr = "";
             for (var i = 0; i < wishPrizes.length; i++) {
                 listStr += "#b#L" + i + "#" + wishPrizesQty[i] + " #z" + wishPrizes[i] + "##k";
-                listStr += " - " + wishPrizesCst[i] + " wish tickets";
+                listStr += " - " + wishPrizesCst[i] + "个希望票";
                 listStr += "#l\r\n";
             }
 
-            cm.sendSimple("您目前拥有#b" + amntTicket + " #i" + slctTicket + "# #t" + slctTicket + "##k。\r\n\r\n购买奖品：\r\n\r\n" + listStr);
+            cm.sendSimple("您目前拥有#b" + amntTicket + "张 #i" + slctTicket + "# #t" + slctTicket + "##k。\r\n\r\n购买奖品：\r\n\r\n" + listStr);
         } else if (status == 2) {
             sel = selection;
 

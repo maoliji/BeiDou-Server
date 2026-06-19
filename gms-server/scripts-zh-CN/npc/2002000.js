@@ -21,11 +21,11 @@
 */
 
 /**
- Luni - Happyville Warp NPC
+ Rupi- Happyville Warp NPC
  **/
 
 function start() {
-    cm.sendYesNo("你想离开幸福村，回到之前所在的地方吗？");
+    cm.sendYesNo("你想离开幸福村吗？");
 }
 
 function action(mode, type, selection) {

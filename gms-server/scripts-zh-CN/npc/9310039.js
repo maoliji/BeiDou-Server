@@ -20,7 +20,7 @@ function start(){
         return;
     }
     if(QuestID != null && QuestID > 0 && !cm.isQuestCompleted(QuestID)) {
-        cm.sendOkLevel('','...');
+        cm.sendOkLevel('','尚未完成前置任务。');
         return;
     }
     if(em == null) {

@@ -33,13 +33,13 @@ function action(mode, type, selection) {
         if (status == 0) {
             var display = "";
             for (var i = 0; i < menu.length; i++) {
-                display += "\r\n#L" + i + "##b Ereve (1000 mesos)#k";
+                display += "\r\n#L" + i + "##b圣地(1000金币)#k";
             }
             cm.sendNext("嗯...那么...嗯...你是想离开金银岛去其他地区吗？你可以乘这艘船去#b圣地#k。在那里，你会看到明亮的阳光照在树叶上，感受到轻柔的微风拂过你的皮肤。那里是神兽和女皇所在的地方。你想去圣地吗？大约需要#b2分钟#k，费用是#b1000#k金币。\r\n");
 
         } else if (status == 1) {
             if (cm.getMeso() < 1000) {
-                cm.sendNext("嗯... 你确定你有 #b1000#k 冒险币吗？检查一下你的背包，确保你有足够的冒险币。你必须支付费用，否则我不能让你上船...");
+                cm.sendNext("嗯... 你确定你有 #b1000#k 金币吗？检查一下你的背包，确保你有足够的金币。你必须支付费用，否则我不能让你上船...");
                 cm.dispose();
             } else {
                 cm.gainMeso(-1000);

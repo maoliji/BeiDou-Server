@@ -9,15 +9,15 @@
 
 var status = 0;
 var rnk = -1;
-var n1 = 50; //???
-var n2 = 40; //??? ???
-var n3 = 7; //35
-var n4 = 10; //40
-var n5 = 20; //50
+var n1 = 10; //纪念币换项链
+var n2 = 5; //纪念币换珠子
+var n3 = 1; //换各职业装备1
+var n4 = 2; //换各职业装备2
+var n5 = 3; //换各职业装备3
 
 var cpqMap = 980000000;
 var cpqMinLvl = 30;
-var cpqMaxLvl = 50;
+var cpqMaxLvl = 200;
 var cpqMinAmt = 2;
 var cpqMaxAmt = 6;
 
@@ -25,7 +25,7 @@ var cpqMaxAmt = 6;
 var refineRocks = true;     // enables moon rock, star rock
 var refineCrystals = true;  // enables common crystals
 var refineSpecials = true;  // enables lithium, special crystals
-var feeMultiplier = 7.0;
+var feeMultiplier = 2.0;
 
 function start() {
     status = -1;
@@ -97,22 +97,25 @@ function action(mode, type, selection) {
                 switch (rnk) {
                     case 10:
                         cm.warp(980000000, 0);
-                        cm.gainExp(17500);
+                        cm.gainExp(27500);
+			cm.gainItem(4310000,1);
+
                         cm.dispose();
                         break;
                     case 20:
                         cm.warp(980000000, 0);
-                        cm.gainExp(1200);
+                        cm.gainExp(11200);
+
                         cm.dispose();
                         break;
                     case 30:
                         cm.warp(980000000, 0);
-                        cm.gainExp(5000);
+                        cm.gainExp(8000);
                         cm.dispose();
                         break;
                     case 40:
                         cm.warp(980000000, 0);
-                        cm.gainExp(2500);
+                        cm.gainExp(5000);
                         cm.dispose();
                         break;
                     default:
@@ -155,17 +158,17 @@ function action(mode, type, selection) {
                         break;
                     case 2:
                         cm.warp(980000000, 0);
-                        cm.gainExp(25500);
+                        cm.gainExp(35000);
                         cm.dispose();
                         break;
                     case 3:
                         cm.warp(980000000, 0);
-                        cm.gainExp(21000);
+                        cm.gainExp(30000);
                         cm.dispose();
                         break;
                     case 4:
                         cm.warp(980000000, 0);
-                        cm.gainExp(19505);
+                        cm.gainExp(25000);
                         cm.dispose();
                         break;
                     default:
@@ -238,14 +241,14 @@ function action(mode, type, selection) {
             }
         } else {
             if (status == 0) {
-                var talk = "你想做什么呢？ 如果你没有参加过怪物嘉年华, 在参加之前，你需要知道一些事情! \r\n#b#L0# 前往怪物嘉年华地图 1.#l \r\n#L3# 前往怪物嘉年华地图 2.#l \r\n#L1# 了解怪物嘉年华.#l\r\n#L2# 交易 #t4001129#.#l";
+                var talk = "你想做什么呢？ 如果你没有参加过怪物嘉年华, 在参加之前，你需要知道一些事情! \r\n#b#L0#前往怪物嘉年华地图 1.#l \r\n#L3#前往怪物嘉年华地图 2.#l \r\n#L1#了解怪物嘉年华.#l\r\n#L2#交易 #t4001129#.#l";
                 if (GameConfig.getServerBoolean("use_enable_custom_npc_script")) {
-                    talk += "\r\n#L4# ... 我可以精炼我的矿石吗#l";
+                    talk += "\r\n#L4#我可以合成我的矿石吗#l";
                 }
                 cm.sendSimple(talk);
             } else if (status == 1) {
                 if (selection == 0) {
-                    if ((cm.getLevel() > 29 && cm.getLevel() < 51) || cm.getPlayer().isGM()) {
+                    if ((cm.getLevel() > 29 && cm.getLevel() < 201) || cm.getPlayer().isGM()) {
                         cm.getChar().saveLocation("MONSTER_CARNIVAL");
                         cm.warp(980000000, 0);
                         cm.dispose();
@@ -255,7 +258,7 @@ function action(mode, type, selection) {
                         cm.dispose();
 
                     } else {
-                        cm.sendOk("很抱歉，只有等级在30到50级之间的玩家才能参加怪物嘉年华活动。");
+                        cm.sendOk("很抱歉，只有等级在30到200级之间的玩家才能参加怪物嘉年华活动。");
                         cm.dispose();
 
                     }
@@ -270,14 +273,14 @@ function action(mode, type, selection) {
                     cm.dispose();
 
                 } else if (selection == 4) {
-                    var selStr = "Very well, instead I offer a steadfast #bore refining#k service for you, taxing #r" + ((feeMultiplier * 100) | 0) + "%#k over the usual fee to synthetize them. What will you do?#b";
+                    var selStr = "好的，我会为你提供#b批量矿石合成#k服务，但价格是#k普通冶炼价格的#r" + ((feeMultiplier * 100) | 0) + "%。#b点击后立即合成#k，你确定想要合成吗？#b";
 
-                    var options = ["Refine mineral ores", "Refine jewel ores"];
+                    var options = ["合成矿石", "合成宝石"];
                     if (refineCrystals) {
-                        options.push("Refine crystal ores");
+                        options.push("合成水晶");
                     }
                     if (refineRocks) {
-                        options.push("Refine plates/jewels");
+                        options.push("合成星石/月石");
                     }
 
                     for (var i = 0; i < options.length; i++) {
@@ -459,7 +462,7 @@ function action(mode, type, selection) {
                 }
 
                 if (allDone) {
-                    cm.sendOk("完成了。谢谢你的出现~。");
+                    cm.sendOk("完成了，谢谢你~");
                 } else {
                     cm.sendOk("完成。请注意，一些物品无法合成，可能是因为您的杂项物品栏空间不足，或者没有足够的纪念币来支付费用。");
                 }

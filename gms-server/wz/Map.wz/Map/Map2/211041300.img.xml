@@ -6,7 +6,7 @@
     <int name="town" value="0"/>
     <int name="returnMap" value="211000000"/>
     <int name="forcedReturn" value="999999999"/>
-    <float name="mobRate" value="0.8"/>
+    <float name="mobRate" value="1.6"/>
     <string name="bgm" value="Bgm05/WolfWood"/>
     <string name="mapMark" value="ElNathDungeon"/>
     <int name="hideMinimap" value="0"/>
@@ -19,7 +19,7 @@
       <int name="id" value="6090000"/>
       <int name="startHour" value="0"/>
       <int name="endHour" value="4"/>
-      <string name="message" value="Riche has appeared."/>
+      <string name="message" value="黑山老妖出现了！"/>
     </imgdir>
   </imgdir>
   <imgdir name="back">
@@ -564,7 +564,7 @@
       <string name="id" value="2119002"/>
       <int name="x" value="823"/>
       <int name="y" value="-406"/>
-      <int name="reactorTime" value="900"/>
+      <int name="reactorTime" value="300"/>
       <int name="f" value="0"/>
       <string name="name" value=""/>
     </imgdir>

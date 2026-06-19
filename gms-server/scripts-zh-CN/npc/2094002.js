@@ -33,7 +33,7 @@ function action(mode, type, selection) {
         var eim = cm.getEventInstance();
         if (eim == null) {
             cm.warp(251010404, 0);
-            cm.sendNext("你怎么来到这里的?");
+            cm.sendNext("你怎么可能在这里，而没有在实例上注册呢？");
             cm.dispose();
             return;
         }
@@ -82,7 +82,7 @@ function action(mode, type, selection) {
                 break;
             case 925100200:
             case 925100300:
-                cm.sendNext("要想袭击海盗船，我们必须先消灭守卫.");
+                cm.sendNext("要攻打海盗船，我们必须先消灭守卫。");
                 cm.dispose();
                 break;
             case 925100201:
@@ -111,7 +111,7 @@ function action(mode, type, selection) {
                 break;
             case 925100202:
             case 925100302:
-                cm.sendNext("这些是船长和克鲁斯，他们献身于海盗勋爵。你认为合适就杀了他们.");
+                cm.sendNext("他们是效忠于老海盗的凯丁和克鲁。随你处置。");
                 cm.dispose();
                 break;
             case 925100400:

@@ -67,7 +67,9 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendNext("这是冒险岛电视卷轴生成器广播。将你在冒险中获得的物品或金币放入其中，以兑换奖励！你可以放入#b任意数量的物品#k，但请注意，放入#r不同的物品#k，其中#r任何一种物品的数量更多#k，将提高奖励的可能性！");
+            //cm.sendNext("这是冒险岛电视卷轴生成器广播。将你在冒险中获得的物品或金币放入其中，以兑换奖励！你可以放入#b任意数量的物品#k，但请注意，放入#r不同的物品#k，其中#r任何一种物品的数量更多#k，将提高奖励的可能性！");
+            cm.sendOk("欢迎来到冒险岛！\r\n(因为脚本bug，冒险岛TV的捐赠获取奖励功能暂时关闭，如需开放可编辑脚本scroll_generator.js)");//有bug，暂时关闭冒险岛TV的奖励功能
+            cm.dispose(); //有bug，暂时关闭冒险岛TV的奖励功能
         } else if (status == 1) {
             var sendStr;
 

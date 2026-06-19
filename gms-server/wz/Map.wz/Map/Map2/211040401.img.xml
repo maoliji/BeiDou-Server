@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<imgdir name="211040401.img">
+<imgdir name="211040401.img" indent="2" media="NONE">
   <imgdir name="info">
     <int name="version" value="10"/>
     <int name="cloud" value="0"/>
@@ -36,6 +36,21 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
+    <imgdir name="1">
+      <string name="bS" value="snowyLightrock2"/>
+      <int name="front" value="0"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="22"/>
+      <int name="x" value="85"/>
+      <int name="y" value="287"/>
+      <int name="rx" value="-60"/>
+      <int name="ry" value="-40"/>
+      <int name="type" value="2"/>
+      <int name="cx" value="0"/>
+      <int name="cy" value="0"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
     <imgdir name="2">
       <string name="bS" value="snowyLightrock2"/>
       <int name="front" value="0"/>
@@ -58,6 +73,21 @@
       <int name="no" value="4"/>
       <int name="x" value="-250"/>
       <int name="y" value="370"/>
+      <int name="rx" value="-100"/>
+      <int name="ry" value="-100"/>
+      <int name="type" value="2"/>
+      <int name="cx" value="0"/>
+      <int name="cy" value="600"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
+    <imgdir name="4">
+      <string name="bS" value="snowyLightrock2"/>
+      <int name="front" value="0"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="10"/>
+      <int name="x" value="-236"/>
+      <int name="y" value="-43"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="2"/>
@@ -141,6 +171,21 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
+    <imgdir name="10">
+      <string name="bS" value="snowyLightrock2"/>
+      <int name="front" value="0"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="13"/>
+      <int name="x" value="-246"/>
+      <int name="y" value="-216"/>
+      <int name="rx" value="-100"/>
+      <int name="ry" value="-100"/>
+      <int name="type" value="2"/>
+      <int name="cx" value="0"/>
+      <int name="cy" value="600"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
     <imgdir name="11">
       <string name="bS" value="snowyLightrock2"/>
       <int name="front" value="0"/>
@@ -171,43 +216,13 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="4">
+    <imgdir name="13">
       <string name="bS" value="snowyLightrock2"/>
       <int name="front" value="0"/>
       <int name="ani" value="0"/>
-      <int name="no" value="10"/>
-      <int name="x" value="-236"/>
-      <int name="y" value="-43"/>
-      <int name="rx" value="-100"/>
-      <int name="ry" value="-100"/>
-      <int name="type" value="2"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="600"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="1">
-      <string name="bS" value="snowyLightrock2"/>
-      <int name="front" value="0"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="22"/>
-      <int name="x" value="85"/>
-      <int name="y" value="287"/>
-      <int name="rx" value="-60"/>
-      <int name="ry" value="-40"/>
-      <int name="type" value="2"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="10">
-      <string name="bS" value="snowyLightrock2"/>
-      <int name="front" value="0"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="13"/>
-      <int name="x" value="-246"/>
-      <int name="y" value="-216"/>
+      <int name="no" value="16"/>
+      <int name="x" value="419"/>
+      <int name="y" value="441"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="2"/>
@@ -231,18 +246,33 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="13">
-      <string name="bS" value="snowyLightrock2"/>
-      <int name="front" value="0"/>
+    <imgdir name="15">
+      <string name="bS" value="snowyLightrock"/>
+      <int name="front" value="1"/>
       <int name="ani" value="0"/>
-      <int name="no" value="16"/>
-      <int name="x" value="419"/>
-      <int name="y" value="441"/>
+      <int name="no" value="7"/>
+      <int name="x" value="-492"/>
+      <int name="y" value="589"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="2"/>
       <int name="cx" value="0"/>
-      <int name="cy" value="600"/>
+      <int name="cy" value="170"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
+    <imgdir name="16">
+      <string name="bS" value="snowyLightrock"/>
+      <int name="front" value="1"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="7"/>
+      <int name="x" value="671"/>
+      <int name="y" value="323"/>
+      <int name="rx" value="-100"/>
+      <int name="ry" value="-100"/>
+      <int name="type" value="2"/>
+      <int name="cx" value="0"/>
+      <int name="cy" value="170"/>
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
@@ -262,18 +292,13 @@
     </imgdir>
   </imgdir>
   <imgdir name="0">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="1">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="acc3"/>
@@ -443,18 +468,13 @@
     </imgdir>
   </imgdir>
   <imgdir name="2">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="3">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="8">
         <string name="oS" value="dungeon2"/>
@@ -679,10 +699,8 @@
     </imgdir>
   </imgdir>
   <imgdir name="4">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="10">
         <string name="oS" value="connect"/>
@@ -1531,10 +1549,8 @@
     </imgdir>
   </imgdir>
   <imgdir name="6">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="hotel"/>
@@ -1715,15 +1731,11 @@
     </imgdir>
   </imgdir>
   <imgdir name="7">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
-  <imgdir name="reactor">
-  </imgdir>
+  <imgdir name="reactor"/>
   <imgdir name="foothold">
     <imgdir name="5">
       <imgdir name="0">
@@ -2453,8 +2465,7 @@
     </imgdir>
   </imgdir>
   <imgdir name="miniMap">
-    <canvas name="canvas" width="72" height="131">
-    </canvas>
+    <canvas name="canvas" format="2" scale="0"/>
     <int name="width" value="1161"/>
     <int name="height" value="2097"/>
     <int name="centerX" value="475"/>

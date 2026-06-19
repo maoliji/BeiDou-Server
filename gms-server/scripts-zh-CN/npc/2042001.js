@@ -9,8 +9,8 @@
 
 var status = 0;
 var rnk = -1;
-var n1 = 10; //纪念币换项链
-var n2 = 5; //纪念币换珠子
+var n1 = 10; //冒险岛纪念币换项链
+var n2 = 5; //冒险岛纪念币换珠子
 var n3 = 1; //换各职业装备1
 var n4 = 2; //换各职业装备2
 var n5 = 3; //换各职业装备3
@@ -266,7 +266,7 @@ function action(mode, type, selection) {
                     status = 60;
                     cm.sendSimple("你想做什么？\r\n#b#L0# 什么是怪物嘉年华？#l\r\n#L1# 怪物嘉年华概述。#l\r\n#L2# 怪物嘉年华的详细信息。#l\r\n#L3# 其实没什么，我改变主意了。#l");
                 } else if (selection == 2) {
-                    cm.sendSimple("记住，如果你有#t4001129#，你可以用它来兑换物品。选择你想要兑换的物品！\r\n#b#L0# #t1122007#（" + n1 + " 纪念币）#l\r\n#L1# #t2041211#（" + n2 + " 纪念币）#l\r\n#L2# 战士武器#l\r\n#L3# 魔法师武器#l\r\n#L4# 弓箭手武器#l\r\n#L5# 盗贼武器#l\r\n#L6# 海盗武器#l");
+                    cm.sendSimple("记住，如果你有#b#z4001129##k，你可以用它来兑换物品。选择你想要兑换的物品！\r\n#b#L0# #z1122007#（" + n1 + " 纪念币）#l\r\n#L1# #z2041211#（" + n2 + " 纪念币）#l\r\n#L2# 战士武器#l\r\n#L3# 魔法师武器#l\r\n#L4# 弓箭手武器#l\r\n#L5# 盗贼武器#l\r\n#L6# 海盗武器#l");
                 } else if (selection == 3) {
                     cm.getChar().saveLocation("MONSTER_CARNIVAL");
                     cm.warp(980030000, 0);

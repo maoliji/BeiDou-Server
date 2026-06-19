@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<imgdir name="211041800.img">
+<imgdir name="211041800.img" indent="2" media="NONE">
   <imgdir name="info">
     <int name="version" value="10"/>
     <int name="cloud" value="0"/>
     <int name="town" value="0"/>
     <int name="returnMap" value="211000000"/>
     <int name="forcedReturn" value="211041400"/>
-    <float name="mobRate" value="1.9"/>
+    <float name="mobRate" value="0.79999995"/>
     <string name="bgm" value="Bgm05/AbandonedMine"/>
     <string name="mapMark" value="ElNathDungeon"/>
     <int name="hideMinimap" value="0"/>
@@ -483,18 +483,15 @@
       <string name="tS" value="blueCave"/>
       <int name="tSMag" value="1"/>
     </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="1">
     <imgdir name="info">
       <string name="tS" value="blueCave"/>
       <int name="tSMag" value="1"/>
     </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="1">
         <string name="oS" value="dungeon2"/>
@@ -877,10 +874,8 @@
       <string name="tS" value="deepMine"/>
       <int name="tSMag" value="1"/>
     </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="3">
     <imgdir name="info">
@@ -2218,8 +2213,7 @@
       <string name="tS" value="blueCave"/>
       <int name="tSMag" value="1"/>
     </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="connect"/>
@@ -3324,28 +3318,23 @@
         <int name="zM" value="0"/>
       </imgdir>
     </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="6">
     <imgdir name="info">
       <string name="tS" value="blueCave"/>
       <int name="tSMag" value="1"/>
     </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="7">
     <imgdir name="info">
       <string name="tS" value="blueCave"/>
       <int name="tSMag" value="1"/>
     </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="foothold">
     <imgdir name="3">
@@ -4464,8 +4453,7 @@
     </imgdir>
   </imgdir>
   <imgdir name="miniMap">
-    <canvas name="canvas" width="123" height="121">
-    </canvas>
+    <canvas name="canvas" format="1" scale="0"/>
     <int name="width" value="1969"/>
     <int name="height" value="1949"/>
     <int name="centerX" value="1526"/>

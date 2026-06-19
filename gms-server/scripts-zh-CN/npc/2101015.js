@@ -27,8 +27,11 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            menuStr = generateSelectionMenu(["我想查看竞技点! / 我想要获得#b#z3010018##k", "我想知道更多阿里安特竞技场的事情."]);
-            cm.sendSimple("你好，我能为你做些什么？");
+            menuStr = generateSelectionMenu([
+                "我想查看竞技点数或兑换#t3010018#", 
+                "我想了解更多关于阿里安特竞技场点数的相关信息"
+            ]);
+            cm.sendSimple("你好，我能为你做些什么？\r\n" + menuStr);
         } else if (status == 1) {
             if (selection == 0) {
                 apqpoints = cm.getPlayer().getAriantPoints();

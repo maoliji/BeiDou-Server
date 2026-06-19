@@ -36,7 +36,10 @@ function end(mode, type, selection) {
         
         if (status == 0) {
             if(qm.getQuestProgress(21728, 0) == 0) {
-                qm.sendNext("你还没找到#r人偶师的洞穴#k是吗？");
+                //qm.sendNext("你还没找到#r人偶师的洞穴#k是吗？");
+                qm.sendNext("嗯，所以入口被一股强大的力量堵住了？我明白了，现在给我一点时间思考...");
+                qm.gainExp(200);
+                qm.forceCompleteQuest();		
             } else {
                 qm.sendNext("嗯，所以入口被一股强大的力量堵住了？我明白了，现在给我一点时间思考...");
                 qm.gainExp(200);

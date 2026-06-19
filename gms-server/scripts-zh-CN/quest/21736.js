@@ -33,7 +33,7 @@ function start(mode, type, selection) {
             status++;
         } else {
             status--;
-        
+        }
         if(status == 0) {
             qm.sendNext("好久不见了，英雄。这段时间等级上升很快嘛？看来你确实很拼命地在修炼啊。很勤奋。有点英雄的架势了。利琳也会为你开心的吧？");
         } else if(status == 1) {
@@ -47,4 +47,5 @@ function start(mode, type, selection) {
             qm.dispose();
         }
     }
+
 }

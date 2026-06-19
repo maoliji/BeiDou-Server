@@ -2,6 +2,7 @@ var status;
 var text;
 var column = ["装备", "消耗", "设置", "其他", "商城"];
 var sel;
+var selectedSlot; // 新增：暂存待删除道具的格子位置
 
 
 function start() {
@@ -25,21 +26,22 @@ function levelChooseInventory(choose) {
     cm.sendSelectLevel("ChooseType", "#L1#清除所有道具#l\r\n#L2#删除指定道具#l\r\n");
 }
 
-// 选择了删除方式1
+// 选择了删除方式1（清除所有道具，自带确认）
 function levelChooseType1() {
-    // 选择否回到levelStart，选择是执行levelDoClear
-    cm.sendYesNoLevel("Start", "DoClear", "#r是否要清除" + column[sel-1] + "栏的所有道具？？？此操作不可逆！#k");
+    // 注意：sendYesNoLevel 第一个参数是“否”回调，第二个是“是”回调
+    cm.sendYesNoLevel("Start", "DoClear", 
+        "#r是否要清除" + column[sel-1] + "栏的所有道具？？？此操作不可逆！#k");
 }
 
-// 选择了删除方式2
+// 选择了删除方式2（删除指定道具）
 function levelChooseType2() {
-    text = "选择要删除的道具#r（点击后立即删除，谨慎操作）#k\r\n\r\n";
+    text = "选择要删除的道具#r（装备为默认属性, 若闪退请用#e键盘#n操作）#k\r\n\r\n";
     let hasVal = false;
     for (let i = 0; i < 96; i++) {
         let item = cm.getInventory(sel).getItem(i);
         if (item) {
             hasVal = true;
-            text += "#L" + item.getPosition() + "##t" + item.getItemId() + "##i" + item.getItemId() + "##l\r\n";
+            text += "#L" + item.getPosition() + "##z" + item.getItemId() + "##l\r\n";
         }
     }
     if (!hasVal) {
@@ -47,22 +49,32 @@ function levelChooseType2() {
         cm.sendNextLevel("Start", "背包栏下没有道具！");
         return;
     }
-    // 选择单个道具
-    cm.sendNextSelectLevel("DoRemove", text);
+    // 进入确认步骤（原为直接 DoRemove）
+    cm.sendNextSelectLevel("ConfirmRemove", text);
 }
 
-// 是否清除选择了是
+// 新增：确认删除选定道具
+function levelConfirmRemove(choose) {
+    selectedSlot = choose;  // 暂存格子位置
+    let targetItem = cm.getInventory(sel).getItem(selectedSlot);
+    let itemName = targetItem ? " #t" + targetItem.getItemId() + "#  " : "该道具";
+    
+    // 注意：sendYesNoLevel 第一个参数是“否”回调，第二个参数是“是”回调
+    // 所以“是”要删除 -> 放第二个参数，“否”返回列表 -> 放第一个参数
+    cm.sendYesNoLevel("ChooseType2", "DoRemove", 
+        "确定要删除 #b" + itemName + "#k 吗？此操作不可逆！");
+}
+
+// 清除全部
 function levelDoClear() {
     cm.removeAllByInventory(sel);
-    // 回到levelStart
     cm.sendOkLevel("Start", "清除完毕！");
-            cm.dispose();
+    cm.dispose();
 }
 
-// 执行删除操作
-function levelDoRemove(choose) {
-    cm.removeAllByInventorySlot(sel, choose);
-    // 回到选择单个道具
+// 执行删除单个道具（是回调，无参，使用全局 selectedSlot）
+function levelDoRemove() {
+    cm.removeAllByInventorySlot(sel, selectedSlot);
     cm.sendOkLevel("ChooseType2", "清除完毕！");
-            cm.dispose();
+    cm.dispose();
 }

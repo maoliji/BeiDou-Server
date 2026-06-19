@@ -24,27 +24,28 @@ function end(mode, type, selection) {
     if (mode == -1) {
         qm.dispose();
     } else {
-        if(mode == 0 && type > 0) {
+        if (mode == 0 && type > 0) {
             qm.dispose();
             return;
         }
-        
+
         if (mode == 1)
             status++;
         else
             status--;
-        
+
         if (status == 0) {
-            if(qm.getQuestProgress(3345, 0) == 4) {
-                qm.sendNext("所以，你成功了。有了这个，玛加提亚的提前灭亡被避免了，做得好，勇敢的冒险家！");
+            if (qm.getQuestProgress(3345, 0) == 4) {
+                qm.sendNext("看来你已经成功了。这样一来，玛加提亚迫在眉睫的危机总算得以避免，做得好，勇敢的冒险者！");
                 qm.forceCompleteQuest();
-                
+
                 qm.gainExp(20000);
             } else {
-                qm.sendNext("你还没有把#r玛加提亚下面的魔法阵#k封印起来吗？这件事很重要，请你快点！");
+                qm.sendNext("难道你还没有封印#r玛加提亚地下的魔法阵#k吗？此事关系重大，还请你加快行动。");
             }
-            
+
             qm.dispose();
         }
+
     }
 }

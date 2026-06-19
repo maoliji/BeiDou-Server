@@ -39,7 +39,7 @@ function start(mode, type, selection) {
             qm.sendNext("金银岛封印石我已经找到了。你看，呵呵呵。");
         } else if (status == 1) {
             if (!qm.canHold(4032323, 1)) {
-                qm.sendNext("Please free a slot on your ETC inventory before receiving the item.");
+                qm.sendNext("你清一下背包。");
                 qm.dispose();
                 return;
             }
@@ -47,6 +47,7 @@ function start(mode, type, selection) {
             if (!qm.haveItem(4032323, 1)) {
                 qm.gainItem(4032323, 1);
             }
+            qm.sendOk("给你，去找利琳吧。");
             qm.forceStartQuest();
             qm.dispose();
         }

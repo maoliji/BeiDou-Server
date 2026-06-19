@@ -5,16 +5,16 @@ var status;
 var cardCount;
 var selectedReward;
 var rewards = [
-    {cards: 100, item: 1112880, costItem: 4001126, costMeso: 1000000},  //第一级戒指需要枫叶1个
-    {cards: 200, item: 1112881, costItem: 1112880, costMeso: 2000000},
-    {cards: 300, item: 1112882, costItem: 1112881, costMeso: 3000000},
-    {cards: 400, item: 1112883, costItem: 1112882, costMeso: 4000000},
-    {cards: 500, item: 1112884, costItem: 1112883, costMeso: 5000000},
-    {cards: 600, item: 1112885, costItem: 1112884, costMeso: 6000000},
-    {cards: 750, item: 1112886, costItem: 1112885, costMeso: 7000000},
-    {cards: 900, item: 1112887, costItem: 1112886, costMeso: 8000000},
-    {cards: 1200, item: 1112888, costItem: 1112887, costMeso: 9000000},
-    {cards: 1500, item: 1112889, costItem: 1112888, costMeso: 10000000}  //一共343种怪物卡，每种5张，合计超过1700张。
+    {cards: 30, item: 1112880, costItem: 4001126, costMeso: 1000000},  //第一级戒指需要枫叶1个
+    {cards: 60, item: 1112881, costItem: 1112880, costMeso: 2000000},
+    {cards: 90, item: 1112882, costItem: 1112881, costMeso: 3000000},
+    {cards: 120, item: 1112883, costItem: 1112882, costMeso: 4000000},
+    {cards: 150, item: 1112884, costItem: 1112883, costMeso: 5000000},
+    {cards: 180, item: 1112885, costItem: 1112884, costMeso: 6000000},
+    {cards: 210, item: 1112886, costItem: 1112885, costMeso: 7000000},
+    {cards: 240, item: 1112887, costItem: 1112886, costMeso: 8000000},
+    {cards: 270, item: 1112888, costItem: 1112887, costMeso: 9000000},
+    {cards: 300, item: 1112889, costItem: 1112888, costMeso: 10000000}  //一共343种怪物卡，每种只需收集一张即计数。
 ];
 
 function start() {

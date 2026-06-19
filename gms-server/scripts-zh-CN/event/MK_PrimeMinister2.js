@@ -1,4 +1,4 @@
-var eventTime = 10 * 60 * 1000;     // 10 minutes
+var eventTime = 10 * 60 * 1000;     // 10分钟（毫秒）
 var entryMap = 106021601;
 var exitMap = 106021402;
 var recruitMap = 106021402;
@@ -9,52 +9,42 @@ var minLevel = 30, maxLevel = 255;
 var minMapId = 106021601;
 var maxMapId = 106021601;
 
-var mobId = 3300008; //Prime Minister
+var mobId = 3300008; // Prime Minister
 const GameConfig = Java.type('org.gms.config.GameConfig');
-minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
-if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;
+if (GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {
+    minLevel = 1;
+    maxLevel = 999;
 }
 
 function init() {
     setEventRequirements();
 }
+
 function setEventRequirements() {
     var reqStr = "";
-
     reqStr += "\r\n   组队人数: ";
-    if (maxPlayers - minPlayers >= 1) {
-        reqStr += minPlayers + " ~ " + maxPlayers;
-    } else {
-        reqStr += minPlayers;
-    }
+    reqStr += (maxPlayers - minPlayers >= 1) ? (minPlayers + " ~ " + maxPlayers) : minPlayers;
 
     reqStr += "\r\n   等级要求: ";
-    if (maxLevel - minLevel >= 1) {
-        reqStr += minLevel + " ~ " + maxLevel;
-    } else {
-        reqStr += minLevel;
-    }
+    reqStr += (maxLevel - minLevel >= 1) ? (minLevel + " ~ " + maxLevel) : minLevel;
 
     reqStr += "\r\n   时间限制: ";
-    reqStr += eventTime + " 分钟";
+    reqStr += (eventTime / 60000) + " 分钟"; // 修复：原显示毫秒，改为分钟
 
     em.setProperty("party", reqStr);
 }
-function getEligibleParty(party) {      //selects, from the given party, the team that is allowed to attempt this event
+
+function getEligibleParty(party) {
     var eligible = [];
     var hasLeader = false;
 
     if (party.size() > 0) {
         var partyList = party.toArray();
-
         for (var i = 0; i < party.size(); i++) {
             var ch = partyList[i];
-
             if (ch.getMapId() == recruitMap && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel) {
-                if (ch.isLeader()) {
-                    hasLeader = true;
-                }
+                if (ch.isLeader()) hasLeader = true;
                 eligible.push(ch);
             }
         }
@@ -69,7 +59,6 @@ function getEligibleParty(party) {      //selects, from the given party, the tea
 function setup(difficulty, lobbyId) {
     var eim = em.newInstance("MK_PrimeMinister2_" + lobbyId);
     respawn(eim);
-
     return eim;
 }
 
@@ -83,9 +72,9 @@ function primeMinisterCheck(eim) {
 function respawn(eim) {
     if (primeMinisterCheck(eim)) {
         eim.startEventTimer(eventTime);
-
         var weddinghall = eim.getMapInstance(entryMap);
         weddinghall.getPortal(1).setPortalState(false);
+        
         const LifeFactory = Java.type('org.gms.server.life.LifeFactory');
         const Point = Java.type('java.awt.Point');
         weddinghall.spawnMonsterOnGroundBelow(LifeFactory.getMonster(mobId), new Point(292, 143));
@@ -101,31 +90,27 @@ function playerEntry(eim, player) {
 
 function scheduledTimeout(eim) {
     var party = eim.getPlayers();
-
     for (var i = 0; i < party.size(); i++) {
         playerExit(eim, party.get(i));
     }
-
     eim.dispose();
 }
 
-function playerRevive(eim, player) { // player presses ok on the death pop up.
-    if (eim.isEventTeamLackingNow(true, minPlayers, player)) {
-        eim.unregisterPlayer(player);
+// 修复：玩家复活后检查剩余人数
+function playerRevive(eim, player) {
+    eim.unregisterPlayer(player);
+    if (eim.getPlayers().size() < minPlayers) {
         end(eim);
-    } else {
-        eim.unregisterPlayer(player);
     }
 }
 
 function playerDead(eim, player) {}
 
+// 修复：玩家断线后检查剩余人数
 function playerDisconnected(eim, player) {
-    if (eim.isEventTeamLackingNow(true, minPlayers, player)) {
-        eim.unregisterPlayer(player);
+    eim.unregisterPlayer(player);
+    if (eim.getPlayers().size() < minPlayers) {
         end(eim);
-    } else {
-        eim.unregisterPlayer(player);
     }
 }
 
@@ -133,63 +118,72 @@ function monsterValue(eim, mobId) {
     return -1;
 }
 
+// 修复：强制停止计时器+清理所有玩家+销毁事件
 function end(eim) {
+    eim.stopEventTimer(); // 停止计时器，避免重复触发
     var party = eim.getPlayers();
     for (var i = 0; i < party.size(); i++) {
         playerExit(eim, party.get(i));
     }
-    eim.dispose();
+    eim.dispose(); // 销毁事件实例，释放地图锁
 }
 
-function leftParty(eim, player) {}
+// 修复：队伍离开/解散时结束事件
+function leftParty(eim, player) {
+    eim.unregisterPlayer(player);
+    if (eim.getPlayers().size() < minPlayers) end(eim);
+}
 
-function disbandParty(eim) {}
+function disbandParty(eim) {
+    end(eim); // 队伍解散直接结束事件
+}
 
 function playerUnregistered(eim, player) {}
 
+// 修复：玩家离开后检查剩余人数，无玩家则结束事件
 function playerExit(eim, player) {
     eim.unregisterPlayer(player);
     player.changeMap(exitMap, 2);
+    if (eim.getPlayers().isEmpty()) end(eim);
 }
 
+// 核心修复：修正参数错误+离开地图时结束事件
 function changedMap(eim, chr, mapid) {
     if (mapid < minMapId || mapid > maxMapId) {
-        if (eim.isEventTeamLackingNow(true, minPlayers, player)) {
-            eim.unregisterPlayer(player);
-            end(eim);
-        } else {
-            eim.unregisterPlayer(player);
-        }
+        eim.unregisterPlayer(chr);
+        if (eim.getPlayers().size() < minPlayers) end(eim);
     }
 }
 
+// 修复：移除玩家后检查剩余人数
 function removePlayer(eim, player) {
     eim.unregisterPlayer(player);
     player.getMap().removePlayer(player);
     player.setMap(entryMap);
+    if (eim.getPlayers().size() < minPlayers) end(eim);
 }
 
 function cancelSchedule() {}
 
 function dispose() {}
 
+// 修复：BOSS击杀后延迟检查，避免玩家未捡奖励就结束
 function clearPQ(eim) {
     eim.stopEventTimer();
     eim.setEventCleared();
+    eim.schedule(function() {
+        if (eim.getPlayers().isEmpty()) end(eim);
+    }, 5000);
 }
 
 function monsterKilled(mob, eim) {
     if (mob.getId() == mobId) {
-        eim.getMapInstance(entryMap).getPortal(1).setPortalState(true);
-
+        var entryMapInst = eim.getMapInstance(entryMap);
+        entryMapInst.getPortal(1).setPortalState(true);
         eim.showClearEffect();
         eim.clearPQ();
     }
 }
 
 function allMonstersDead(eim) {}
-
-// ---------- FILLER FUNCTIONS ----------
-
 function changedLeader(eim, leader) {}
-

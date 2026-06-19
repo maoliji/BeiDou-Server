@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<imgdir name="211042400.img">
+<imgdir name="211042400.img" indent="2" media="NONE">
   <imgdir name="info">
     <int name="version" value="10"/>
     <int name="cloud" value="0"/>
@@ -10,7 +10,7 @@
     <string name="bgm" value="Bgm05/HellGate"/>
     <string name="mapMark" value="ElNathDungeon"/>
     <int name="hideMinimap" value="0"/>
-    <int name="fieldLimit" value="4202588"/>
+    <int name="fieldLimit" value="8284"/>
     <int name="VRTop" value="-720"/>
     <int name="VRLeft" value="-1800"/>
     <int name="VRBottom" value="-120"/>
@@ -234,7 +234,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="33"/>
       <int name="x" value="-200"/>
-      <int name="y" value="-681"/>
+      <int name="y" value="-711"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="1"/>
@@ -249,7 +249,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="33"/>
       <int name="x" value="364"/>
-      <int name="y" value="-681"/>
+      <int name="y" value="-711"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="1"/>
@@ -264,7 +264,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="33"/>
       <int name="x" value="505"/>
-      <int name="y" value="-681"/>
+      <int name="y" value="-711"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="1"/>
@@ -324,7 +324,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="24"/>
       <int name="x" value="-535"/>
-      <int name="y" value="-240"/>
+      <int name="y" value="-270"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -339,7 +339,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="27"/>
       <int name="x" value="-484"/>
-      <int name="y" value="-450"/>
+      <int name="y" value="-480"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -354,7 +354,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="30"/>
       <int name="x" value="-553"/>
-      <int name="y" value="-623"/>
+      <int name="y" value="-653"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -370,7 +370,7 @@
       <int name="no" value="24"/>
       <int name="f" value="0"/>
       <int name="x" value="-1943"/>
-      <int name="y" value="-240"/>
+      <int name="y" value="-270"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -385,7 +385,7 @@
       <int name="no" value="21"/>
       <int name="f" value="0"/>
       <int name="x" value="-1694"/>
-      <int name="y" value="-236"/>
+      <int name="y" value="-266"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -505,7 +505,7 @@
       <int name="no" value="29"/>
       <int name="f" value="1"/>
       <int name="x" value="-1962"/>
-      <int name="y" value="-623"/>
+      <int name="y" value="-653"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -535,7 +535,7 @@
       <int name="no" value="29"/>
       <int name="f" value="0"/>
       <int name="x" value="-1678"/>
-      <int name="y" value="-623"/>
+      <int name="y" value="-653"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -550,7 +550,7 @@
       <int name="no" value="27"/>
       <int name="f" value="0"/>
       <int name="x" value="-1892"/>
-      <int name="y" value="-450"/>
+      <int name="y" value="-480"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -565,7 +565,7 @@
       <int name="no" value="26"/>
       <int name="f" value="0"/>
       <int name="x" value="-1749"/>
-      <int name="y" value="-429"/>
+      <int name="y" value="-459"/>
       <int name="rx" value="-100"/>
       <int name="ry" value="-100"/>
       <int name="type" value="0"/>
@@ -635,18 +635,13 @@
     </imgdir>
   </imgdir>
   <imgdir name="0">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="1">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="dungeon2"/>
@@ -728,28 +723,19 @@
     </imgdir>
   </imgdir>
   <imgdir name="2">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="3">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="4">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="5">
     <imgdir name="info">
@@ -1164,27 +1150,19 @@
         <int name="zM" value="0"/>
       </imgdir>
     </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="6">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="7">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
-  <imgdir name="reactor">
-  </imgdir>
+  <imgdir name="reactor"/>
   <imgdir name="foothold">
     <imgdir name="5">
       <imgdir name="0">
@@ -2383,11 +2361,9 @@
       </imgdir>
     </imgdir>
   </imgdir>
-  <imgdir name="ladderRope">
-  </imgdir>
+  <imgdir name="ladderRope"/>
   <imgdir name="miniMap">
-    <canvas name="canvas" width="90" height="30">
-    </canvas>
+    <canvas name="canvas" format="2" scale="0"/>
     <int name="width" value="1446"/>
     <int name="height" value="495"/>
     <int name="centerX" value="1848"/>

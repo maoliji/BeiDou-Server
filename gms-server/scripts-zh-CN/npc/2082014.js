@@ -42,7 +42,8 @@ function action(mode, type, selection) {
         if (status == 0) {
             const GameConfig = Java.type('org.gms.config.GameConfig');
             if (GameConfig.getServerBoolean("use_enable_custom_npc_script")) {
-                cm.openShopNPC(2082014);
+                //cm.openShopNPC(2082014);
+                cm.sendOk("卷轴商店已关闭，如需打开，请编辑scripts-zh-CN文件夹下npc文件夹的2082014.js脚本");
             } else if (cm.isQuestStarted(3749)) {
                 cm.sendOk("我们已经找到了敌人的终极武器！沿着船头区域前进，你会找到我的妹妹 #b#p2082013##k。向她报告，获取有关任务的进一步指示。");
             } else {

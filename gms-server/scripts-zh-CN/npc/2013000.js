@@ -92,7 +92,7 @@ function action(mode, type, selection) {
                 }
             } else if (status == 2) {
                 if (selection == 0) {
-                    if (cm.haveItem(4001158, 10) && cm.canHold(1082232)) {
+                    if (cm.haveItem(4001158, 5) && cm.canHold(1082232)) {
                         cm.gainItem(1082232, 1);
                         cm.gainItem(4001158, -5);
                         cm.dispose();

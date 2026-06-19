@@ -44,7 +44,7 @@ function action(mode, type, selection) {
                 var progress = cm.getQuestProgressInt(23339, 1);
 
                 if (progress == 3) {
-                                        cm.sendGetText("当水开始流动时，管道会起反应。一个带键盘的秘密隔间出现了. #b输入密码#k!(my love Phyllia 或 芝麻开门)");
+                    cm.sendGetText("当水流开始流动时，那根管道发生了反应；一个装有键盘的秘密隔间随即显现了出来。 #b输入密码#k!(my love Phyllia 或 琵丽雅是我的爱)");
                 } else if (progress == 1) {
                     cm.setQuestProgress(23339, 1, 2);
                     cm.dispose();
@@ -63,7 +63,7 @@ function action(mode, type, selection) {
                 cm.dispose();
             }
         } else if (status == 1) {
-                        if(cm.getText() == "my love Phyllia"||cm.getText() == "芝麻开门") {
+            if (cm.getText() == "my love Phyllia"||cm.getText() == "琵丽雅是我的爱") {
                 cm.setQuestProgress(23339, 1, 4);
                 cm.warp(261000001, 1);
                 cm.dispose();

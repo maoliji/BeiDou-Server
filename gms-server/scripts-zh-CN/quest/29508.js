@@ -5,8 +5,10 @@ function start(mode, type, selection) {
 }
 
 function end(mode, type, selection) {
-    if (qm.getPlayer().getMarriageId() > 0 && qm.getPlayer().getGuildId() > 0 && qm.getPlayer().getJunior1() > 0 && qm.canHold(1142081, 1)) {
-        qm.sendNext("哇.给你勋章!");
+//    if (qm.getPlayer().getMarriageId() > 0 && qm.getPlayer().getGuildId() > 0 && qm.getPlayer().getJunior1() > 0 && qm.canHold(1142081, 1)) {
+       if (qm.canHold(1142081, 1)) {
+
+        qm.sendNext("（由于bug，直接完成）你是最佳公民，给你勋章!");
         qm.forceCompleteQuest();
         qm.gainItem(1142081, 1);
     } else {

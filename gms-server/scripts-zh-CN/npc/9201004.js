@@ -68,7 +68,7 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            var questionStr = ["我怎样才能吸引到某人?", "我怎么能结婚?", "我怎么能离婚?"]
+            var questionStr = ["我怎样才能与他人订婚?", "我要怎么办理结婚?", "我要怎么办理离婚?"]
 
             if (!(!cm.getPlayer().isMarried() && getWeddingRingItemId(cm.getPlayer()))) {
                 questionStr.push("我想要离婚...");

@@ -53,7 +53,17 @@ function action(mode, type, selection) {
             status = 0;
         }
         if (status == 0) {
-            var prompt = "\r\n#b#L0# 什么是遗迹挑战?#l\r\n#b#L1# #t4001024#? 这是什么?#l\r\n#b#L2# 家族任务?#l\r\n#b#L3# 我现在没什么事.#l";
+            // 基础对话选项
+            var prompt = "\r\n#b#L0# 什么是遗迹挑战?#l\r\n#b#L1# #t4001024#? 这是什么?#l\r\n#b#L2# 家族任务?#l";
+            
+            // 检测任务6201是否已开始，若是则添加新选项
+            if (cm.isQuestStarted(6201)) {
+                prompt += "\r\n#b#L4# 前往“未公开的遗迹”#l";
+            }
+            
+            // 补充"没事"选项
+            prompt += "\r\n#b#L3# 我现在没什么事.#l";
+
             if (selectedOption == -1) {
                 prompt = "我们家族联盟，长期以来一直在努力破译'Emerald Tablet',这是一件珍贵的古老文物。因此，我们发现，来自过去的神秘国家圣端尼亚在这里沉睡。我们还发现，传说中的神话珠宝#t4001024#的线索可能就在圣端尼亚的遗迹上。这就是为什么家族联盟开启了家族组队任务，为了最终能找到#t4001024#." + prompt;
             } else {
@@ -71,6 +81,10 @@ function action(mode, type, selection) {
                 cm.sendNext("我之前曾经派遣过一些探险者前往圣端尼亚，但他们没有一个回来，这促使我们开始家族任务。我们一直在等待足够强大的家族来应对艰难的挑战，就像你们家族这样的。");
             } else if (selectedOption == 3) {
                 cm.sendOk("真的吗？如果你还有其他问题要问，随时都可以和我交谈。");
+                cm.dispose();
+            // 新增：处理"前往未公开的遗迹"选项
+            } else if (selectedOption == 4) {
+                cm.sendOk("从左边的入口即可进入“未公开的遗迹”");
                 cm.dispose();
             } else {
                 cm.dispose();

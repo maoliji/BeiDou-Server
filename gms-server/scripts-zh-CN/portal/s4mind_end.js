@@ -23,7 +23,8 @@ function enter(pi) {
         return false;
     } else {
         if (pi.isQuestStarted(6410)) {
-            pi.setQuestProgress(6410, 6411, "p2");
+            //pi.setQuestProgress(6410, 6411, "p2");
+            pi.setQuestProgress(6410, 0, 1);
         }
 
         pi.playPortalSound();

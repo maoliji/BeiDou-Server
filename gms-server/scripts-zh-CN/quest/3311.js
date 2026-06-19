@@ -18,7 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var status = -1;
+let status = -1;
 
 function end(mode, type, selection) {
     if (mode == -1) {
@@ -35,7 +35,7 @@ function end(mode, type, selection) {
             status--;
         
         if (status == 0) {
-            if(qm.getQuestProgress(3311, 0) == 1 && qm.getQuestProgress(3311, 1) == 1) {
+            if ((qm.getQuestProgress(3311, 0) == 1 && qm.getQuestProgress(3311, 1) == 1) || qm.getQuestProgress(3311, 0) == 5) {
                 qm.sendNext("嗯，那么卡帕莱特的博士写了一些关于研究一些先锋派的新型洛伊德机器人的文章，它可以击败现有的机器人，这是为了准备研究的最后一步？我们已经三个星期没有他的消息了，一定是出了什么问题...");
                 qm.gainExp(60000);
                 qm.forceCompleteQuest();

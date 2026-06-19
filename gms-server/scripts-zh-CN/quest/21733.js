@@ -62,7 +62,7 @@ function end(mode, type, selection) {
         if (status == 0) {
             qm.sendNext("啊......没想到还会碰上这种事情。怎么都没想到人偶师还会潜伏到这里来。平时大概是疏于修炼了，完全被对方给算计了。不过，这也暴露出了他们的弱点。");
         } else if (status == 1) {
-	qm.sendNextPrev("弱点？", 2);
+	qm.sendNextPrev("弱点？(缺少对话，完成此任务习得#b精准矛#k技能)", 2);
         } else if (status == 2) {
             qm.gainExp(8000);
             qm.teachSkill(21100000, 0, 20, -1); // polearm mastery

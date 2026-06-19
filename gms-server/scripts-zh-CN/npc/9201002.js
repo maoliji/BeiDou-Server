@@ -170,8 +170,8 @@ function action(mode, type, selection) {
                 }
 
                 if (hasEngagement) {
-                    var text = "有什么事吗?";
-                    var choice = new Array("我们要结婚了");
+                    var text = "你好。我能为你提供什么帮助？";
+                    var choice = new Array("我们已经准备好举办婚礼了。");
                     for (x = 0; x < choice.length; x++) {
                         text += "\r\n#L" + x + "##b" + choice[x] + "#l";
                     }
@@ -372,12 +372,12 @@ function action(mode, type, selection) {
 
                                             giveCoupleBlessings(eim, player, partner);
 
-                                            cm.getMap().dropMessage(6, "大祭司约翰：我现在宣布你们结为夫妻，这是我通过这棵巨大的枫树所赋予的权力。你可以吻新娘！");
+                                            cm.getMap().dropMessage(6, "大主教约翰：以神圣冒险岛世界之树赋予我的权柄，我在此宣布你们结为夫妻。现在，你可以亲吻新娘了！");
                                             eim.schedule("showMarriedMsg", 2 * 1000);
                                         }
                                     } else {
                                         eim.setIntProperty("confirmedVows", player.getId());
-                                        cm.getMap().dropMessage(6, "婚礼助手: " + player.getName() + "已经确认了誓言！ 好吧，再往前走一步就正式了。系紧安全带！");
+                                        cm.getMap().dropMessage(6, "婚礼助手：" + player.getName() + "已许下爱的誓言！好了，距离正式结为夫妻就差最后一步啦！准备好迎接幸福时刻吧！");
                                     }
 
                                     break;

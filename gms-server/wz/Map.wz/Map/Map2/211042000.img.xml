@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<imgdir name="211042000.img">
+<imgdir name="211042000.img" indent="2" media="NONE">
   <imgdir name="info">
     <int name="version" value="10"/>
     <int name="cloud" value="0"/>
@@ -23,7 +23,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="0"/>
       <int name="x" value="0"/>
-      <int name="y" value="10"/>
+      <int name="y" value="-40"/>
       <int name="rx" value="-10"/>
       <int name="ry" value="-10"/>
       <int name="type" value="1"/>
@@ -38,7 +38,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="1"/>
       <int name="x" value="-21"/>
-      <int name="y" value="-284"/>
+      <int name="y" value="-334"/>
       <int name="rx" value="-12"/>
       <int name="ry" value="-12"/>
       <int name="type" value="1"/>
@@ -53,7 +53,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="2"/>
       <int name="x" value="63"/>
-      <int name="y" value="-265"/>
+      <int name="y" value="-315"/>
       <int name="rx" value="-12"/>
       <int name="ry" value="-12"/>
       <int name="type" value="1"/>
@@ -68,7 +68,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="4"/>
       <int name="x" value="-261"/>
-      <int name="y" value="-36"/>
+      <int name="y" value="-86"/>
       <int name="rx" value="-15"/>
       <int name="ry" value="-15"/>
       <int name="type" value="1"/>
@@ -83,7 +83,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="6"/>
       <int name="x" value="384"/>
-      <int name="y" value="-34"/>
+      <int name="y" value="-84"/>
       <int name="rx" value="-16"/>
       <int name="ry" value="-16"/>
       <int name="type" value="1"/>
@@ -98,7 +98,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="5"/>
       <int name="x" value="64"/>
-      <int name="y" value="-41"/>
+      <int name="y" value="-91"/>
       <int name="rx" value="-19"/>
       <int name="ry" value="-19"/>
       <int name="type" value="1"/>
@@ -113,7 +113,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="11"/>
       <int name="x" value="-343"/>
-      <int name="y" value="-304"/>
+      <int name="y" value="-354"/>
       <int name="rx" value="-20"/>
       <int name="ry" value="-20"/>
       <int name="type" value="1"/>
@@ -128,7 +128,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="14"/>
       <int name="x" value="-231"/>
-      <int name="y" value="-343"/>
+      <int name="y" value="-393"/>
       <int name="rx" value="-20"/>
       <int name="ry" value="-20"/>
       <int name="type" value="1"/>
@@ -143,7 +143,7 @@
       <int name="ani" value="0"/>
       <int name="no" value="13"/>
       <int name="x" value="441"/>
-      <int name="y" value="-336"/>
+      <int name="y" value="-386"/>
       <int name="rx" value="-20"/>
       <int name="ry" value="-20"/>
       <int name="type" value="1"/>
@@ -153,66 +153,6 @@
       <int name="f" value="0"/>
     </imgdir>
     <imgdir name="9">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="0"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="7"/>
-      <int name="x" value="-424"/>
-      <int name="y" value="-14"/>
-      <int name="rx" value="-20"/>
-      <int name="ry" value="-20"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="10">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="0"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="8"/>
-      <int name="x" value="-410"/>
-      <int name="y" value="-301"/>
-      <int name="rx" value="-20"/>
-      <int name="ry" value="-20"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="11">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="0"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="9"/>
-      <int name="f" value="0"/>
-      <int name="x" value="732"/>
-      <int name="y" value="-8"/>
-      <int name="rx" value="-20"/>
-      <int name="ry" value="-20"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-    </imgdir>
-    <imgdir name="12">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="0"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="10"/>
-      <int name="f" value="0"/>
-      <int name="x" value="721"/>
-      <int name="y" value="-296"/>
-      <int name="rx" value="-20"/>
-      <int name="ry" value="-20"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-    </imgdir>
-    <imgdir name="13">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="0"/>
       <int name="ani" value="0"/>
@@ -227,7 +167,7 @@
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
     </imgdir>
-    <imgdir name="14">
+    <imgdir name="10">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="0"/>
       <int name="ani" value="0"/>
@@ -242,13 +182,13 @@
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
     </imgdir>
-    <imgdir name="15">
+    <imgdir name="11">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="0"/>
       <int name="ani" value="0"/>
       <int name="no" value="15"/>
       <int name="x" value="-133"/>
-      <int name="y" value="-148"/>
+      <int name="y" value="-198"/>
       <int name="rx" value="-60"/>
       <int name="ry" value="-40"/>
       <int name="type" value="1"/>
@@ -257,13 +197,13 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="16">
+    <imgdir name="12">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="0"/>
       <int name="ani" value="0"/>
       <int name="no" value="16"/>
       <int name="x" value="4519"/>
-      <int name="y" value="-171"/>
+      <int name="y" value="-221"/>
       <int name="rx" value="-65"/>
       <int name="ry" value="-45"/>
       <int name="type" value="1"/>
@@ -272,13 +212,13 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="17">
+    <imgdir name="13">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="0"/>
       <int name="ani" value="0"/>
       <int name="no" value="17"/>
       <int name="x" value="928"/>
-      <int name="y" value="-196"/>
+      <int name="y" value="-246"/>
       <int name="rx" value="-70"/>
       <int name="ry" value="-50"/>
       <int name="type" value="1"/>
@@ -287,17 +227,77 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="18">
+    <imgdir name="14">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
       <int name="no" value="31"/>
       <int name="x" value="-200"/>
-      <int name="y" value="-644"/>
+      <int name="y" value="-649"/>
       <int name="rx" value="-90"/>
       <int name="ry" value="-90"/>
       <int name="type" value="1"/>
       <int name="cx" value="423"/>
+      <int name="cy" value="0"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
+    <imgdir name="15">
+      <string name="bS" value="moltenRock"/>
+      <int name="front" value="1"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="33"/>
+      <int name="x" value="364"/>
+      <int name="y" value="-686"/>
+      <int name="rx" value="-90"/>
+      <int name="ry" value="-90"/>
+      <int name="type" value="1"/>
+      <int name="cx" value="423"/>
+      <int name="cy" value="0"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
+    <imgdir name="16">
+      <string name="bS" value="moltenRock"/>
+      <int name="front" value="1"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="35"/>
+      <int name="x" value="505"/>
+      <int name="y" value="-683"/>
+      <int name="rx" value="-90"/>
+      <int name="ry" value="-90"/>
+      <int name="type" value="1"/>
+      <int name="cx" value="423"/>
+      <int name="cy" value="0"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
+    <imgdir name="17">
+      <string name="bS" value="moltenRock"/>
+      <int name="front" value="1"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="21"/>
+      <int name="x" value="-852"/>
+      <int name="y" value="-241"/>
+      <int name="rx" value="-90"/>
+      <int name="ry" value="-90"/>
+      <int name="type" value="0"/>
+      <int name="cx" value="0"/>
+      <int name="cy" value="0"/>
+      <int name="a" value="255"/>
+      <int name="f" value="0"/>
+    </imgdir>
+    <imgdir name="18">
+      <string name="bS" value="moltenRock"/>
+      <int name="front" value="1"/>
+      <int name="ani" value="0"/>
+      <int name="no" value="22"/>
+      <int name="x" value="-906"/>
+      <int name="y" value="-434"/>
+      <int name="rx" value="-90"/>
+      <int name="ry" value="-90"/>
+      <int name="type" value="0"/>
+      <int name="cx" value="0"/>
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
       <int name="f" value="0"/>
@@ -306,13 +306,13 @@
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
-      <int name="no" value="33"/>
-      <int name="x" value="364"/>
-      <int name="y" value="-681"/>
+      <int name="no" value="29"/>
+      <int name="x" value="-835"/>
+      <int name="y" value="-628"/>
       <int name="rx" value="-90"/>
       <int name="ry" value="-90"/>
-      <int name="type" value="1"/>
-      <int name="cx" value="423"/>
+      <int name="type" value="0"/>
+      <int name="cx" value="0"/>
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
       <int name="f" value="0"/>
@@ -321,13 +321,13 @@
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
-      <int name="no" value="35"/>
-      <int name="x" value="505"/>
-      <int name="y" value="-678"/>
+      <int name="no" value="24"/>
+      <int name="x" value="2569"/>
+      <int name="y" value="-245"/>
       <int name="rx" value="-90"/>
       <int name="ry" value="-90"/>
-      <int name="type" value="1"/>
-      <int name="cx" value="423"/>
+      <int name="type" value="0"/>
+      <int name="cx" value="0"/>
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
       <int name="f" value="0"/>
@@ -336,9 +336,9 @@
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
-      <int name="no" value="21"/>
-      <int name="x" value="-852"/>
-      <int name="y" value="-236"/>
+      <int name="no" value="25"/>
+      <int name="x" value="2621"/>
+      <int name="y" value="-434"/>
       <int name="rx" value="-90"/>
       <int name="ry" value="-90"/>
       <int name="type" value="0"/>
@@ -351,9 +351,9 @@
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
-      <int name="no" value="22"/>
-      <int name="x" value="-906"/>
-      <int name="y" value="-429"/>
+      <int name="no" value="30"/>
+      <int name="x" value="2550"/>
+      <int name="y" value="-628"/>
       <int name="rx" value="-90"/>
       <int name="ry" value="-90"/>
       <int name="type" value="0"/>
@@ -363,66 +363,6 @@
       <int name="f" value="0"/>
     </imgdir>
     <imgdir name="23">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="1"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="29"/>
-      <int name="x" value="-835"/>
-      <int name="y" value="-623"/>
-      <int name="rx" value="-90"/>
-      <int name="ry" value="-90"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="24">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="1"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="24"/>
-      <int name="x" value="2569"/>
-      <int name="y" value="-240"/>
-      <int name="rx" value="-90"/>
-      <int name="ry" value="-90"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="25">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="1"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="25"/>
-      <int name="x" value="2621"/>
-      <int name="y" value="-429"/>
-      <int name="rx" value="-90"/>
-      <int name="ry" value="-90"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="26">
-      <string name="bS" value="moltenRock"/>
-      <int name="front" value="1"/>
-      <int name="ani" value="0"/>
-      <int name="no" value="30"/>
-      <int name="x" value="2550"/>
-      <int name="y" value="-623"/>
-      <int name="rx" value="-90"/>
-      <int name="ry" value="-90"/>
-      <int name="type" value="0"/>
-      <int name="cx" value="0"/>
-      <int name="cy" value="0"/>
-      <int name="a" value="255"/>
-      <int name="f" value="0"/>
-    </imgdir>
-    <imgdir name="27">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
@@ -437,7 +377,7 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="28">
+    <imgdir name="24">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
@@ -452,7 +392,7 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="29">
+    <imgdir name="25">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
@@ -467,7 +407,7 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="30">
+    <imgdir name="26">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="1"/>
@@ -482,7 +422,7 @@
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
     </imgdir>
-    <imgdir name="31">
+    <imgdir name="27">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="1"/>
@@ -497,7 +437,7 @@
       <int name="cy" value="0"/>
       <int name="a" value="255"/>
     </imgdir>
-    <imgdir name="32">
+    <imgdir name="28">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
@@ -512,7 +452,7 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="33">
+    <imgdir name="29">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
@@ -527,7 +467,7 @@
       <int name="a" value="255"/>
       <int name="f" value="0"/>
     </imgdir>
-    <imgdir name="34">
+    <imgdir name="30">
       <string name="bS" value="moltenRock"/>
       <int name="front" value="1"/>
       <int name="ani" value="0"/>
@@ -906,18 +846,13 @@
     </imgdir>
   </imgdir>
   <imgdir name="0">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="1">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="trap"/>
@@ -1155,12 +1090,9 @@
     </imgdir>
   </imgdir>
   <imgdir name="2">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="3">
     <imgdir name="info">
@@ -1876,14 +1808,11 @@
         <int name="zM" value="32"/>
       </imgdir>
     </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="4">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="connect"/>
@@ -3898,14 +3827,11 @@
         <int name="zM" value="0"/>
       </imgdir>
     </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="obj"/>
   </imgdir>
   <imgdir name="6">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
     <imgdir name="obj">
       <imgdir name="0">
         <string name="oS" value="dungeon2"/>
@@ -4109,15 +4035,11 @@
     </imgdir>
   </imgdir>
   <imgdir name="7">
-    <imgdir name="info">
-    </imgdir>
-    <imgdir name="tile">
-    </imgdir>
-    <imgdir name="obj">
-    </imgdir>
+    <imgdir name="info"/>
+    <imgdir name="tile"/>
+    <imgdir name="obj"/>
   </imgdir>
-  <imgdir name="reactor">
-  </imgdir>
+  <imgdir name="reactor"/>
   <imgdir name="foothold">
     <imgdir name="3">
       <imgdir name="30">
@@ -9765,8 +9687,7 @@
     </imgdir>
   </imgdir>
   <imgdir name="miniMap">
-    <canvas name="canvas" width="250" height="59">
-    </canvas>
+    <canvas name="canvas" format="2" scale="0"/>
     <int name="width" value="4011"/>
     <int name="height" value="953"/>
     <int name="centerX" value="1061"/>

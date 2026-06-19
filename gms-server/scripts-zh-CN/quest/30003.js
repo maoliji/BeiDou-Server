@@ -66,9 +66,9 @@ function end(mode, type, selection)
 	    if (status == 0)
 	    {
 			//第一层对话
-            qm.sendOk("不错嘛,任务完成!这是给你的奖励,希望你能用到它\r\n\r\n#fUI/CashShop.img/CSDiscount/bonus# 金币x50000");		
+            qm.sendOk("不错嘛,任务完成!这是给你的奖励,希望你能用到它\r\n\r\n#fUI/CashShop.img/CSDiscount/bonus# 金币x10000");		
 			qm.forceCompleteQuest();
-			qm.gainMeso(50000);
+			qm.gainMeso(10000);
             qm.dispose();			
 	    }
 		else if (status == 1 )

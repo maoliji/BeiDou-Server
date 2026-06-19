@@ -50,6 +50,7 @@ function action(mode, type, selection) {
         text += "#b  注：点击NPC无反应可输入 @dispose 来解卡#k\r\n\r\n";
         text += "#d  【随着等级提升，将自动开放更多便捷功能】#k\r\n";
 
+        text += "#L74#领取快捷箱子#l\r\n\r\n";
         text += "#L0#新人福利#l \t #L1#每日签到#l\t #L2#在线奖励#l\r\n";
 
         if (cm.getPlayer().getLevel()>=15) {
@@ -69,11 +70,12 @@ function action(mode, type, selection) {
        }
 
         if (cm.getPlayer().getLevel()>=70) {
-        text += "#L13#物品兑换#l\t #L7#卷轴商店#l\t #L17#益智答题#l\r\n";
+        text += "#L26#矿卷背包#l\t #L13#物品兑换#l\t #L17#益智答题#l\r\n";
        }
 
         if (cm.getPlayer().getLevel()>=120) {
         text += "#L8#大药商店#l\t #L22#技能全满#l \t #L23#更换职业#l\r\n"; 
+        text += "#L7#卷轴商店#l\t #L24#转生系统#l\r\n"; 
        }
 
 
@@ -85,9 +87,10 @@ function action(mode, type, selection) {
         if (cm.getPlayer().isGM()) {
             text += "\r\n";
             text += "\t\t\t\t#r=====以下内容仅GM可见=====\r\n";
-            text += "#L62#GM商店集合      #l \t #L63#整容集合#l\r\n";
-	text += "#L65#一键删除道具#l \t     #L66#一键刷道具#l\r\n";
-	text += "#L67#有状态脚本示例#l \t #L68#NextLevel脚本示例#l";
+            text += "#L62#GM商店集合     #l \t #L63#整容集合#l\t           #L73#技能绑定#l\r\n";
+	text += "#L65#一键删除道具#l \t    #L66#刷道具(代码)#l\t    #L69#刷道具(名称)#l\r\n";
+	text += "#L70#远程任务#l \t            #L71#任意门#l\t               #L72#召唤怪物#l\r\n";
+	text += "#L75#GM怪物手册#l  #L67#有状态脚本示例#l \t#L68#NextLevel脚本示例#l\r\n";
         }
         cm.sendSimple(text);
     } else if (status === 1) {
@@ -182,11 +185,15 @@ function doSelect(selection) {
             openNpc("更换职业"); 
             break;
         case 24:
-            openNpc("一键转生"); 
+            openNpc("转生系统"); 
             break;
 
         case 25:
             openNpc("2006");  //明珠港怪物卡戒指NPC
+            break;
+
+        case 26:
+            openNpc("矿物背包");  //矿卷背包
             break;
 
         // GM功能
@@ -210,6 +217,27 @@ function doSelect(selection) {
             break;
         case 68:
             openNpc("Example2")
+            break;
+        case 69:
+            openNpc("虚空索物");
+            break;
+        case 70:
+            openNpc("远程任务");
+            break;
+        case 71:
+            openNpc("任意门");
+            break;
+        case 72:
+            openNpc("召唤怪物");
+            break;
+        case 73:
+            openNpc("技能绑定");
+            break;
+        case 74:
+            openNpc("快捷功能");
+            break;
+        case 75:
+            openNpc("怪物手册");
             break;
         default:
             cm.sendOk("该功能暂不支持，敬请期待！");

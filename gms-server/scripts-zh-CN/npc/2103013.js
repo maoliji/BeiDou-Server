@@ -34,7 +34,7 @@ function start() {
 	if (cm.getMapId() == 926020001)
 		text = "站住!你成功抵挡了奈特的怒火.奈特允许你进入企鹅长老的墓.现在想进去吗?\r\n\r\n#b#L0#好.#l\r\n#L1#等会儿.#l";
 	else if (cm.getMapId() == 926010000)
-		text = "我是#p2103013#.\r\n\r\n#b#L0#这里是干嘛的.#l\r\n#e#L1# 我要进入金字塔.#l#n\r\n\r\n#L2#寻找组队.#l\r\n\r\n#L3#进入企鹅长老墓穴.#l\r\n#L4# 奖励是什么.#l\r\n#L5#领取<法老保护者>勋章.#l";
+		text = "我是#p2103013#.\r\n\r\n#b#L0#这里是干嘛的.#l\r\n#e#L1#我要进入金字塔.#l#n\r\n\r\n#L2#寻找组队.#l\r\n\r\n#L3#进入企鹅长老墓穴.#l\r\n#L4#奖励是什么.#l\r\n#L5#领取<法老保护者>勋章.#l";
 	else 
 		text = "你想放弃挑战离开吗?\r\n\r\n#b#L0#离开#l";
 		
@@ -58,9 +58,9 @@ function action(mode, type, selection) {
                 selected = selection;
             }
             if (selection == 0 || selected == 0) {
-                cm.sendNext("这是Nett金字塔，混沌和复仇之神。长期以来，它一直被埋在沙漠深处，但Nett已命令它升起地面。如果你不惧混乱和可能的死亡，你可以挑战沉睡在金字塔内的Yeti法老。无论结果如何，选择权在你手中。");
+                cm.sendNext("这是奈特金字塔，混沌和复仇之神。长期以来，它一直被埋在沙漠深处，但奈特已命令它升起地面。如果你不惧混乱和可能的死亡，你可以挑战沉睡在金字塔内的法老雪人。无论结果如何，选择权在你手中。");
             } else if (selection == 1) {
-                cm.sendSimple("你这些不知道尼特之怒的愚蠢家伙，现在是选择你们命运的时刻！\r\n\r\n#b#L0# 独自进入。#l\r\n#L1# 与2人或更多的队伍一起进入。#l");
+                cm.sendSimple("你这些不知道奈特之怒的愚蠢家伙，现在是选择你们命运的时刻！\r\n\r\n#b#L0# 独自进入。#l\r\n#L1# 与2人或更多的队伍一起进入。#l");
             } else if (selection == 2) {
                 cm.openUI(0x16);
                 cm.showInfoText("使用组队搜索找一个队伍!");
@@ -68,13 +68,14 @@ function action(mode, type, selection) {
             } else if (selection == 3) {
                 cm.sendSimple("你带来了什么宝石？\r\n\r\n#L0##i4001322# #t4001322##l\r\n#L1##i4001323# #t4001323##l\r\n#L2##i4001324# #t4001324##l\r\n#L3##i4001325# #t4001325##l");
             } else if (selection == 4) {
-                cm.sendNext("在法老雪人的墓穴内，你可以通过证明自己有能力击败法老雪人的克隆体——法老雪人小弟，获得#e#b#t2022613##k#n。在那个盒子里藏着一份非常特别的宝藏。那就是#e#b#t1132012##k#n。\r\n#i1132012:# #t1132012#\r\n\r\n而且，如果你以某种方式能够在地狱模式中生存下来，你将获得#e#b#t1132013##k#n。\r\n\r\n#i1132013:# #t1132013#\r\n\r\n当然，Nett是不会允许这种事情发生的。");
+                cm.sendNext("在法老雪人的墓穴内，你可以通过证明自己有能力击败法老雪人的克隆体——法老雪人小弟，获得#e#b#t2022613##k#n。在那个盒子里藏着一份非常特别的宝藏。那就是#e#b#t1132012##k#n。\r\n#i1132012:# #t1132012#\r\n\r\n而且，如果你以某种方式能够在地狱模式中生存下来，你将获得#e#b#t1132013##k#n。\r\n\r\n#i1132013:# #t1132013#\r\n\r\n当然，奈特是不会允许这种事情发生的。");
             } else if (selection == 5) {
                 var progress = cm.getQuestProgressInt(29932);
                 if (progress >= 50000) {
                     cm.dispose();
                 } else {
                     cm.sendNext("抱歉，我无法完成你的要求。");
+                    cm.dispose();
                 }
 
             }
@@ -122,7 +123,7 @@ function action(mode, type, selection) {
                         return;
                     } else {
                         if (pqparty.getMembers().size() < 2) {
-                            cm.sendOk("获得更多成员...");
+                            cm.sendOk("需要更多成员...");
                             cm.dispose();
                             return;
                         } else {
@@ -150,8 +151,8 @@ function action(mode, type, selection) {
                     cm.dispose();
                     return;
                 }
-                if (selection < 3 && cm.getPlayer().getLevel() > 60) {
-                    cm.sendOk("只有等级超过60级的玩家才能进入地狱模式。");
+                if (selection < 3 && cm.getPlayer().getLevel() < 60) {
+                    cm.sendOk("只有等级超过60级的玩家才能进入超难模式。");
                     cm.dispose();
                     return;
                 }
@@ -164,7 +165,7 @@ function action(mode, type, selection) {
                 }
 
                 if (!cm.createPyramid(mode, party == 1)) {
-                    cm.sendOk("所有房间都已满，请稍后再试或者换一个频道:)");
+                    cm.sendOk("所有房间都已满，请稍后再试或者换一个频道。");
                 }
                 cm.dispose();
             }

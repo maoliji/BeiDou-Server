@@ -25,7 +25,7 @@ function action(mode, type, selection) {
 
         if (status == 1) {
             if (cm.getChar().getMapId() == 209000000) {
-                cm.sendYesNo("你想前往 #b雪花洒落#k 的地方吗？");
+                cm.sendYesNo("你想前往 #b雪花洒落#k 的地方吗？\r\n#r注意！进去前请去左边屋顶上的箱子获取 #v1472063#并穿戴上，否则会被冻死！#k");
                 status = 9;
             } else if (cm.getChar().getMapId() == 209080000) {
                 cm.sendYesNo("你希望回到幸福村吗？");

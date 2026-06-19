@@ -154,7 +154,7 @@ function action(mode, type, selection) {
                     }
                 }
             } else {
-                cm.sendNext("请告诉你的#b队伍领袖#k来找我谈话。");
+                cm.sendNext("请告诉你的#b队长#k来找我谈话。");
             }
         }
 

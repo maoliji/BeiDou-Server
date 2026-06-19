@@ -55,7 +55,7 @@ function action(mode, type, selection) {
             }
         } else {
             if (status == 0) {
-                cm.sendNext("你们打败了斯卡利昂和塔加！太棒了！把这个纪念品当作你们勇敢的奖励。");
+                cm.sendNext("你们打败了心疤狮王和暴力熊！太棒了！把这个纪念品当作你们勇敢的奖励。");
             } else if (status == 1) {
                 if (!eim.giveEventReward(cm.getPlayer())) {
                     cm.sendNext("请先在你的背包里腾出空间！");

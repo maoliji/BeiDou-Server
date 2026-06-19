@@ -66,7 +66,7 @@ function end(mode, type, selection) {
             status--;
         
         if (status == 0) {
-            qm.sendNext("您好，亲爱的冒险家，是莎莉让您来的吧？说明您已经熟悉了大巨变前的4大基本职业了，目前版本对标#bCMS079#k，因此也有了海盗,啊，你问#r战神和龙神#k？那是歪门邪道...");
+            qm.sendNext("您好，亲爱的冒险家，是莎莉让您来的吧？说明您已经熟悉了大巨变前的4大基本职业了，目前版本对标#bCMS079#k，因此也有了海盗、骑士团和战神,啊，你问#r龙神#k？那是后面的版本才有...");
         } else if (status == 1) {
 			qm.sendOk("亲爱的冒险家，望您回到童年，享受以前无忧无虑的冒险欢乐时光吧！");
             qm.forceCompleteQuest();

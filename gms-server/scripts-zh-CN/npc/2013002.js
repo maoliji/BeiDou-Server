@@ -53,7 +53,7 @@ function action(mode, type, selection) {
 
         } else if (cm.getPlayer().getMapId() == 920011300) {
             if (status == 0) {
-                cm.sendNext("谢谢你不仅修复了雕像，还救出了我米涅瓦，得以脱离困境。愿女神的祝福与你同在，直到最后……作为感激之情，请接受这份纪念品，以表彰你的勇敢。");
+                cm.sendNext("谢谢你不仅修复了雕像，还救出了我，让我脱离困境。愿女神的祝福与你同在，直到最后……作为感激之情，请接受这份纪念品，以表彰你的勇敢。");
             } else if (status == 1) {
                 if (cm.getEventInstance().giveEventReward(cm.getPlayer()) && cm.canHold(4001158)) {
                     cm.warp(200080101, 0);

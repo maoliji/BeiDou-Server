@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="2161011.img" indent="2" media="NONE">
+  <imgdir name="info">
+    <string name="name" value="gargoyle"/>
+    <imgdir name="script">
+      <imgdir name="0">
+        <string name="script" value="timeQuestGargoyle"/>
+      </imgdir>
+    </imgdir>
+  </imgdir>
+  <imgdir name="stand">
+    <canvas name="0" format="2" scale="0">
+      <vector name="origin" x="68" y="108"/>
+      <int name="z" value="0"/>
+    </canvas>
+  </imgdir>
+</imgdir>

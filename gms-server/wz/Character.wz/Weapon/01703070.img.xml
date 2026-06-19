@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="01703070.img" indent="2" media="NONE">
+  <imgdir name="30">
+    <imgdir name="stabOF">
+      <imgdir name="0">
+        <canvas name="effect" format="2" scale="0">
+          <vector name="origin" x="27" y="63"/>
+          <imgdir name="map">
+            <vector name="navel" x="-40" y="15"/>
+          </imgdir>
+          <string name="z" value="characterEnd"/>
+        </canvas>
+      </imgdir>
+      <imgdir name="1">
+        <canvas name="effect" format="2" scale="0">
+          <vector name="origin" x="-43" y="66"/>
+          <imgdir name="map">
+            <vector name="navel" x="70" y="18"/>
+          </imgdir>
+          <string name="z" value="characterEnd"/>
+        </canvas>
+      </imgdir>
+      <imgdir name="2">
+        <canvas name="effect" format="2" scale="0">
+          <vector name="origin" x="125" y="88"/>
+          <imgdir name="map">
+            <vector name="navel" x="0" y="10"/>
+          </imgdir>
+          <string name="z" value="characterEnd"/>
+        </canvas>
+      </imgdir>
+    </imgdir>
+  </imgdir>
+  <imgdir name="49">
+    <imgdir name="stabOF">
+      <imgdir name="0">
+        <canvas name="effect" format="2" scale="0">
+          <vector name="origin" x="27" y="63"/>
+          <imgdir name="map">
+            <vector name="navel" x="-40" y="15"/>
+          </imgdir>
+          <string name="z" value="characterEnd"/>
+        </canvas>
+      </imgdir>
+      <imgdir name="1">
+        <canvas name="effect" format="2" scale="0">
+          <vector name="origin" x="-43" y="66"/>
+          <imgdir name="map">
+            <vector name="navel" x="70" y="18"/>
+          </imgdir>
+          <string name="z" value="characterEnd"/>
+        </canvas>
+      </imgdir>
+      <imgdir name="2">
+        <canvas name="effect" format="2" scale="0">
+          <vector name="origin" x="125" y="88"/>
+          <imgdir name="map">
+            <vector name="navel" x="0" y="10"/>
+          </imgdir>
+          <string name="z" value="characterEnd"/>
+        </canvas>
+      </imgdir>
+    </imgdir>
+  </imgdir>
+  <imgdir name="info">
+    <int name="cash" value="1"/>
+    <canvas name="icon" format="2" scale="0">
+      <vector name="origin" x="1" y="34"/>
+    </canvas>
+    <canvas name="iconRaw" format="2" scale="0">
+      <vector name="origin" x="1" y="34"/>
+    </canvas>
+    <int name="incMAD" value="0"/>
+    <int name="incPAD" value="0"/>
+    <string name="islot" value="Wp"/>
+    <int name="reqDEX" value="0"/>
+    <int name="reqINT" value="0"/>
+    <int name="reqJob" value="0"/>
+    <int name="reqLevel" value="0"/>
+    <int name="reqLUK" value="0"/>
+    <int name="reqSTR" value="0"/>
+    <string name="vslot" value="Wp"/>
+  </imgdir>
+  <uol name="31" value="30"/>
+  <uol name="32" value="30"/>
+  <uol name="33" value="30"/>
+  <uol name="37" value="30"/>
+  <uol name="38" value="30"/>
+  <uol name="40" value="30"/>
+  <uol name="41" value="30"/>
+  <uol name="42" value="30"/>
+  <uol name="43" value="30"/>
+  <uol name="44" value="30"/>
+  <uol name="45" value="30"/>
+  <uol name="46" value="30"/>
+  <uol name="47" value="30"/>
+  <uol name="48" value="30"/>
+</imgdir>
